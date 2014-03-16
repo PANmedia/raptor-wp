@@ -22,25 +22,27 @@ class Raptor {
             die('Access denied');
         }
 
-        $posts = isset($_POST['posts']) ? json_decode($_POST['posts']) : null;
-        dump($posts);
-        if (!$posts) {
+        if (!isset($_POST['posts']) || !is_array($_POST['posts'])) {
             header('HTTP/1.0 400 Bad Request', true, 400);
             die('Error saving content');
         }
 
-        $post = array();
-        foreach ($_POST['posts'] as $id => $content) {
-            dump($_POST['posts']);
-            if (current_user_can('edit_post', $id)){
-                $post['ID'] = $id;
-                $post['post_content'] = $content;
-                if (wp_update_post($post) !== 0) {
-                    $updatedPosts++;
+        $updated = 0;
+        foreach ($_POST['posts'] as $id => $post) {
+            if (current_user_can('edit_post', $id)) {
+                $data = array('ID' => $id);
+                if (isset($post['title'])) {
+                    $data['post_title'] = $post['title'];
+                }
+                if (isset($post['content'])) {
+                    $data['post_content'] = $post['content'];
+                }
+                if (wp_update_post($data) !== 0) {
+                    $updated++;
                 }
             }
         }
-        dump($_POST);
+        die("Successfully saved {$updated} post(s).");
     }
 
     public function adminPrintScripts() {

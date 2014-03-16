@@ -1,28 +1,30 @@
-/*
-jQuery('.wp-editor-area').raptor({
-    preset: 'inline',
-    plugins: {
-
-    }
-});
-*/
 (function($) {
 
-    var SaveWpPlugin = function() {
-        this.name = 'saveWp';
+    var SavePostPlugin = function() {
+        this.name = 'savePost';
     }
 
-    SaveWpPlugin.prototype.init = function() {};
-    SaveWpPlugin.prototype.enable = function() {};
+    SavePostPlugin.prototype.init = function() {};
+    SavePostPlugin.prototype.enable = function() {};
 
-    SaveWpPlugin.prototype.save = function(saveSections) {
+    SavePostPlugin.prototype.save = function(saveSections) {
+        var posts = {};
+        this.raptor.unify(function(raptor) {
+            if (raptor.isDirty()) {
+                raptor.clean();
+                var id = raptor.getElement().closest('article').attr('id').replace(/[^0-9]+/, '');
+                if (typeof posts[id] === 'undefined') {
+                    posts[id] = {};
+                }
+                posts[id][raptor.getPlugin('savePost').options.type] = raptor.getHtml();
+            }
+        });
         $.ajax({
                 type: 'post',
-                dataType: 'json',
                 url: RaptorWP.url,
                 data: {
                     action: 'raptor_save',
-                    posts: this.raptor.getHtml(),
+                    posts: posts,
                     nonce: RaptorWP.nonce
                 }
             })
@@ -30,27 +32,23 @@ jQuery('.wp-editor-area').raptor({
             .fail(this.fail.bind(this));
     };
 
-    SaveWpPlugin.prototype.done = function(data, status, xhr) {
+    SavePostPlugin.prototype.done = function(data, status, xhr) {
         this.raptor.unify(function(raptor) {
             if (raptor.isDirty()) {
                 raptor.saved([data, status, xhr]);
             }
+            raptor.disableEditing();
         });
         $.pnotify({
-            text: 'Successfully saved content.',
+            text: data,
             type: 'success',
             state: 'confirmation',
             styling: 'jqueryui',
             history: false
         });
-        if (!this.options.retain) {
-            this.raptor.unify(function(raptor) {
-                raptor.disableEditing();
-            });
-        }
     };
 
-    SaveWpPlugin.prototype.fail = function(xhr) {
+    SavePostPlugin.prototype.fail = function(xhr) {
         $.pnotify({
             text: 'Failed to save content.',
             type: 'error',
@@ -59,7 +57,23 @@ jQuery('.wp-editor-area').raptor({
         });
     };
 
-    Raptor.registerPlugin(new SaveWpPlugin());
+    Raptor.registerPlugin(new SavePostPlugin());
+
+    $('.entry-title a').raptor({
+        preset: 'micro',
+        plugins: {
+            dock: {
+                docked: true,
+                spacer: false
+            },
+            save: {
+                plugin: 'savePost'
+            },
+            savePost: {
+                type: 'title'
+            }
+        }
+    });
 
     $('.entry-content').raptor({
         plugins: {
@@ -68,21 +82,10 @@ jQuery('.wp-editor-area').raptor({
                 spacer: false
             },
             save: {
-                plugin: 'saveWp'
+                plugin: 'savePost'
             },
-            saveJson: {
-                id: RaptorWP.id,
-                url: RaptorWP.url,
-                postName: 'raptor-content',
-                data: function(id, contentData) {
-                    console.log(id, contentData);
-                    var data = {
-                        action: 'save_post',
-                        posts: contentData,
-                        nonce: RaptorWP.nonce
-                    };
-                    return data;
-                }
+            savePost: {
+                type: 'content'
             }
         }
     });

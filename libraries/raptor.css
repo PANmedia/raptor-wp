@@ -1,0 +1,2866 @@
+/* Libraries */
+/* Non styles */
+/**
+ * Style global variables
+ *
+ * @author David Neilsen <david@panmedia.co.nz>
+ */
+/**
+ * Z index variables
+ *
+ * @author David Neilsen <david@panmedia.co.nz>
+ */
+/* line 9, mixins.scss */
+.raptor-ui-cancel .ui-icon, .raptor-ui-class-menu .ui-icon, .raptor-ui-clean-block .ui-icon, .raptor-ui-clear-formatting .ui-icon, .raptor-ui-click-button-to-edit .ui-icon, .raptor-ui-close .ui-icon, .raptor-ui-dock-to-screen .ui-icon, .raptor-ui-dock-to-element .ui-icon, .raptor-ui-embed .ui-icon, .raptor-ui-float-left .ui-icon, .raptor-ui-float-none .ui-icon, .raptor-ui-float-right .ui-icon, .raptor-ui-guides .ui-icon, .raptor-ui-history-undo .ui-icon, .raptor-ui-history-redo .ui-icon, .raptor-ui-hr-create .ui-icon, .raptor-ui-image-resize .ui-icon, .raptor-ui-image-swap .ui-icon, .raptor-ui-insert-file .ui-icon, .raptor-ui-link-create .ui-icon, .raptor-ui-link-remove .ui-icon, .raptor-ui-list-unordered .ui-icon, .raptor-ui-list-ordered .ui-icon, .raptor-ui-save .ui-icon, .raptor-ui-snippet-menu .ui-icon, .raptor-ui-special-characters .ui-icon, .raptor-ui-table-create .ui-icon, .raptor-ui-table-insert-row .ui-icon, .raptor-ui-table-insert-column .ui-icon, .raptor-ui-table-delete-row .ui-icon, .raptor-ui-table-delete-column .ui-icon, .raptor-ui-table-merge-cells .ui-icon, .raptor-ui-table-split-cells .ui-icon, .raptor-ui-tag-menu .ui-icon, .raptor-ui-align-left .ui-icon, .raptor-ui-align-right .ui-icon, .raptor-ui-align-center .ui-icon, .raptor-ui-align-justify .ui-icon, .raptor-ui-text-bold .ui-icon, .raptor-ui-text-italic .ui-icon, .raptor-ui-text-strike .ui-icon, .raptor-ui-text-size-increase .ui-icon, .raptor-ui-text-size-decrease .ui-icon, .raptor-ui-text-underline .ui-icon, .raptor-ui-text-sub .ui-icon, .raptor-ui-text-super .ui-icon, .raptor-ui-view-source .ui-icon, .raptor-ui-file-manager .ui-icon, .raptor-plugin-delete .ui-icon, .raptor-plugin-rename .ui-icon, .raptor-plugin-edit .ui-icon, .raptor-plugin-view .ui-icon, .raptor-plugin-download .ui-icon, .raptor-plugin-insert .ui-icon, .raptor-plugin-cancel .ui-icon, .raptor-plugin-crop .ui-icon, .raptor-plugin-flip-h .ui-icon, .raptor-plugin-flip-v .ui-icon, .raptor-plugin-redo .ui-icon, .raptor-plugin-resize .ui-icon, .raptor-plugin-revert .ui-icon, .raptor-plugin-rotate-left .ui-icon, .raptor-plugin-rotate-right .ui-icon, .raptor-plugin-save .ui-icon, .raptor-plugin-undo .ui-icon, .raptor-plugin-upload .ui-icon, .raptor-ui-image-editor .ui-icon, .raptor-ui-lorem-ipsum .ui-icon, .raptor-ui-revisions .ui-icon, .raptor-ui-revisions-preview-button .ui-icon, .raptor-ui-revisions-apply-button .ui-icon, .raptor-ui-revisions-diff-button .ui-icon, .raptor-section-add-item .ui-icon, .raptor-section-remove .ui-icon, .raptor-section-add-layout .ui-icon, .raptor-section-guides .ui-icon, .raptor-section-save .ui-icon {
+  width: 16px;
+  height: 16px;
+  display: block;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=85);
+  opacity: 0.85;
+}
+
+/* line 16, mixins.scss */
+.raptor-ui-cancel .ui-icon:before, .raptor-ui-class-menu .ui-icon:before, .raptor-ui-clean-block .ui-icon:before, .raptor-ui-clear-formatting .ui-icon:before, .raptor-ui-click-button-to-edit .ui-icon:before, .raptor-ui-close .ui-icon:before, .raptor-ui-dock-to-screen .ui-icon:before, .raptor-ui-dock-to-element .ui-icon:before, .raptor-ui-embed .ui-icon:before, .raptor-ui-float-left .ui-icon:before, .raptor-ui-float-none .ui-icon:before, .raptor-ui-float-right .ui-icon:before, .raptor-ui-guides .ui-icon:before, .raptor-ui-history-undo .ui-icon:before, .raptor-ui-history-redo .ui-icon:before, .raptor-ui-hr-create .ui-icon:before, .raptor-ui-image-resize .ui-icon:before, .raptor-ui-image-swap .ui-icon:before, .raptor-ui-insert-file .ui-icon:before, .raptor-ui-link-create .ui-icon:before, .raptor-ui-link-remove .ui-icon:before, .raptor-ui-list-unordered .ui-icon:before, .raptor-ui-list-ordered .ui-icon:before, .raptor-ui-save .ui-icon:before, .raptor-ui-snippet-menu .ui-icon:before, .raptor-ui-special-characters .ui-icon:before, .raptor-ui-table-create .ui-icon:before, .raptor-ui-table-insert-row .ui-icon:before, .raptor-ui-table-insert-column .ui-icon:before, .raptor-ui-table-delete-row .ui-icon:before, .raptor-ui-table-delete-column .ui-icon:before, .raptor-ui-table-merge-cells .ui-icon:before, .raptor-ui-table-split-cells .ui-icon:before, .raptor-ui-tag-menu .ui-icon:before, .raptor-ui-align-left .ui-icon:before, .raptor-ui-align-right .ui-icon:before, .raptor-ui-align-center .ui-icon:before, .raptor-ui-align-justify .ui-icon:before, .raptor-ui-text-bold .ui-icon:before, .raptor-ui-text-italic .ui-icon:before, .raptor-ui-text-strike .ui-icon:before, .raptor-ui-text-size-increase .ui-icon:before, .raptor-ui-text-size-decrease .ui-icon:before, .raptor-ui-text-underline .ui-icon:before, .raptor-ui-text-sub .ui-icon:before, .raptor-ui-text-super .ui-icon:before, .raptor-ui-view-source .ui-icon:before, .raptor-ui-file-manager .ui-icon:before, .raptor-plugin-delete .ui-icon:before, .raptor-plugin-rename .ui-icon:before, .raptor-plugin-edit .ui-icon:before, .raptor-plugin-view .ui-icon:before, .raptor-plugin-download .ui-icon:before, .raptor-plugin-insert .ui-icon:before, .raptor-plugin-cancel .ui-icon:before, .raptor-plugin-crop .ui-icon:before, .raptor-plugin-flip-h .ui-icon:before, .raptor-plugin-flip-v .ui-icon:before, .raptor-plugin-redo .ui-icon:before, .raptor-plugin-resize .ui-icon:before, .raptor-plugin-revert .ui-icon:before, .raptor-plugin-rotate-left .ui-icon:before, .raptor-plugin-rotate-right .ui-icon:before, .raptor-plugin-save .ui-icon:before, .raptor-plugin-undo .ui-icon:before, .raptor-plugin-upload .ui-icon:before, .raptor-ui-image-editor .ui-icon:before, .raptor-ui-lorem-ipsum .ui-icon:before, .raptor-ui-revisions .ui-icon:before, .raptor-ui-revisions-preview-button .ui-icon:before, .raptor-ui-revisions-apply-button .ui-icon:before, .raptor-ui-revisions-diff-button .ui-icon:before, .raptor-section-add-item .ui-icon:before, .raptor-section-remove .ui-icon:before, .raptor-section-add-layout .ui-icon:before, .raptor-section-guides .ui-icon:before, .raptor-section-save .ui-icon:before {
+  display: none;
+}
+
+/* line 20, mixins.scss */
+.raptor-ui-cancel:hover .ui-icon, .raptor-ui-class-menu:hover .ui-icon, .raptor-ui-clean-block:hover .ui-icon, .raptor-ui-clear-formatting:hover .ui-icon, .raptor-ui-click-button-to-edit:hover .ui-icon, .raptor-ui-close:hover .ui-icon, .raptor-ui-dock-to-screen:hover .ui-icon, .raptor-ui-dock-to-element:hover .ui-icon, .raptor-ui-embed:hover .ui-icon, .raptor-ui-float-left:hover .ui-icon, .raptor-ui-float-none:hover .ui-icon, .raptor-ui-float-right:hover .ui-icon, .raptor-ui-guides:hover .ui-icon, .raptor-ui-history-undo:hover .ui-icon, .raptor-ui-history-redo:hover .ui-icon, .raptor-ui-hr-create:hover .ui-icon, .raptor-ui-image-resize:hover .ui-icon, .raptor-ui-image-swap:hover .ui-icon, .raptor-ui-insert-file:hover .ui-icon, .raptor-ui-link-create:hover .ui-icon, .raptor-ui-link-remove:hover .ui-icon, .raptor-ui-list-unordered:hover .ui-icon, .raptor-ui-list-ordered:hover .ui-icon, .raptor-ui-save:hover .ui-icon, .raptor-ui-snippet-menu:hover .ui-icon, .raptor-ui-special-characters:hover .ui-icon, .raptor-ui-table-create:hover .ui-icon, .raptor-ui-table-insert-row:hover .ui-icon, .raptor-ui-table-insert-column:hover .ui-icon, .raptor-ui-table-delete-row:hover .ui-icon, .raptor-ui-table-delete-column:hover .ui-icon, .raptor-ui-table-merge-cells:hover .ui-icon, .raptor-ui-table-split-cells:hover .ui-icon, .raptor-ui-tag-menu:hover .ui-icon, .raptor-ui-align-left:hover .ui-icon, .raptor-ui-align-right:hover .ui-icon, .raptor-ui-align-center:hover .ui-icon, .raptor-ui-align-justify:hover .ui-icon, .raptor-ui-text-bold:hover .ui-icon, .raptor-ui-text-italic:hover .ui-icon, .raptor-ui-text-strike:hover .ui-icon, .raptor-ui-text-size-increase:hover .ui-icon, .raptor-ui-text-size-decrease:hover .ui-icon, .raptor-ui-text-underline:hover .ui-icon, .raptor-ui-text-sub:hover .ui-icon, .raptor-ui-text-super:hover .ui-icon, .raptor-ui-view-source:hover .ui-icon, .raptor-ui-file-manager:hover .ui-icon, .raptor-plugin-delete:hover .ui-icon, .raptor-plugin-rename:hover .ui-icon, .raptor-plugin-edit:hover .ui-icon, .raptor-plugin-view:hover .ui-icon, .raptor-plugin-download:hover .ui-icon, .raptor-plugin-insert:hover .ui-icon, .raptor-plugin-cancel:hover .ui-icon, .raptor-plugin-crop:hover .ui-icon, .raptor-plugin-flip-h:hover .ui-icon, .raptor-plugin-flip-v:hover .ui-icon, .raptor-plugin-redo:hover .ui-icon, .raptor-plugin-resize:hover .ui-icon, .raptor-plugin-revert:hover .ui-icon, .raptor-plugin-rotate-left:hover .ui-icon, .raptor-plugin-rotate-right:hover .ui-icon, .raptor-plugin-save:hover .ui-icon, .raptor-plugin-undo:hover .ui-icon, .raptor-plugin-upload:hover .ui-icon, .raptor-ui-image-editor:hover .ui-icon, .raptor-ui-lorem-ipsum:hover .ui-icon, .raptor-ui-revisions:hover .ui-icon, .raptor-ui-revisions-preview-button:hover .ui-icon, .raptor-ui-revisions-apply-button:hover .ui-icon, .raptor-ui-revisions-diff-button:hover .ui-icon, .raptor-section-add-item:hover .ui-icon, .raptor-section-remove:hover .ui-icon, .raptor-section-add-layout:hover .ui-icon, .raptor-section-guides:hover .ui-icon, .raptor-section-save:hover .ui-icon {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1;
+}
+
+/* Base style */
+/**
+ * Main editor styles
+ *
+ * @author David Neilsen <david@panmedia.co.nz>
+ * @author Michael Robinson <michael@panmedia.co.nz>
+ */
+/* line 7, style.scss */
+.raptor-editing {
+  outline: none;
+}
+
+/* line 12, style.scss */
+.raptor-editable-block-hover:not(.raptor-editing),
+.raptor-editable-block:hover:not(.raptor-editing) {
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoAQMAAAC2MCouAAAABlBMVEUAAACfn5/FQV4CAAAAAnRSTlMAG/z2BNQAAABPSURBVHhexc2xEYAgEAXRdQwILYFSKA1LsxRKIDRwOG8LMDb9++aO8tAvjps4qXMLaGNf5JglxyyEhWVBXpAfyCvyhrwjD74OySfy8dffFyMcWadc9txXAAAAAElFTkSuQmCC') 0 0;
+}
+
+/* line 16, style.scss */
+.raptor-editing-inline {
+  width: 600px;
+  min-height: 150px;
+  padding: 5px !important;
+  background-color: #fff;
+  border: 1px solid #c1c1c1 !important;
+  border-top: none !important;
+  color: #333;
+  font-size: 1em;
+  text-shadow: none;
+}
+
+/* line 28, style.scss */
+.raptor-editing-inline * {
+  text-shadow: inherit;
+}
+
+/* line 32, style.scss */
+.raptor-editing-inline *:not(.cms-color) {
+  color: inherit;
+}
+
+/**
+ * Unsupported warning styles
+ *
+ * @author David Neilsen <david@panmedia.co.nz>
+ */
+/* line 8, support.scss */
+.raptor-unsupported {
+  position: relative;
+}
+
+/* line 12, support.scss */
+.raptor-unsupported-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: black;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
+  opacity: 0.5;
+}
+
+/* line 22, support.scss */
+.raptor-unsupported-content {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin: -200px 0 0 -300px;
+  width: 600px;
+  height: 400px;
+}
+
+/* line 31, support.scss */
+.raptor-unsupported-input {
+  position: absolute;
+  bottom: 10px;
+}
+
+/* line 36, support.scss */
+.raptor-unsupported-content {
+  padding: 10px;
+  background-color: white;
+  border: 1px solid #777;
+}
+
+/**
+ * Toolbar layout.
+ *
+ * @author David Neilsen <david@panmedia.co.nz>
+ */
+/* line 9, toolbar.scss */
+.raptor-layout-toolbar-outer {
+  overflow: visible;
+  position: fixed;
+  font-size: 12px;
+  z-index: 1300;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #f7f7f7), color-stop(100%, #fafafa));
+  background: -webkit-linear-gradient(#f7f7f7, #fafafa);
+  background: -moz-linear-gradient(#f7f7f7, #fafafa);
+  background: -o-linear-gradient(#f7f7f7, #fafafa);
+  background: linear-gradient(#f7f7f7, #fafafa);
+}
+/* line 17, toolbar.scss */
+.raptor-layout-toolbar-outer * {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+/* line 22, toolbar.scss */
+.raptor-layout-toolbar-inner {
+  border: 1px solid #c1c1c1;
+  border-top: none;
+}
+
+/* line 27, toolbar.scss */
+.raptor-layout-toolbar-toolbar {
+  padding: 6px 0 0 5px;
+  overflow: visible;
+}
+
+/* line 32, toolbar.scss */
+.raptor-layout-toolbar-path {
+  padding: 5px;
+}
+
+/* line 36, toolbar.scss */
+.raptor-layout-toolbar-group {
+  float: left;
+  margin-right: 5px;
+}
+
+/* line 41, toolbar.scss */
+.raptor-layout-toolbar-group .ui-button {
+  padding: 0;
+  margin-top: 0;
+  margin-left: -1px;
+  margin-bottom: 5px;
+  margin-right: 0;
+  height: 32px;
+  float: left;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 52, toolbar.scss */
+.raptor-layout-toolbar-group .ui-button:hover {
+  z-index: 1;
+}
+
+/* line 56, toolbar.scss */
+.raptor-layout-toolbar-group .ui-button-icon-only {
+  width: 32px;
+}
+
+/* line 60, toolbar.scss */
+.raptor-layout-toolbar-group .ui-button-text-only .ui-button-text {
+  padding: 8px 16px 10px 16px;
+}
+
+/* line 63, toolbar.scss */
+.raptor-layout-toolbar-group .ui-button-text-icon-primary .ui-button-text {
+  padding: 8px 16px 10px 32px;
+}
+
+/**
+ * Hover panel layout.
+ *
+ * @author Michael Robinson <michael@panmedia.co.nz>
+ * @author David Neilsen <david@panmedia.co.nz>
+ */
+/* line 7, hover-panel.scss */
+.raptor-layout-hover-panel {
+  z-index: 1100;
+  position: absolute;
+}
+
+/* line 12, hover-panel.scss */
+.raptor-layout-hover-panel .raptor-layout-toolbar-group:last-child {
+  margin-right: 0;
+}
+
+/* line 16, hover-panel.scss */
+.raptor-layout-hover-panel .raptor-layout-toolbar-group .ui-button {
+  margin-bottom: 0;
+}
+
+/**
+ * Select menu UI widget styles
+ *
+ * @author David Neilsen <david@panmedia.co.nz>
+ */
+/* line 6, menu.scss */
+.raptor-menu {
+  z-index: 1600;
+  padding: 6px;
+}
+
+/* line 11, menu.scss */
+.raptor-menu .ui-menu-item:before {
+  display: none;
+}
+
+/* line 16, menu.scss */
+.raptor-menu .ui-menu-item a,
+.raptor-menu .ui-menu-item a:hover {
+  white-space: pre;
+  padding: 3px 10px;
+}
+
+/**
+ * Select menu UI widget styles
+ *
+ * @author David Neilsen <david@panmedia.co.nz>
+ */
+/* line 6, select-menu.scss */
+.raptor-selectmenu {
+  overflow: visible;
+  position: relative;
+}
+
+/* line 11, select-menu.scss */
+.raptor-selectmenu-button {
+  text-align: left;
+  padding: 3px 18px 5px 5px !important;
+  float: none !important;
+}
+/* line 18, select-menu.scss */
+.raptor-selectmenu-button .ui-icon {
+  position: absolute;
+  right: 1px;
+  top: 8px;
+}
+/* line 23, select-menu.scss */
+.raptor-selectmenu-button .raptor-selectmenu-text {
+  font-size: 13px;
+}
+
+/* line 28, select-menu.scss */
+.raptor-selectmenu-wrapper {
+  position: relative;
+}
+
+/* line 32, select-menu.scss */
+.raptor-selectmenu-button .ui-button-text {
+  padding: 0 25px 0 5px;
+}
+
+/* line 35, select-menu.scss */
+.raptor-selectmenu-button .ui-icon {
+  background-repeat: no-repeat;
+}
+
+/* line 39, select-menu.scss */
+.raptor-selectmenu-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: auto;
+  display: none;
+  margin-top: -1px !important;
+}
+
+/* line 48, select-menu.scss */
+.raptor-selectmenu-visible .raptor-selectmenu-menu {
+  display: block;
+  z-index: 1;
+}
+
+/* line 53, select-menu.scss */
+.raptor-selectmenu-menu-item {
+  padding: 5px;
+  margin: 3px;
+  z-index: 1;
+  text-align: left;
+  font-size: 13px;
+  font-weight: normal !important;
+  border: 1px solid transparent;
+  cursor: pointer;
+  background-color: inherit;
+}
+
+/* line 65, select-menu.scss */
+.raptor-selectmenu-button {
+  background: #f5f5f5;
+  border: 1px solid #ccc;
+}
+
+/**
+ * Cancel plugin.
+ *
+ * @author David Neilsen <david@panmedia.co.nz>
+ */
+/* line 27, mixins.scss */
+.raptor-ui-cancel .ui-icon, .raptor-ui-cancel.ui-state-hover .ui-icon {
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAtFBMVEX///+nAABhAACnAACjAACCAACgAACHAACjAAByAAB1AAByAACDAACnAACCAACHAACgAACNAACbAACXAACMAACSAABfAACYAACRAACjAACbAAChAACqAACNAACcAACHAACqAADEERGsERHQERG+NjaiERHUTEzYERG4ERGlFBSfFRX/d3f6cnK0JSWoHh7qYmLkXFyvFRXmXl7vZ2fNRUX4cHDXT0/+dnbbU1O3Li7GPT26MTG2f8oMAAAAIXRSTlMASEjMzADMzAAASMxIAMwAAMzMzEjMzEhISABIzABISEg/DPocAAAAj0lEQVR4Xo3PVw6DMBBF0RgXTO+hBYhtILX3sv99RRpvgPcxVzp/M5syb7lYepxDABDeYcQ5wg+MAMhr3JOyJKfxTABqduuvjD37O6sBwjZ+f76/7TFuQw1VnhyGYZPklYagKbKLlDIrmkBDGq1hUaqhM4UQJpwOwFdK+a4LAbCdlWNTCgGwjLlhUQqZ8uofSk8NKY1Fm8EAAAAASUVORK5CYII=') 0 0 !important;
+}
+
+/**
+ * Snippet menu plugin.
+ *
+ * @author David Neilsen <david@panmedia.co.nz>
+ */
+/* line 27, mixins.scss */
+.raptor-ui-class-menu .ui-icon, .raptor-ui-class-menu.ui-state-hover .ui-icon {
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyNJREFUeNpskn9MG2UYx7/3o7TlSgNLi1jciiA71jkt6UgAnQpdTMYMTkayLCQzWbIY3faHiQR1TP/TLJkxLsaYmDidM1kTBQqZEp1hKyMgGRMhYXTgoCBFFhmchZZe797X9zpK0O25e3Nv7r6f7/O8z3Ncz1ERRnDpG86t8d2tUuKRkwv8RO+Kn4hCSUFVfHy2TRuOfEooHdQIVglNI5BXnwF/fwsbW4cFi61ZjWadtMkylDD2xPOlKlmuwKKEhtyiXScI+OPr2nSEpT4Y6bdR8EccZZWVzidrqucxglAggLzaHeASJly+fAku607MeF97pa+0rCF3qs1tWxo1jJD9bQBc9xHxVKm/6YDFWeLT1BSXcTdlZUE0m6Elk0ipKt6f3QePx4NQKARd1zk5FIA7dAnirEJ3el2yx5Rl4YhV1/RUih2L428ND0RG+q/dfarq+fwd3kr3buF3fPfDNOTFrt8K1dtwhIaQZIlEZQ0DF8+edrC9YGQuLJHz6l49Uf7Hzd7JQnfRXva88nRVjbuxVEFx+ONf7iqTY+p1ihRwiABvGT04ZyzeGAMHV/TO+HnBZML+Y80VqeTa30TX0k0f6DzfE52aDAv99EN9kb6rCkJjQtcvpGdowCY+PZtTFXWNj68pCsxmqz1bsoOy68evzvX+eWfipnQDX+r36Ht8Ts6elVjsZ5UlFiXTBsykyMvfVmwTLGYtlUyqC3MzsaGrP81EB28P2qa5LtyjXzjcblc4EhlkcCtDiMhxFNr6j6ETBNo/O6OoOraywnVW+1/mJXQ4h0GToB+9UF/v+76zs4/BbzL5qsGI2BQ6RTBFEDROTViH5i1lsK/Bb8f4mXV4KAG0sE/RDPMfg0w85spBR6wWlNLty9Kc/6Xq6gzcyuC+zVoxz2HbXAEcTul+P/6h2+Px+L6LPT3v1Hk8nzwHdDO4+//JmIH0sCL8u6TIwWMffP66z+c7HdO04LPA6MOE4lj28Qde5sZ/PXvoRbu35ejL38RifJAQsgFveZTDlgJuk4H1jQcMFLXJ2/7123OJ5cQFQqyjGfCJcn4DXh8c/hVgAAYpUQUdUKm5AAAAAElFTkSuQmCC') 0 0 !important;
+}
+
+/**
+ * Clean block plugin styles.
+ *
+ * @author David Neilsen <david@panmedia.co.nz>
+ */
+/* line 27, mixins.scss */
+.raptor-ui-clean-block .ui-icon, .raptor-ui-clean-block.ui-state-hover .ui-icon {
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAoNJREFUeNqkU11Ik1EYfo6bm7WZW2r+MDNTZ9ZQcbYws0iNpiZEBF4UXWgXCXURXQQiBTYhgi4qRo0y+gEpNImauKVkhkzDNrxoCjrNZSSapnNLv+n2nc5HGmFJgQcezuGc93nPc877vIRSivUMYqwkEFIIeQQQsnzA5rP1FEe0BKXZP894Bm6AQiKGPsjDsLSEmpD/uCSX8e4JYOv9LJF+noNhb/ExrW8BBvE/yClmO824YbpaKUgwG6sjvy8gQVdwQNv4qNkeCK6tQMHiz7H5kMs1fKe1Rw7/xARKTl8+Gq4hX5496bR/nkINz8MiKAhliGCIYohjRF2YLCJnW2ZelrM8I6mlxYzCQj1arX4cTBzC4ZMXyhYD11soD074E3KrglwJkyl3S2WbZBvCI8OjE1JjlDGqqCXvojjg4bB5ZwKaO0NRUFAKq/U5CpOGIRKJYG2638AuOxHCZLT5PDP+NF3JvvhkbSY3y8eOdA+IvV9nsFGlxLf+MZRle2E2NyI/vxQvnXGYc88hEABhgEifSdw2O521dfSmyyjiZRFyxKSqIGK1Gu8bgTI5FgEfh3TFPBra+6BW70H5+dqGvBTUs2d8XKmCJVtDFqanHRd35GqKhxz9EFMRtmakwDc1C8oFoUjcglO7PNCdKW9i8beZ/C7BMr+qwDY6+/rpTeO1h3ZFlAJJOWqMD36CZ3IG0mg5Jj+48fjp3bdV+dTEwrtWeKt9YEnbTvy21y+q1ercIp59UHJWGsYcQ7B0tHUz99WFSdH+O+EPIzElHa5RKnWN2pQVVce1gz1OvHn3vpcPolYiwavV8Ws50SKVgD4wNdUt98ilEALLX5tp3d243gQ/BBgABJ4L2+7frOgAAAAASUVORK5CYII=') 0 0 !important;
+}
+
+/**
+ * Clear formatting style plugin.
+ *
+ * @author David Neilsen <david@panmedia.co.nz>
+ */
+/* line 27, mixins.scss */
+.raptor-ui-clear-formatting .ui-icon, .raptor-ui-clear-formatting.ui-state-hover .ui-icon {
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wGGxcPH7KJ9wUAAAEKSURBVDjL3ZG9SgNBFIW/I76D1RIEazEIFitWNguxUPANUkUIKG4jYiEBC7WwUFJZiNssFvoOFipMFx/AoIVVEAvxB7w2MyBhV5Iq4IHLPecy9zBzBv4nJLUltQc5O1awXAE+gAnPhzMAFoE7YNzzoQ0WgBvg1vPBDSRNAl9m9gC4ebPpc+jkkADkkOTggi4KryFpV9KMpHgfXr/T1DJwGWxn4IIuM7iQdB1qDu73oPder9spuNDPYLZoeUrSZd9saQUej6DzUqvZCbhj2Pjr+pu/ZzuwnMLbc7Vqh+BCPyjIIAaefMVhuA69bhTZGnyuwlULXDeKrFWWQT+akDTAbfk3B90s+4WR4Acs5VZuyM1J1wAAAABJRU5ErkJggg==') 0 0 !important;
+}
+
+/**
+ * Click to edit plugin
+ *
+ * @author Michael Robinson <michael@panmedia.co.nz>
+ * @author David Neilsen <david@panmedia.co.nz>
+ */
+/* line 27, mixins.scss */
+.raptor-ui-click-button-to-edit .ui-icon, .raptor-ui-click-button-to-edit.ui-state-hover .ui-icon {
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2lpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wUmlnaHRzPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvcmlnaHRzLyIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcFJpZ2h0czpNYXJrZWQ9IkZhbHNlIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjcwQjlGRTM4MDM4NzExRTFBREUyQ0JDMzAwQUI1NjI2IiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjcwQjlGRTM3MDM4NzExRTFBREUyQ0JDMzAwQUI1NjI2IiB4bXA6Q3JlYXRvclRvb2w9IkFkb2JlIFBob3Rvc2hvcCBDUzMgV2luZG93cyI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ1dWlkOkFDMUYyRTgzMzI0QURGMTFBQUI4QzUzOTBEODVCNUIzIiBzdFJlZjpkb2N1bWVudElEPSJ1dWlkOkM5RDM0OTY2NEEzQ0REMTFCMDhBQkJCQ0ZGMTcyMTU2Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+jLCN8AAAAjlJREFUeNqMk01oE1EQx/+7eYkXFUP3JPEDE9C2FAsBhYBE8YNUcpJilPZgonhQ8NAcpEJRtNKDoEIOFkSUSIPVWJGIaJuq1VgrUkGxiVEPjVHaQtvEJLvNZru7vhYK6bqrDgzMvDe/ecO8GcZms6FUKqFcLkNRFMiyjGo55FXho3q7v3nRvxKN1s8DbQUg/AMYIjCQJVAjGz5zXNvuYDAw3N5uUwDC6oEPuhU92CFJ0n5XJhMQx8fR0NKyr6Sqpxi/dzUqUgUNjRLqHIp+OSp2Zqe4o/5gpjWZTMJqtSJSW/t4XaXSQfY0FsAwwMr1jCEsSTh94mTQE3+0A5ucd+FyuTrXmkwRh9mcMuxBNXzgcJdHliXY7Xb03ah/yPMkmmaYVNpsBvkfWBQFTE5+w/uR+0OOjQgpCvthKYz8C+b5PHK5n0g8u/OKPthpIsxgdSj5G5zPT4Hnc3gS60lYzLhACOLacGIET09nIIpz6OsND1ssOK8SDOgVS/TgiYmvdCrn0XMrPELhc6rKDBi1ajGBqmKzUMRxn7/Lk82OUV/BzeuRt7Tss/TuD3gbHfmtVH9RmxVEWAoC9jb5njeNjsax8F3docg7uhILcL8WXvWFLoEo4hgt9yBVtigwTocz0Myw7BprTatw9VJvQpbVDgo/1cKp73XYcnn5tJKZIrzbdx1xx+6FPr4cjL6mZxHLCiS08Ju0G7NFjlpjyxNcDKtnZvLua3R1YtR/QXVOC3M1wOwnTreJvwUYACjgD2NsoiY9AAAAAElFTkSuQmCC') 0 0 !important;
+}
+
+/**
+ * Close plugin.
+ *
+ * @author David Neilsen <david@panmedia.co.nz>
+ */
+/* line 27, mixins.scss */
+.raptor-ui-close .ui-icon, .raptor-ui-close.ui-state-hover .ui-icon {
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAtFBMVEX///+nAABhAACnAACjAACCAACgAACHAACjAAByAAB1AAByAACDAACnAACCAACHAACgAACNAACbAACXAACMAACSAABfAACYAACRAACjAACbAAChAACqAACNAACcAACHAACqAADEERGsERHQERG+NjaiERHUTEzYERG4ERGlFBSfFRX/d3f6cnK0JSWoHh7qYmLkXFyvFRXmXl7vZ2fNRUX4cHDXT0/+dnbbU1O3Li7GPT26MTG2f8oMAAAAIXRSTlMASEjMzADMzAAASMxIAMwAAMzMzEjMzEhISABIzABISEg/DPocAAAAj0lEQVR4Xo3PVw6DMBBF0RgXTO+hBYhtILX3sv99RRpvgPcxVzp/M5syb7lYepxDABDeYcQ5wg+MAMhr3JOyJKfxTABqduuvjD37O6sBwjZ+f76/7TFuQw1VnhyGYZPklYagKbKLlDIrmkBDGq1hUaqhM4UQJpwOwFdK+a4LAbCdlWNTCgGwjLlhUQqZ8uofSk8NKY1Fm8EAAAAASUVORK5CYII=') 0 0 !important;
+}
+
+/**
+ * Basic color menu plugin.
+ *
+ * @author David Neilsen <david@panmedia.co.nz>
+ */
+/* line 6, color-menu-basic/color-menu-basic.scss */
+.raptor-ui-color-menu-basic-menu > div {
+  min-width: 100px;
+}
+
+/* line 10, color-menu-basic/color-menu-basic.scss */
+.raptor-ui-color-menu-basic-menu span {
+  padding-left: 2px;
+}
+
+/* line 14, color-menu-basic/color-menu-basic.scss */
+.raptor-ui-color-menu-basic .ui-icon-swatch {
+  width: 16px;
+  height: 16px;
+  background-image: none;
+  border: 1px solid rgba(0, 0, 0, 0.35);
+}
+
+/**
+ * Dock plugin.
+ *
+ * @author David Neilsen <david@panmedia.co.nz>
+ */
+/* line 8, dock/dock.scss */
+.raptor-plugin-dock-docked .raptor-layout-toolbar-path, .raptor-plugin-dock-docked-to-element .raptor-layout-toolbar-path {
+  display: none;
+}
+
+/* line 13, dock/dock.scss */
+.raptor-plugin-dock-docked {
+  line-height: 0;
+}
+
+/* line 17, dock/dock.scss */
+.raptor-plugin-dock-visible {
+  display: block;
+}
+
+/* line 21, dock/dock.scss */
+.raptor-plugin-dock-hidden {
+  display: none;
+}
+
+/**
+ * Dock to screen plugin.
+ *
+ * @author David Neilsen <david@panmedia.co.nz>
+ */
+/* line 27, mixins.scss */
+.raptor-ui-dock-to-screen .ui-icon, .raptor-ui-dock-to-screen.ui-state-hover .ui-icon {
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAwFBMVEX///8NDQ1VVVVVVVVTU1M5OTlLS0tHR0dVVVVDQ0MfHx8vLy8+Pj40NDQPDw/Gxsa4uMTr6+vz8/O2xO0tT8Tv7++uut0lR7PBz/hcdcwiRKvp6emqt9s+XtbQ1ehHac1thuX5+fmptdzk5OT29vbh4eFXed/n5+fu7u7x8fGfrecoSq739/fCz/jFxcjLy8q4xu3KytbDzevb29vY2NjU1NPQ0M7P1eY1V7vBzvdkhuzHx8bFxcbg4ujFxczHx9F6WxVSAAAAEXRSTlMAhmZZWnNrbSJvfnhxdWTT046to6oAAACXSURBVHheZco1FsMwAATRTcxhkZnCzMz3v1WkyvbLb6YZ2Fq9oNmA3j2ezpft87X5fPc9HXhUAZN12QTI/HvBz4BbFWD2V5K7dFX6JmCNKKVxyMJYdmQBDhVi4DHGvIEQ1AFac0ICzhnnASHzFmDMplKyS1RmBtAmQyk/5CqkDTSjsbS4LlSiJtAg6k3fqQppAJ1aWQd/fntuHFvCkQDlAAAAAElFTkSuQmCC') 0 0 !important;
+}
+
+/* line 13, dock-to-screen/dock-to-screen.scss */
+.raptor-plugin-dock-docked .raptor-layout-toolbar-inner {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-box;
+  display: box;
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  -ms-box-pack: center;
+  box-pack: center;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -ms-box-align: center;
+  box-align: center;
+  width: 100%;
+}
+/* line 21, dock-to-screen/dock-to-screen.scss */
+.raptor-plugin-dock-docked .raptor-layout-toolbar-toolbar {
+  text-align: center;
+}
+
+/**
+ * Dock to element plugin.
+ *
+ * @author David Neilsen <david@panmedia.co.nz>
+ */
+/* line 27, mixins.scss */
+.raptor-ui-dock-to-element .ui-icon, .raptor-ui-dock-to-element.ui-state-hover .ui-icon {
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAsVBMVEX///9VVVUNDQ1VVVVVVVUvLy9TU1MfHx+4uMTGxsZBY+hAYuYREREPDw9BY+kiRK0lR7Wwvue9y/O5x/C+zPVcfuO4xe5CZMjBz/iywOgzVc81V7q0weoqTLAjRasrTcE7Xd1Qcte2xO3Azfa7yfHQ0M7Ly8rFxcbFxcy1wuvHx9HKyta/zPXp6enBzve2w+zY2Njb29vh4eHU1NPr6+tlh+3Hx8a5xu/FxcjCz/jn5+fv4craAAAADnRSTlMAZoZZInhaftPTwIBCZLWComUAAACBSURBVHheZcRVcgJRFADRJiNYMu5uuBPP/heWx9eF4lR1o2sjoelgTi/n98Xya/Wz3u4mJnw+gvD3XghtchRJC3G/F30MeeCJIIfSG4RXQjV8i6EC2++Eb4MTFSJyoO7StBaQbVw3uyqG6mBAcyqK5k8Zqz7GMLMsa/6ivN72xpN/8isdAjArQVYAAAAASUVORK5CYII=') 0 0 !important;
+}
+
+/* line 16, dock-to-element/dock-to-element.scss */
+.raptor-plugin-dock-inline-wrapper {
+  width: 100% !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/**
+ * Dialog docked to element
+ */
+/* line 25, dock-to-element/dock-to-element.scss */
+.raptor-plugin-dock-docked-to-element-wrapper {
+  font-size: inherit;
+  color: inherit;
+  font-family: inherit;
+}
+
+/* line 30, dock-to-element/dock-to-element.scss */
+.raptor-plugin-dock-docked-to-element-wrapper .raptor-layout-toolbar-outer {
+  /* Removed fixed position from the editor */
+  position: relative !important;
+  top: auto !important;
+  left: auto !important;
+  border: 0 none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  z-index: auto !important;
+  width: 100% !important;
+  font-size: inherit !important;
+  color: inherit !important;
+  font-family: inherit !important;
+  float: none !important;
+  width: auto !important;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-box;
+  display: box;
+  -webkit-box-orient: vertical;
+  -moz-box-orient: vertical;
+  -ms-box-orient: vertical;
+  box-orient: vertical;
+}
+/* line 50, dock-to-element/dock-to-element.scss */
+.raptor-plugin-dock-docked-to-element-wrapper .raptor-layout-toolbar-outer .raptor-layout-toolbar-toolbar {
+  margin: 0;
+  z-index: 2;
+  -webkit-box-ordinal-group: 1;
+  -moz-box-ordinal-group: 1;
+  -ms-box-ordinal-group: 1;
+  box-ordinal-group: 1;
+}
+/* line 57, dock-to-element/dock-to-element.scss */
+.raptor-plugin-dock-docked-to-element-wrapper .raptor-layout-toolbar-outer .raptor-layout-toolbar-toolbar .ui-widget-header {
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+}
+
+/* line 64, dock-to-element/dock-to-element.scss */
+.raptor-plugin-dock-docked-element {
+  /* Override margin so toolbars sit flush next to element */
+  margin: 0 !important;
+  display: block;
+  z-index: 1;
+  position: relative !important;
+  top: auto !important;
+  left: auto !important;
+  border: 0 none;
+  padding: 0;
+  margin: 0;
+  z-index: auto;
+  width: 100%;
+  font-size: inherit;
+  color: inherit;
+  font-family: inherit;
+  float: none;
+  width: auto;
+  -webkit-box-ordinal-group: 2;
+  -moz-box-ordinal-group: 2;
+  -ms-box-ordinal-group: 2;
+  box-ordinal-group: 2;
+}
+
+/* line 89, dock-to-element/dock-to-element.scss */
+.raptor-plugin-dock-docked-to-element .raptor-layout-toolbar-inner {
+  border-top: 1px solid #c1c1c1;
+}
+
+/**
+ * Embed plugin
+ *
+ * @author David Neilsen <david@panmedia.co.nz>
+ */
+/* line 27, mixins.scss */
+.raptor-ui-embed .ui-icon, .raptor-ui-embed.ui-state-hover .ui-icon {
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAxlBMVEX////////fNzfaMTHVLCzKISHFGxvvR0flPDzpSEjdMTH4Y2PaKyvtTk7PJibXIyOnLi7lQECkKyvSHR3mPj6eJCSUGhqRFxfqQkL0XFziOTmOFBSBBwehKCiHDQ3PFRWaISGXHR3wVlaECgqqMTGLEBDGHR365eW1ICDaXFz139/LDg7NLi6tNDTSKSnMNzd9AwP1TEy/Fhbwxsbqv7+7EhKzFBS6EBDonZ3akJDkhISxBwf8a2vLIiLPcHD88fH67+/fYGAnLmvBAAAAAXRSTlMAQObYZgAAAJtJREFUeF5Vx0WShFAUBMB631F3afdxd7v/pQaiN5C7BK4mgM3nxAahczfihIgrrfVTqs+qGN2qLMvHwy4tB6sOmWeMIXp7/jI9L8PCYowR0e/3xzVj1gLLiHNOg9OR82iJvBZC0GD/J0Sdo7B93+/78+737AKNK6Uker2UA7fBNlBKPdyos2CLWXI/ksywnr+MzNdoLyZa4HYC/3EAHWTN0A0YAAAAAElFTkSuQmCC') 0 0 !important;
+}
+
+/* line 13, embed/embed.scss */
+.raptor-ui-embed-panel-tabs {
+  height: 100%;
+  width: 100%;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-box;
+  display: box;
+  -webkit-box-orient: vertical;
+  -moz-box-orient: vertical;
+  -ms-box-orient: vertical;
+  box-orient: vertical;
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  -ms-box-flex: 1;
+  box-flex: 1;
+}
+/* line 22, embed/embed.scss */
+.raptor-ui-embed-panel-tabs .raptor-ui-embed-code-tab,
+.raptor-ui-embed-panel-tabs .raptor-ui-embed-preview-tab {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-box;
+  display: box;
+  -webkit-box-orient: vertical;
+  -moz-box-orient: vertical;
+  -ms-box-orient: vertical;
+  box-orient: vertical;
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  -ms-box-flex: 1;
+  box-flex: 1;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+/* line 28, embed/embed.scss */
+.raptor-ui-embed-panel-tabs .raptor-ui-embed-code-tab p,
+.raptor-ui-embed-panel-tabs .raptor-ui-embed-preview-tab p {
+  padding-top: 10px;
+}
+/* line 32, embed/embed.scss */
+.raptor-ui-embed-panel-tabs .raptor-ui-embed-code-tab textarea,
+.raptor-ui-embed-panel-tabs .raptor-ui-embed-preview-tab textarea {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-box;
+  display: box;
+  -webkit-box-flex: 4;
+  -moz-box-flex: 4;
+  -ms-box-flex: 4;
+  box-flex: 4;
+}
+
+/* line 39, embed/embed.scss */
+.raptor-ui-embed-dialog .ui-dialog-content {
+  display: -webkit-box !important;
+  display: -moz-box !important;
+  display: box !important;
+  width: 100% !important;
+  overflow: hidden;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/**
+ * Float block plugin
+ *
+ * @author David Neilsen <david@panmedia.co.nz>
+ */
+/* line 27, mixins.scss */
+.raptor-ui-float-left .ui-icon, .raptor-ui-float-left.ui-state-hover .ui-icon {
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAS5JREFUeNpi/P//PwMlgImBQsACY1zaIH4A6Bp7dAUzV31jnLHy22YgkxFqIQhf/vfvXymKAQ8eidtra35lYAQqY+FgZWBmZ2X49fk7AxvbX6DsN1+CLlgwn5khMECAwcLiL4OogiIDj6QEw9uLZ4AGfAVJ70BzAQg7ohigrnaP4cEDLoY3bzkYzL6/ZVA34ma4ev07w/sPv0HSHgRdoKICUvgR6IWPDK8evWb49+8iw/1bfxhevwYbsBfNdhC2BkkwwqLRxRhuFgM3HyMDrwAjw8vH/xj2nvuH1WZgIDKgGMDExLQNiz9xYWagASboBpAU/zAXsCCJ7SbCZjaghexAmgOIFUh2AXKyh7GRXTARiI2w2MoKVMwBtRVkOysQHwNiPxQXDFhmotgAgAADAKYzbYynfqX2AAAAAElFTkSuQmCC') 0 0 !important;
+}
+
+/* line 27, mixins.scss */
+.raptor-ui-float-none .ui-icon, .raptor-ui-float-none.ui-state-hover .ui-icon {
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAkFBMVEUAAAABAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEAAAABAQEAAADRrxbRsBYBAQEBAQEBAQEBAQEBAQEBAQEBAQEAAAAAAAAAAACcegnCrQ6ffgqukQv+/GixkS3duyLhwyfkyizevSNRMDCigDLauC/y41DcuiLrzTTQrhWCYBiObSDErz3r4VvApCt4Vg6dewnDaH3NAAAAGHRSTlMAycfDxcu9v8HYu+DAwIm3uZnRkdDn7LIyy/h+AAAAWklEQVR4Xp2KRwqFMBQAYzfGXmPtvfx//9spgvAWQcRZzgx6gz6dGEDkQ1FWNRBN2/XZCMRvXtZtB4LSfxon6AHTsjVZUQWR5xz2cWfJxYR9eFf2MQnCCH3hAIfwBUXJe8YuAAAAAElFTkSuQmCC') 0 0 !important;
+}
+
+/* line 27, mixins.scss */
+.raptor-ui-float-right .ui-icon, .raptor-ui-float-right.ui-state-hover .ui-icon {
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAS1JREFUeNpi/P//PwMlgImBQsACN4mJqRFIaQExIxQzZYRzBaaHcWE4kZGJ8aCe/0sHFAOAoB5d4avXfAwPH4swaGt+ZWAEGsnCwcrAzM7K8Ovzd3sMFwDBWpjNMPrK5b++C94yMwQGCDBYWPxlEFVQZOCRlGB4e/EMAzYDgtFdICr6kUFd7QfDgwdcDG/ecjCYfX/LoG7EzXD1+ncGeyNMAzYiuQDsCmHhf54qKr+BzI9AL3xkePXoNcO/fxcZ7t/6wwDzAyMsGoGBiDWUnQwR4tx8jAy8AowMLx//Y9h95g+GAdvQXIAPM//798+EKBfgAkADMMJgNxE2swEtZAfSHECsQLILkJM9jI3sgolAbITFVlagYg6orSDbWYH4GBD7obhgwDITxQYABBgAdBpg+9sXURwAAAAASUVORK5CYII=') 0 0 !important;
+}
+
+/**
+ * Show guides plugin
+ *
+ * @author David Neilsen <david@panmedia.co.nz>
+ */
+/* line 27, mixins.scss */
+.raptor-ui-guides .ui-icon, .raptor-ui-guides.ui-state-hover .ui-icon {
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAHZJREFUeNpi/P//PwNFAGQAIyMjDK9BYqNgXHqZ0MSYcFmEyxBGsClMTGS5+t+/fxg2biLGAGTXoBvATGoYkuUFGMDmhd2kGjL4vHCUUi9cIjcpnwPi2UAsBaXPQZPwOXxscD5Cy0xLSbUc3YDnJLue0uwMEGAA2O1APJOrHFQAAAAASUVORK5CYII=') 0 0 !important;
+}
+
+/* line 10, guides/guides.scss */
+.raptor-ui-guides-visible * {
+  outline: 1px dashed rgba(0, 0, 0, 0.5);
+}
+
+/**
+ * History plugin
+ *
+ * @author David Neilsen <david@panmedia.co.nz>
+ */
+/* line 27, mixins.scss */
+.raptor-ui-history-undo .ui-icon, .raptor-ui-history-undo.ui-state-hover .ui-icon {
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAe1JREFUeNrEUzFrFEEU/mazu7d3x8U9g0ROwkHEwrSrNmksJBxok1RRwUIEz0awFStZoqQw5B9ok1jYiRDBwl4PSaFJVLCMMfHWS7zb3ZndGd9ssgdXiVzhwGNnH+/75n3vm2FKKQyzDAy5zKmHLRSKRdiOA6tQgGlZDcrPUme3dcFBEPSLlZQQcZyFTFN8WZiGOUCnVCMRws9/4zD8BwkEFpz7N66c8vQJUbeLNEn+LuEQqxo8jv0716e8/f0UPIp0+n1OTbFLsUF1z+n7boAgA0eRf/em521tdeE4BuYunfa0OYehEMUJ3wt6Fza+7s4EkVwh3DJFLyPgYejfa0576+u/MsZe70g/tX8QRujSHDgXtpTpmOvarkjYrZ97Qg/xUTYDOv3B46U3rcnJMqRUUKaBtsXwzWDYJmfax1y0x07gx/FxfLbckd+1Wj0dYddI8vlcwhp1gcUnr/z55mXvbcfA99WXrVwjMwzGHNs0yiWbVSpFXqtVMTFxkrU+zOt55ENc04N7tvTCP9O86mn76D6cIzDSODYRhhUEnXFguy4/bs6gWr1IubN9F3KShHN8Wn6a3QNtZaFU0lvtZXAUm1LK13Jn5z7Vzw0Q9EmE0NvZDNnpoDw6OuC7voFUs0C19Uzif39MQxP8EWAA91//GdkHdYEAAAAASUVORK5CYII=') 0 0 !important;
+}
+
+/* line 27, mixins.scss */
+.raptor-ui-history-redo .ui-icon, .raptor-ui-history-redo.ui-state-hover .ui-icon {
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAd9JREFUeNrEU89LG0EUfjP7KyvEGsRorRhoySGCuSyht0IPgicFQZCcvXsvHoP/Q8FDKZRCpQityKIHvZT2YI6t6MUfCJqQKpt1d7Ozu7N9O9vWhIIUcvDBt/OY4X3z3vfNkjiOoZ+g0GfIyaf46gtQSQJF0wQIvePN5nJiJYS8xmUzDAIz8H1gnQ74npcS3BeubYOm60lqCKQjm/89QhSG0HEcSG6tzo4bAWM1JJntGaE7UNQKcL6EaQkxknQfcS6Imk0GizOTxrvPx7Xf4pvdBAOc85VBnVTLU6OPhx8NZBVZUjmPIYpStNsMGo0I5l8+NT5sfxckggCFAYrFzyaHlo1yoYDdSs2WD9e2A/atC4wFooMkJBT79EqBF88Lxu7eYU0QMN+v5Eey1enSRKF1y6ULFoKFAFUDntMgwpsiDuAEMbgBhydDKmxtH9TRmdWUwPOWSsXi2Fmr7RyfNG6sa9vzbI+FHT+MI3730hbmjIwEcLTxSRSrup5qgH6Wvn39cd76ae9TSndw6wzRQNiSooQxiohjHij4Pqy379PiTMb86wJalL+6ZB+pLK9RSv+x0XddkQfrb9K2VdXssRHZk4M1mRDc6XXWsaw/aT15ibKimN3n5MF/pr4JfgkwANDA599q/NhJAAAAAElFTkSuQmCC') 0 0 !important;
+}
+
+/**
+ * Horizontal rule plugin
+ *
+ * @author David Neilsen <david@panmedia.co.nz>
+ */
+/* line 27, mixins.scss */
+.raptor-ui-hr-create .ui-icon, .raptor-ui-hr-create.ui-state-hover .ui-icon {
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAXhJREFUeNpi/P//PwMTExMDEmgEYi0gZsSCrwJxNUzhv3//GBixGEA0ABnAgkV8LZqtTFDaF6aAX8KCwdBrA4QDckFq+1sGSUVrBkZGRqKwvEEhg2PyS7BeuAv07AsZXjw4BmJuQLIV5gImJLYrv7g53LlwA8TkLRgCi28wXDzQF/Dr10+G379/M/z58wfoz/9gfUxMrAzMzGwMsnr5DBwcvBgGHABiexBDyTiV4cuXTwxfv35j+PHjB9CQ/0BnszCwsHAysLHxIofVQSB2gBlgnxogAqREiI6B+ikf7ZFdcHD2hjf2X79+Zfj8+TNeF7Cz84K9wMrKdRDZAAcQ8fbJaYYndw4zYAsDHlFjBjZxKwyXwAPx1cMTDIdWxoKY+5BCHo7f31tp8VM9iUFQ0oaBQ9YBYQIoLo1dygmmA2QgIGHJoGhUCtaLLSkfweICVqA6diDNAcQKyJYTlRdAanCJY8sL04HYFM3WM0Acgs0QRlymEwsAAgwAwwCYinucCRoAAAAASUVORK5CYII=') 0 0 !important;
+}
+
+/**
+ * Image resize button.
+ *
+ * @author David Neilsen <david@panmedia.co.nz>
+ */
+/* line 27, mixins.scss */
+.raptor-ui-image-resize .ui-icon, .raptor-ui-image-resize.ui-state-hover .ui-icon {
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAeBJREFUeNqkU8tu00AUPWOPZ2JnnLahacNDYVEkNm3FDiGoPIItH1DBGr6BPwCJD0DAR7BjU1Wyl+yQEJt2ySoqquqkcerYsbkek6gIShYZaTSPe+acc2fusLIssUzjL9+cGgbGWJTnmU6SBFmW/QV0HAee54FzJyTRoNr78KrN+Hic0GErStMLPZ1Or1SqSOM4hm3bWsoGkRRE0gYnxYjUNQFCy7KCRZYJF5GQJhehSaEoCj0YxNU8OPx4H/+7EUb9yYsvRqTVWtGGII7PcH4+NICCLvTpOwYlaV4ArgBWXWCrA2xfBx7fLTEcDgx2dvm83+/PFXI69aD3Fbu9e+C2DdcBThOg0wRurdXx0Sgx2NnI0zT7g+BT9Bo/dzSe7e3DdxV6awKSW/Abdfwy3hCUpTVfVK9w8sPHQXyEb8fv0d3YRLfToXEDu7fv4OFNH5fxhsDzrhHraO7gRvsRlFKU+yqUaMOT65A0nqRNik/oGRsGK2WzJpByhViZWTSoWD6/3b/iDVKKCwihfhO0agIqotD3N/VkMor2nn9fWAdSqkgIcpOnVR1ocqCCioQ29Xh8trD2XUqtKPLQth0jZlWWHMcLOJfkpEu1Lv79aWi/jsuwws9SYcv+RgtLtl8CDABaJ7dGG392fAAAAABJRU5ErkJggg==') 0 0 !important;
+}
+
+/* line 10, image-resize/image-resize.scss */
+.raptor-resize-image {
+  position: relative;
+  min-width: 300px;
+}
+/* line 13, image-resize/image-resize.scss */
+.raptor-resize-image .form-text {
+  width: 40%;
+}
+/* line 16, image-resize/image-resize.scss */
+.raptor-resize-image label {
+  width: 35%;
+  display: inline-block;
+}
+/* line 20, image-resize/image-resize.scss */
+.raptor-resize-image .form-text, .raptor-resize-image label {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+/* line 23, image-resize/image-resize.scss */
+.raptor-resize-image div {
+  margin-bottom: 1.25em;
+  z-index: 10;
+  position: relative;
+}
+/* line 28, image-resize/image-resize.scss */
+.raptor-resize-image .raptor-ui-image-resize-lock-proportions-container {
+  position: absolute;
+  z-index: 0;
+}
+
+/* line 34, image-resize/image-resize.scss */
+.raptor-ui-image-resize-lock-proportions-container {
+  right: 16%;
+  top: 19px;
+  height: 54px;
+  width: 40%;
+  border-color: #ccc;
+  border-width: 1px 1px 1px 0;
+  border-style: solid solid solid none;
+}
+
+/* line 46, image-resize/image-resize.scss */
+.raptor-ui-image-resize-lock-proportions {
+  position: absolute;
+  right: -21px;
+  top: 50%;
+  margin-top: -21px;
+  height: 26px;
+  width: 26px;
+  border: 8px solid #ddd;
+  -webkit-border-radius: 39px;
+  -moz-border-radius: 39px;
+  -ms-border-radius: 39px;
+  -o-border-radius: 39px;
+  border-radius: 39px;
+  -webkit-box-shadow: 0 0 0 1px white inset;
+  -moz-box-shadow: 0 0 0 1px white inset;
+  box-shadow: 0 0 0 1px white inset;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #eaeaea), color-stop(100%, #ffffff));
+  background: -webkit-linear-gradient(#eaeaea, #ffffff);
+  background: -moz-linear-gradient(#eaeaea, #ffffff);
+  background: -o-linear-gradient(#eaeaea, #ffffff);
+  background: linear-gradient(#eaeaea, #ffffff);
+}
+/* line 60, image-resize/image-resize.scss */
+.raptor-ui-image-resize-lock-proportions .ui-button-text {
+  display: none;
+}
+/* line 64, image-resize/image-resize.scss */
+.raptor-ui-image-resize-lock-proportions .ui-icon {
+  margin-left: -8px;
+  margin-top: -8px;
+  left: 50%;
+  top: 50%;
+  position: absolute;
+  background-repeat: no-repeat;
+}
+/* line 73, image-resize/image-resize.scss */
+.raptor-ui-image-resize-lock-proportions.ui-state-hover {
+  cursor: pointer;
+  border-width: 8px;
+}
+
+/**
+ * Image swap button.
+ *
+ * @author David Neilsen <david@panmedia.co.nz>
+ */
+/* line 27, mixins.scss */
+.raptor-ui-image-swap .ui-icon, .raptor-ui-image-swap.ui-state-hover .ui-icon {
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAjNJREFUeNqkk81rE0EYxp/52Elqk9i0pWITjNrSVKqCh9IgXnqoh0JBRfFv8Cj0UigFoXiqB+nBnvwP1Ktg9a5FED1YKBjR1JLUSuKSj93Z2fWd1fQilUoXdmf23WeeeX/7vsOiKMJRLnlraWn/hTE2R8Pwf6z/Ju3ThGE3kHu6vPzoMDkxum8sLt6RtCsE5/A8z8a5IaSrqwyOAI4poOUDvTRme4EExS6PAJkkMDsRIdCaxxkwMlBKodVs8oAMZsY7GEglScigDS0kVZP8PZoXTwB9PYDVdQ3mEEXDnEwcpa6sb2zg9dsnOJnN49KZEpTk0LSz0UDaAarVNArjRQSErX2fy8CYv7hnp6YO5H784iU4K0CHHL7vC2nTsNwfng3943f9tr9wvYZPdYZXOwLTeQPf83hsYHkYTyGhQhBJt6YQlD4TDGEQIjRRzN3pRHCbhBVqayCk5bA8D1dzKBYNbt9sQBIrFwLpUzkk+7Jwt7fR/r4Xc58fCjAz0oaUCk3XdaTl0PRha7OM2s5xtNwenB3lyBcUJscm4KT6ESZT1CvvYXUra2vrdxcW3sQ1F6IqLYd1np+vU6gOWw3bG7rD8OXdFgbyDiqbPtw9HxcnQ6QzmecqkXhAu9uqwRrEGVQq3W4MLT4ZMXiRQaPN8fmjwc8fEc6RzurzhQK+lsvQWkPGHFLi2r3dA9v29PSfg0M6q7fz/sFBNOp1yN1arTpWKt0/7Omx3Hy/VFSsox7nXwIMAMop+9fDjIs6AAAAAElFTkSuQmCC') 0 0 !important;
+}
+
+/**
+ * Insert file plugin
+ *
+ * @author David Neilsen <david@panmedia.co.nz>
+ */
+/* line 27, mixins.scss */
+.raptor-ui-insert-file .ui-icon, .raptor-ui-insert-file.ui-state-hover .ui-icon {
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAcVJREFUeNrEkz1rFFEUhp+587nzmY2JYXeNki1isWKihZ0gaGFjIULA3sYfEQikFVsrwTaF+gdsY2ljF4KdYuNmY9yM2bkz47kzECxlU3jgMncu87znPS9zrbquuUgpLljO1s7OI3n25+S/OWVZDt7u7r6ah36yvf3cKbW2Ksnh7ksLZYFriy1ZMw0mnrQjK5AzGXa4BKMe6Aq2btcY1tFaq1K+3Lhi4TmQCbAUwfef0HHbdxPz5BRuyKAbAzidgWEM6+iiaAT60T7rvTW6Ub/pfH0FVpJWKBdgeKl1cqZb0UZA2EZAVxUfPr3mYxDy8NZj7o3uN5aNI2M7L2AxhKJsz0LXjFG1AoURELWDwwMWsgX2Tt5wfPKV1eWr9BZXuZx26XjS2gpb2GtH+13VFI3AbKZKUTs7HvDjl8N07PFu8plOcEgURsRRTBzHJHFClqQi3GdtecCdaz6GPXcw7D3A8zx83ycMQ5IkJssSut1UlsBZRCohRJGL8hW6zs8d2JU4+LvqJuGSXNJTKpe9YjqtOToqCYKgaXJzVBkHtjMZjz3bdXn/4uk//j6mWY7tehjWyjY3n4mD4VwXSakv1n+/jX8EGAAI68BpoWbP4wAAAABJRU5ErkJggg==') 0 0 !important;
+}
+
+/**
+ * Link plugin
+ *
+ * @author Michael Robinson <michael@panmedia.co.nz>
+ * @author David Neilsen <david@panmedia.co.nz>
+ */
+/* line 27, mixins.scss */
+.raptor-ui-link-create .ui-icon, .raptor-ui-link-create.ui-state-hover .ui-icon {
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAilBMVEX///8EBARUVFRUVFQEBARTU1MqKiwfHx5MTEzGxsZNTU1FRUWAgH8SEhJnZ2fd3d06Ojrg4ODIyMgODg4DAwMSEhLCwsGcnKXExNEvLy+ysrh+foMQEBBBQUEEBATJydeenqcDAwPT09OIiIjj4+OZmZl3d3fU1OPCwsHW1tXq6urr6+va2trGxsaRnmwcAAAAI3RSTlMAimdfRTOWgDXbAGXFj339cv3dAHtC3OP8bt+2cnuA/OMA+Akct2IAAABoSURBVHhetcVZFoIgGAbQ7wcVwyEKtBi01OZh/9urw2EJdV8ufkHmnDHG85RE2a7Wp812GGJtiaqvG1rOXws1dV9BzWKi2/3xfL1pErOCdT6YS2SCdxZdsdtfD8ci1UFnIxGNWUrjHz6V6QhqNdQf6wAAAABJRU5ErkJggg==') 0 0 !important;
+}
+
+/* line 27, mixins.scss */
+.raptor-ui-link-remove .ui-icon, .raptor-ui-link-remove.ui-state-hover .ui-icon {
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAA2FBMVEX///8WFhYvLy9LS0sEBAQODg4EBARNTU0DAwNVVVVUVFQtLS1nZ2cfHx46OjoSEhLGxsZTU1OAgH/T09NUVFQEBAQ6OjpMTEwvLy+4uMDCwsEQEBCvr7sSEhIEBAR+foMqKixFRUUEBARDQ0MBAQEBAQG5ucQiIiICAgIODg7Z2dlAQEBMTEwsLCxGRkYAAABPT0/e3t4mJiYqKiopKSlUVFQiIiJJSUkjIyNFRUU5OTkBAQEoKCi/v8zCws+qgFWFZkY7MSbc3Nzj4+Pm5ubOztzU1OTQ0N6IE/7FAAAAQ3RSTlMAAAAAigAAAAAAZwB9gACP2zPF+F9ocjVu39xy40KAtpZlRQBrUPx9AIb8AE8AAAAA/AAAAAAAAAAAAAAA/PwAAAD8PWHlxQAAALtJREFUeF5dzsVWxEAQheHqpGPEPeMWGXfcmQHe/42oC+ewmH95F1UfGWFyhZLQUBHlTvBxOp92gZP/DaN25Esp/ag9ukeUxa5p6qbpxpmHqGgNOtWm6gxahaIokwX1ht16ps3q7rAn9utrg7RxX6Z6KvtjbWJZGHTuuLLtw8P2f/CAWd4uGYNBqCpj5s1NM2cMPd3xc2D4EDDkIWCmj1NgSEHAlGUJDAnEmOfPr+8XxtDr27sQwHDA0GU/2RcVwEV78WkAAAAASUVORK5CYII=') 0 0 !important;
+}
+
+/* Dialog */
+/* line 18, link/link.scss */
+.raptor-ui-link-create-panel .raptor-ui-link-create-menu {
+  height: 100%;
+  width: 200px;
+  float: left;
+  border-right: 1px dashed #D4D4D4;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-box;
+  display: box;
+  -webkit-box-orient: vertical;
+  -moz-box-orient: vertical;
+  -ms-box-orient: vertical;
+  box-orient: vertical;
+}
+/* line 27, link/link.scss */
+.raptor-ui-link-create-panel .raptor-ui-link-create-menu p {
+  font-weight: bold;
+  margin: 12px 0 8px;
+}
+/* line 31, link/link.scss */
+.raptor-ui-link-create-panel .raptor-ui-link-create-menu fieldset {
+  -webkit-box-flex: 2;
+  -moz-box-flex: 2;
+  -ms-box-flex: 2;
+  box-flex: 2;
+  margin: 2px 4px;
+  padding: 7px 4px;
+  font-size: 13px;
+}
+/* line 36, link/link.scss */
+.raptor-ui-link-create-panel .raptor-ui-link-create-menu fieldset label {
+  display: block;
+  margin-bottom: 10px;
+}
+/* line 39, link/link.scss */
+.raptor-ui-link-create-panel .raptor-ui-link-create-menu fieldset label span {
+  display: inline-block;
+  width: 150px;
+  font-size: 13px;
+  vertical-align: top;
+}
+
+/* line 50, link/link.scss */
+.raptor-ui-link-create-panel .raptor-ui-link-create-menu fieldset,
+.raptor-ui-link-create-panel .raptor-ui-link-create-wrap fieldset {
+  border: none;
+}
+
+/* line 54, link/link.scss */
+.raptor-ui-link-create-panel .raptor-ui-link-create-wrap {
+  margin-left: 200px;
+  padding-left: 20px;
+  min-height: 200px;
+  position: relative;
+}
+/* line 60, link/link.scss */
+.raptor-ui-link-create-panel .raptor-ui-link-create-wrap.raptor-ui-link-create-loading:after {
+  content: 'Loading...';
+  position: absolute;
+  top: 60px;
+  left: 200px;
+  padding-left: 20px;
+}
+/* line 68, link/link.scss */
+.raptor-ui-link-create-panel .raptor-ui-link-create-wrap h2 {
+  margin: 10px 0 0;
+}
+/* line 71, link/link.scss */
+.raptor-ui-link-create-panel .raptor-ui-link-create-wrap fieldset {
+  margin: 2px 4px;
+  padding: 7px 4px;
+  font-size: 13px;
+}
+/* line 75, link/link.scss */
+.raptor-ui-link-create-panel .raptor-ui-link-create-wrap fieldset input[type=text] {
+  width: 300px;
+  padding: 5px;
+}
+/* line 80, link/link.scss */
+.raptor-ui-link-create-panel .raptor-ui-link-create-wrap fieldset input[type=text].raptor-external-href,
+.raptor-ui-link-create-panel .raptor-ui-link-create-wrap fieldset input[type=text].raptor-document-href {
+  width: 400px;
+}
+/* line 83, link/link.scss */
+.raptor-ui-link-create-panel .raptor-ui-link-create-wrap fieldset.raptor-email label {
+  display: inline-block;
+  width: 140px;
+}
+/* line 87, link/link.scss */
+.raptor-ui-link-create-panel .raptor-ui-link-create-wrap fieldset.raptor-email input {
+  width: 340px;
+}
+/* line 92, link/link.scss */
+.raptor-ui-link-create-panel .raptor-ui-link-create-wrap ol li {
+  list-style: decimal inside;
+}
+
+/* line 99, link/link.scss */
+.raptor-ui-link-create-panel .raptor-ui-link-create-wrap
+.raptor-ui-link-create-panel .raptor-ui-link-create-wrap fieldset #raptor-ui-link-create-external-target {
+  vertical-align: middle;
+}
+
+/* line 104, link/link.scss */
+.raptor-ui-link-create-error-message div {
+  padding: 0 .7em;
+}
+/* line 106, link/link.scss */
+.raptor-ui-link-create-error-message div p {
+  margin: 0;
+}
+/* line 108, link/link.scss */
+.raptor-ui-link-create-error-message div p .ui-icon {
+  margin-top: 2px;
+  float: left;
+  margin-right: 2px;
+}
+
+/**
+ * List plugin
+ *
+ * @author David Neilsen <david@panmedia.co.nz>
+ */
+/* line 27, mixins.scss */
+.raptor-ui-list-unordered .ui-icon, .raptor-ui-list-unordered.ui-state-hover .ui-icon {
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAMlJREFUeNpi/P//PwNFAGQAIyNjGBCvgdIMxGKQXhaoORFlZWWBXV1dTED2KqjYGiBmRMJMaOwrQFwOc0EEEG+A0iS5gBFEMDExkeX9f//+MTAxUAhgBsQC8U4oTRKABWJ8Rkae84wZk5iB7MVQsW1IAYYLW8MCMRGID0Bp+gYiC46EhTPR4QrEdCA+A6VJT8pAcDMsLB3EuAniQP14BIiPAfEJID4FxGehqe8OED8B4vVgvVADioH4GZTGGWhYvUtpbqQ4JQIEGABjeFYu055ToAAAAABJRU5ErkJggg==') 0 0 !important;
+}
+
+/* line 27, mixins.scss */
+.raptor-ui-list-ordered .ui-icon, .raptor-ui-list-ordered.ui-state-hover .ui-icon {
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAM1JREFUeNpi/P//PwNFAGQAIyNjIxCvAWJBIGYgFoP0skDNqQfidUDMiGT2GigfhpnQ2FeAuJwFSQMTmuNCiPEBTFMblF1CahAwgvzBxMREVvj9+/cP7oIuIN4Bpcl2gRMQJwFxDFRuG1KAYcVAF1jDojEBiGcAsQSp0QjzgiEQawLxSiibNoGInmqRE9J0IJaEYnNSXAAzYC4QNwJxIJLcEbRAYwZidiDmgOLTYPVIzgJpPgD2F45Aw+olqAFrgfg5EBeTagAjpdkZIMAAg/ZGwsH5qkAAAAAASUVORK5CYII=') 0 0 !important;
+}
+
+/**
+ * Logo plugin
+ *
+ * @author David Neilsen <david@panmedia.co.nz>
+ */
+/* line 8, logo/logo.scss */
+.raptor-ui-logo {
+  border: none !important;
+  background: transparent !important;
+  -webkit-box-shadow: none !important;
+  -moz-box-shadow: none !important;
+  box-shadow: none !important;
+}
+
+/* line 14, logo/logo.scss */
+.raptor-ui-logo .ui-icon {
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAjCAYAAAAe2bNZAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyRpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoTWFjaW50b3NoKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDoyNjE5MjlDMjdFRkUxMUUyOUY4RjkzODc5OEQ0RTRCQyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDoyNjE5MjlDMzdFRkUxMUUyOUY4RjkzODc5OEQ0RTRCQyI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkIyNDkzQTBGN0RDQjExRTI5RjhGOTM4Nzk4RDRFNEJDIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkIyNDkzQTEwN0RDQjExRTI5RjhGOTM4Nzk4RDRFNEJDIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+fRcgAAAABzFJREFUeNrsVwtQVNcZ/u7dZR+siAILyPJaWECEgtNMRk0oIlIFwQeZpMamTTBqo2JriWmiMdWmvpsUNdhOYm0Tg0bbmhCxBtxFY3B8kIQWNBpgWdmFBQQUlceyj3v39r8LpmamOuNqZ9IZz8w393XOd79z/u/897+MIAj4rjQW36H2UMz/hRjpnR4sSx39rWtZaDAiJT04bXRiilaKz1r4MLr9CCFmpMtlQm28HB1NDmBJig+EIQ4mq/tbPKvOD927mLu0pwl5i2do4qaNl2t8pKw/x/GDnXbebKq50lLV4Gyj5zsIHQ9sZe7QNq1bHrdiYq52NMSM4OQBzi0Ge9RoiRCSMEs7aZajC8f29i+wW7st1ON1guF/IWaXMlFbGJ8RAVg44FZ+Eo+Ce+SawARh5vPqcChiw5sNFr1pt1lND64+SAPnZCQqCpf+gMfa18woq6RIhPgAahrOjPRgxBOCQO9t7wGau6CbGoGEx+THWI0UFic88EqM1cZ9g+TMCWvmpDEw7TNim64B87RNOPznSzAcaAFEf7K3aERBQf8RZ+1B3vKY79NV6QNZGf/gsJVZM6akFe22IeeIC/MNWvCtMcjkW5EV3gqjsZ3eLxkWwtw2kMIFQQ3TKQeWLo78Cd3J91qMOLGCraUK/6DQ38RND2eiYq7C5BTQoNFhRRWLV0wJcHAsLplcELp53BYvmC67ULzjDBncgsPlFih1EmROUDybmSjzToybvCiVSl9yuZxj3KZOnLGIBpUhM16LP3xxHorMRfj1CTXMDjcJZ4bNy5JXInwQm67FsiVkdLkMLxZN8ewTbax2clyE2rvdtHBraYBEplzLMCwYTkB09Di6a4RBr0d5+WHsXFeC3z8vx8qiOGCAEpmc5mWNxsW3z9N2v0LMJFDCoA0tyM6ToksaHtw/eVtAEtB7zysjl8sXyZS+CnHWAmn+YbKvZ/Zt7Z14ruBXcDs6MTVODoTTbVUc+qtUqNg9QHnYhKSeQSSxA0gK7wccg2iso066F1iR06swyZW+P5XKFPDjYrBnZR2y09ORMpGFfWgQ/X0mjKePQMrPtAAZ9F/zPkVHiR1pF4DI6HjgcSKIpuTSmozGqyH4ciAV0vhJIuezXoWJdws6w6bNmD0pA+pz9fjTxjrU1qzE03nvwN7FYP8bGWIUUPnUaWT3aYB4ovJJR3+zEv3CJ+gOrUN5SxOmFzfBbh8i2OG0C7HeieF4T4hw7Sa6A8agoCUKJQuO45B+KSU0M4UnGEcmHsDsPvKSirxCntJlK9H6xwYkMb8EFAYUFgfgnZeTkbalDhzHeTi93dpM/sYNONx4Dh+ajTBmPwpFp5JUhtHXmLbz1x1w+YZCP1EKvdaMVvYy5OPD0DqqGphTBb9IDu+9+iYm//wjMJQUWQKVuMzdxDB3qoGPflLpVodrGYVCgb8sXoz84AlIhgTb+Wps/Nsk2PddQBujQoirj0icUIUxGOyU4aKgQ63hKGR+Icj47afgeQ5Oh9MTpq62y8Ls3Bz2nsPEcS7xSyIXz194fy/+/upaVNy4gTXCo2g+0o7IsRzK3/2cdpfgyTPKMAn8lFHwZ0/i+thEzF/3obgSuH2ybp5zeRWmMf6jr9qHbMOElAF/tGULnnplNbayFJ4LofBJDsKymWHITI/AIyu247mSC7BJVFi+ZxZe2zUBH297Bm632zNW5HAQF3H2eCUmKipqX/0XZygTCwS3h/Ca/QZMV77EyfZqDBpMWL27DVUnLEjt2YyDL87DhrcTwZ08B+54DX6RI6BsfcHIeAF1xEWc+73yDLWAsrKyboncTxKl00EikeJ3BdPw/qldqPi4AntW78HBf+4dLiUfW4S31gdjl74LHTdTwPf2QhrAY8GGKgoND3OzEbyjn8/Pzw+GNxmYfNCbGuNbWl97lpJcHxmRh0KlAi6uQk7uDPy1/hB8qtcPk7BuNFrcyPC1Y27RTjxTUoH5r+s9Y/r6bkLkSE9PLy7OUfV6XULEpM5c/sScvLajHx1Eh7UNgREJqCulwqryZUiri/HSW83YOWUBNqUNIFZyBactPlDWbPZ4RYQ4Rhy7cOFCS2Bg4Pr7KjtpdYYojJmFgeqaffv3B3zd3I2t9UosCmpFiNIKxuzEkgwB9B2F1TgIDZUU1fpyfC+lCIYTxzFKKceKwsJrGo0m69A8v6H2rrv/St/RM8Nlwa0yV9DabLaKQwc+SDj7+SmcP3uSsnAnlj3ugj9tfoZqqxv+DIxNAmqESEQkZ2Hu3FxMmz6zUaVSZVes0pm/utSOz0wC/tFkvz8xI4Io/aLIam5cc1Z/bFRjSwe6rl3HoMvh6eunYBEbFgh/9ThMzcodiIqN30L9t+8ojBtCRzfMZhsqGxk02Jz3L+Y2UWPp8GNCNiGFMG7kUSeBihlUEj44XfvVdZfLBSflTgdlX4fDgSfzZsDbrf3wx/+hmP/W/i3AALMDE5j9eIuBAAAAAElFTkSuQmCC') 0 0;
+  background-repeat: no-repeat;
+  width: 35px !important;
+  height: 35px !important;
+  left: 0 !important;
+  top: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/**
+ * Paste plugin
+ *
+ * @author David Neilsen <david@panmedia.co.nz>
+ * @author Michael Robinson <michael@panmedia.co.nz>
+ */
+/* line 10, paste/paste.scss */
+.raptor-plugin-paste-panel-tabs {
+  height: auto;
+  width: 100%;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-box;
+  display: box;
+  -webkit-box-orient: vertical;
+  -moz-box-orient: vertical;
+  -ms-box-orient: vertical;
+  box-orient: vertical;
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  -ms-box-flex: 1;
+  box-flex: 1;
+}
+
+/* line 19, paste/paste.scss */
+.raptor-plugin-paste .ui-tabs a {
+  outline: none;
+}
+
+/* line 23, paste/paste.scss */
+.raptor-plugin-paste-panel-tabs > div {
+  overflow: auto;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-box;
+  display: box;
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  -ms-box-flex: 1;
+  box-flex: 1;
+  -webkit-box-orient: vertical;
+  -moz-box-orient: vertical;
+  -ms-box-orient: vertical;
+  box-orient: vertical;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  border: 1px solid #C2C2C2;
+  border-top: none;
+}
+
+/* line 35, paste/paste.scss */
+.raptor-plugin-paste-panel-tabs > div > textarea.raptor-plugin-paste-area {
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  -ms-box-flex: 1;
+  box-flex: 1;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-box;
+  display: box;
+}
+
+/* line 41, paste/paste.scss */
+.raptor-plugin-paste-panel-tabs > div > textarea,
+.raptor-plugin-paste-panel-tabs > div > .raptor-plugin-paste-area {
+  border: none;
+  padding: 2px;
+}
+
+/* line 46, paste/paste.scss */
+.raptor-plugin-paste-dialog .ui-dialog-content {
+  display: -webkit-box !important;
+  display: -moz-box !important;
+  display: box !important;
+  width: 100% !important;
+  overflow: hidden;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/**
+ * Save plugin.
+ *
+ * @author David Neilsen <david@panmedia.co.nz>
+ */
+/* line 27, mixins.scss */
+.raptor-ui-save .ui-icon, .raptor-ui-save.ui-state-hover .ui-icon {
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAVNJREFUeNqkU71ugzAQPowtwdAdqRLK3odg6161a+cukZonoGrElgWWDqhb16oP0AfoytStirows0QRMj/unQsohAQi5aTD5vju4/Pd2VBKwTnG6cEYe8bl6s73P09Jel8ur3H5ruv6CUiBYRgfQRAosnrCyQhLOZTLG1ImpYQSA1VVjf7dNE0gLOV0R6AXlAMSk4uiGCUQ6ITdJzDpz0SQTxAoxlqVZo+gLEuQyDxFwIQAwg4IiPV3vYbL2WyUgDBHFbxG0Um9t237sIIkSeDYYGHbur3neQMCTgqoRWEYDToh8NyLxSO4rgtpmrY14D0CUsA5h80mh/n8QQdXq7CTTN/ILMtqa9AjEDjOGrTdSnAcRwdpr1unzB5BMweiGwY8tx/H8U+WZbmUSoPJlfr3NrZLgDkXujbNXaD9DfoLAt8OFRHPfb8X+sLcW+Pc6/wnwABHMdnKf4KT4gAAAABJRU5ErkJggg==') 0 0 !important;
+}
+
+/**
+ * Snippet menu plugin.
+ *
+ * @author Melissa Richards <melissa@panmedia.co.nz>
+ */
+/* line 27, mixins.scss */
+.raptor-ui-snippet-menu .ui-icon, .raptor-ui-snippet-menu.ui-state-hover .ui-icon {
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAUVBMVEX///8XODhUfn5PeXkwVVVUfn5JcXE5X19BaWkbPT2/0ND+///5/f3r9/fr+vry+vq2x8f+/v66y8vs9PTU5eXl9PT2+vrCcW7i7u6uv78zqiKT+FVrAAAACnRSTlMAgmdpd01sc29httCJoAAAAEhJREFUeF61yEcOgDAMBdFAup1GL/c/KOLLygngzW7UN+zYWQzNk2CN4dK9z+tbchihLqIGDJ+P8yJqRNljmLKJYjDi0EX1jwctjAPf3g65IAAAAABJRU5ErkJggg==') 0 0 !important;
+}
+
+/**
+ * Special Characters plugin
+ *
+ * @author Michael Robinson <michael@panmedia.co.nz>
+ */
+/* line 27, mixins.scss */
+.raptor-ui-special-characters .ui-icon, .raptor-ui-special-characters.ui-state-hover .ui-icon {
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAANRJREFUeNrUkz0KAjEQhZNFUAtxt9B7WC1Y2e45rDyAp1ms9yZrKXgD27VYsRELs76BF0nY+AOpHPhg5k3mEYZEd12nYiJRkRFtMPDcEs9vDGbMz+BmG8aYsAEjBWuwoIni8AHswMU7LUu0aK2FLSjBnLViXrLnzYR2kIMjaBytoZb/ssQryAJ6xt5XgwosQeFoBbWqdzqwA2EFaqeuqamPO6C4QdqCkdOSvJVe7+W6bogp2IMTmRBbSy/1bu064npiMHzzPiQe4I6Z11vQ//+ZngIMAFDvbrCjwfedAAAAAElFTkSuQmCC') 0 0 !important;
+}
+
+/**
+ * Table plugin.
+ *
+ * @author David Neilsen <david@panmedia.co.nz>
+ */
+/* line 8, table/style/table-support.scss */
+.raptor-plugin-table-support-selected ::selection,
+.raptor-plugin-table-support-selected ::-moz-selection {
+  background: transparent;
+}
+
+/* line 12, table/style/table-support.scss */
+.raptor-plugin-table-support-cell-selected {
+  background-color: Highlight;
+}
+
+/**
+ * Table plugin.
+ *
+ * @author David Neilsen <david@panmedia.co.nz>
+ */
+/* line 6, table/style/table.scss */
+.raptor-ui-table-create-menu td {
+  width: 14px;
+  height: 14px;
+  border: 1px solid #000;
+}
+
+/* line 12, table/style/table.scss */
+.raptor-ui-table-create-menu .raptor-ui-table-create-menu-hover {
+  border: 1px solid #f00;
+}
+
+/* line 27, mixins.scss */
+.raptor-ui-table-create .ui-icon, .raptor-ui-table-create.ui-state-hover .ui-icon {
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAA81BMVEX///9Vf38LKytAZ2cpTU0wVVU0WlpLc3NVf39TfX04Xl4YOjoNLS08Y2NRenpEa2tOd3dHb2/C09NEzP+8zc31+fn6/Pzx9/fu9fXA0dHF1tbD1NRDy/73/Pzp9vbk9PSG0uz+//+I7v/p+fk0vO/5/f38/v7u+Pg9xfj0+/tCyv3r9/fm9fXx+fm+z8/H2Ng4wPOF6/w6wvU2vvE1vfCE6vvM2tpkzvU/x/rO3d29zs7J2tr///88w/Z/5fZ94/R64PF43u/K2dni8/PM3NxByfzQ3t6D0OmBzueAzOV+y+R8yeJ6x+B5xt94xd7I2NiF0utdtcIgAAAAEnRSTlMAZodwend1a01nc4Flcmhuam1CIHuOAAAAuElEQVR4Xl3KRZbCQBQAwM9EcGuXOO5u4+52/9PQLytCrQsKuYwCFK8zilCLsTd82fdvlvPVuh3XoNHFyXCx6d/eze8f2t0G5DvY2/2/vX98fn3//Hby0PRxEjGmGJOMEb8J9QH2oqvZq0bb6SUZ1MGamEGpolRSSiYWVHvpOGj0aEavCqWRGZwrziXnZFQCN0jHs0Z/ZgQuOGMzhFBCSCHI2AE7TIfSSJoR2lBuPZ1olaFykVGBc0fWbx5/ckww/gAAAABJRU5ErkJggg==') 0 0 !important;
+}
+
+/* line 27, mixins.scss */
+.raptor-ui-table-insert-row .ui-icon, .raptor-ui-table-insert-row.ui-state-hover .ui-icon {
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAeZJREFUeNqcU0FrE0EU/mYyIaRoaNOQJlGSbjy0FuxR8VIoUcGDN4X+gUJ/QA899dBf0V76CwTBS6EVIsVLBQ8hLdbiRgrRCKE2JmmTNtmZvre7WVBEGx+83fd23vfN997MiuerqxBCPAOQxvBWU8YYkGderq2tD4umzZeUdhyOhaHHkw+ATwitdeB/yt8XRkFYoRyPQGrDFAKP7whsfzbuW2tyWt62gYLFJJ6/qQBcT1ipnH7fVeD4BDu2QV51Yb6dwfBu5I+iBPyuIbTnnDsmBsIK1fcIfAXwdq52sDwTD3rdOzzEg+npIN8tlUhBFoSV6ufDL7j5LvuVFbxI9ICmgTWmcFyvB/Ow0mlUarUgTycS4HpXweVY25zet+cdkrbx6em1T6CY2vIUnLdaxxhpFZmRYtydu/dP8MfdsqvAJWienORudJPz9KFIMfZevb2WApeg1xNK1qMidmAt6EWDlcI+qEvkQx1YqhP0/LuzaV+BTJRmOMgx4+tGFJ34CMotIBOP49b4OG7TwJrtNrLJJHITE5hMpfCj0RgokOqi22XC0OAY+R4UIsBRtRrcPLaybf+Scz1hQ+qU+iaLhMNhbE61/Q6JAZm/zoDrCRsRsdlZ7muRmPPD/kxSyooYDOV/7UqAAQBguExUpw0RrAAAAABJRU5ErkJggg==') 0 0 !important;
+}
+
+/* line 27, mixins.scss */
+.raptor-ui-table-insert-column .ui-icon, .raptor-ui-table-insert-column.ui-state-hover .ui-icon {
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAABFFBMVEX///8LKytVf39TfX08Y2NVf393rpBLc3NHb29Reno4Xl5Od3c0WlopTU1AZ2dEa2swVVUYOjoNLS0wt0BEzP+8zc3x9/fu9fUrsDmG0uxDy/4xuEHp9vYcnSbI6cu9zs71+fn6/PwgoisHgQozu0QorDXr9/cwt0Dp+fnu+Pg0vO8WlB38/v7+//8kpzD5/f3k9PTx+fmI7v/3/PxCyv0utD3m9fX0+/vi8/P///943u/I2dl4xd6w5/u/8/tAyPu67vau5fpS6mNf0PpayvS95PEr4zy54O2F6/zX5OTb5+cg4DHP3t7X4+PT4uJkzvVd7W4W3idG6Fdl7nbQ4OB5xt/M3Nzg9f055UrT4OA1vfCE0eoavkAQAAAAFHRSTlMAh2Znck0aa21oc2p1enBud4Fl4L/CnmUAAADNSURBVHheZcpFUgRBAAXRDy3jSkm7y7gL7u6u978HXWwggtzk5kFZFanpWqpmVwBp4ycncMQkoNAnxmzvaOft4Piz0y8ApR6ZzM53oyja3+z0SkBuSIy7rxPzyTx72R7mgPyUTHTfn9/PfZ9O80BtSQx961I71G5cuqwB1XEmPC9+jD2PjquA3BbiYvA++HBpWwaKSSYYC04DxmhSBMqWELf2lX3tUqsM1BeZ4Lz70OWcLupAZSTEcxiGry4dVYBGa/23VgNorvytiX99A3lfH44tztyBAAAAAElFTkSuQmCC') 0 0 !important;
+}
+
+/* line 27, mixins.scss */
+.raptor-ui-table-delete-row .ui-icon, .raptor-ui-table-delete-row.ui-state-hover .ui-icon {
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAfhJREFUeNqcU0FrE0EU/mbdEHpQJA1tk0hs4iGttIgUKhVvsaIWL2L/QMHizYvnFvoLehEKgtScPemt5lTQkkICxVaKNAElJEKJhhib1N2Z8b3Z7EJFAvHBx74H833zvfdmxeLq6gMAMQweda31W1spFX+9trYxKPvRysoT/tpKSqEpuVMESNGARAP8q97NXgTzjICU0lKaJQTmrwhsHWnzVYogga0ykE2xiId8BeDzzPMEXFfInsC7skba7kLXfkHzbYTbQ0T8piCUB66lvgDmGQHXdXsO4N1c7eDZ1UjQa+HwEDcmJoJ6e2+PHCTBvDMOFqMODuoWUuEwvhwfB/NIxWKo1OtBHYtGweev7+zsKt+BJGvjD+cwv76Or5kZVO4t9N1AlXCtVHpOvoueACn+PDlBaXkZNwsFfKB8YXa2/x6npmZe5XLkwHFMC41WC3ObmzhoC5Pn8vn+r6hWK9q+Ax7i6fYRNjo20q0O7pILv+e/wZGgudxfWnqa2d9/b5ED08Kb5hCSiRB+Ow7ikQgSw8O4RANrtdtIjozg8ugoxsfG8L3ZNEOkd3Dr0+Qk7NNu95y/Rn4H2TDwuVoNXh7Hx3L5TG0cE8+s8UejEQ6FQniZafe6IwXE+/bP55nHuTg/Pf2YlNOD/kyWZVWEEC+EP5j/jT8CDADTO03xCBe9dwAAAABJRU5ErkJggg==') 0 0 !important;
+}
+
+/* line 27, mixins.scss */
+.raptor-ui-table-delete-column .ui-icon, .raptor-ui-table-delete-column.ui-state-hover .ui-icon {
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAABJlBMVEX///9Vf38LKytEFBRRenowVVVEa2sYOjp6AABHb28pTU00WlpTfX0LKyuKAABVf39AZ2dOd3cIKCg8Y2NLc3MNLS04Xl5jVlZDYGBzAABEzP+8zc29zs76/Pz1+flDy/7u9fXx9/e3MDC7MzP+///M3NyI7v/8/v7x+fm4MTH0+/uqJiblxsahHx/u+PiG0uyyLCylIyPk9PS1Ly/3/Pz5/f00vO9Cyv2uKSnp+fnp9vacHBye4vzm9fXr9/fT4OD6Z2fI7PmF6/zX5OSiICDX4+PH6/j8bW2a5/RAyPua3vhkzvX4YGCE0er+c3PQ4OD2+vrzUlKJ0ut5xt94xd543u/xTEw1vfD1WVn///+O1/HvR0fI2dmh7vvb5+fH19f/d3fi8/OZ9EmDAAAAGnRSTlMAZocAaHdugZltenVnAMxNcGoAcmtlc0REzGDVx0oAAADWSURBVHheTcrDYgRBAIThSgZrZZnuMde2FdvW+79Eum/7H6ouHxJ7uyWA6NtuUUB0iD44m1qWdf7Sd0Qg5RNvsP6qbqunT30/BWR6RL+4el/dHt8/PPYyQKhLvIaq2ratqrQbAuQy0Ruf36Xf0pFCyzKQLDKhaZ3rjqbRYhJI17nYNE+aC4XW00BuzoRpDpdD06TzHBAZc+FWLis/Ch1HAGnGhGG0XluGQWcSEG5zcVO7q7kKbYeBwOiPN3mesB0FgOw+Lx//iBfYZ4HYAU8IHgYF9jH8A8JjJyK0AUFIAAAAAElFTkSuQmCC') 0 0 !important;
+}
+
+/* line 27, mixins.scss */
+.raptor-ui-table-merge-cells .ui-icon, .raptor-ui-table-merge-cells.ui-state-hover .ui-icon {
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAA81BMVEX///9Vf38LKytOd3c8Y2NLc3MwVVUpTU0YOjoNLS1Vf39TfX04Xl5RenpEa2tAZ2c0WlpHb29EzP/6/Pzu9fXA0dH5/f3r9/eG0uzk9PTp+fk0vO/1+fnx9/e8zc3u+PhDy/7F1tb0+/tCyv3C09M4wPP8/v7i8/O+z8/m9fXx+flhg+n+//8nSbg5W9o9xfi9zs73/PyI7v8mSK3D1NRCZMjJ2trp9vbH2Ng1vfA2vvE/x/qF6/w8w/Y6wvV94/R64PF43u+E6vt/5fZByfyF0uuD0OmBzuf///+AzOV+y+R8yeJ6x+B5xt94xd5kzvXK2dmu5BAUAAAAEnRSTlMAZodqcmt3eoFlTWdzaG5wdW1C/rgCAAAAtklEQVR4Xl3Kw7rDUBRA4d0b1TgIjdq2dYn3f5qeL5k0/QdrtCCbSshC7j0hB4UOcoPLur/dVVdLo1MAroZGwebUP++rh6NR40CQkft3vd0/Pr++f35lASpDNFIx9jCmGNvDChR95KqzRTvmF6HUYodpTk2TsrZKwDvRMZ6E/43B2OEhr7DDsrqWRVmVPJTn0dGLzcsgNtlBiEcIJcRuiiBp0eFNQtoY2JoEab3+RE9D5i0hA68e7McfFiRaMwIAAAAASUVORK5CYII=') 0 0 !important;
+}
+
+/* line 27, mixins.scss */
+.raptor-ui-table-split-cells .ui-icon, .raptor-ui-table-split-cells.ui-state-hover .ui-icon {
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAA8FBMVEX///9Vf38LKys8Y2MwVVU0WlpVf39TfX0YOjoNLS1Od3dAZ2dRenpEa2s4Xl5Lc3MpTU1Hb29EzP/6/Pzu9fXm9fW8zc35/f3k9PTp+fnu+Pjx9/f8/v7A0dH0+/tDy/7+///F1tY4wPOG0uz3/Pw9xfjp9vZCyv1CZMjx+fn1+fk0vO8mSK3r9/eI7v8nSbjJ2tqF0uuD0Ok1vfA2vvGAzOWBzuc/x/qF6/w8w/Y6wvV94/R64PF43u+E6vt/5fZByfzD1NTC09O+z8+9zs7///9hg+nH2Nji8/M5W9p+y+R8yeJ6x+B5xt94xd5kzvVtEZTHAAAAEnRSTlMAZodyd3VNZ4FlanBobnNrem0aKGmPAAAArUlEQVR4Xl3KRZLDMBQA0Z8xU0CSmR1mZoZhuv9t4rI2cV71soEv5PAgvOYIoEYobJ6W9fUmmU27kQqyhwbN1aF+3Ca7fdeToWSi8H88Wcy/vn9+/8wSVGpoUMU4xtjH2KhVQAtQWB29v1GBBko7PTqdFq2tAONkR49yGCj208N1h7R+EbhGdnxSDQ5YPT0IiQnxCTF0FspWdsTni3+9GVYZRPvjgS2C9JIjwbM7cpQh7ppJ8UgAAAAASUVORK5CYII=') 0 0 !important;
+}
+
+/**
+ * Tag menu plugin
+ *
+ * @author David Neilsen <david@panmedia.co.nz>
+ */
+/* line 27, mixins.scss */
+.raptor-ui-tag-menu .ui-icon, .raptor-ui-tag-menu.ui-state-hover .ui-icon {
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAU5JREFUeNpi/P//PwMlgAVEMDExNQIpbRL1Xv337189C5Sj29zcHPjnzx+4LMhlQAVg/PfvXzgNwuzs7AxdXV1McBcAAfPv378Zbt68+XblypVHYYYUFxf7gTRMmDBhE0zM0tLSWl1dXRikB+x6ZK8ANZ8EUv5QzPLp0yeGz58/w+TB4sePHz/JxsYG1wNzwbWmpiYQex5y+Pz8+ZMBGsgsSOLzZs2aBeJfQ5YoxRbA379/B/sZzYC1UMyALoEOWH/+/AUMPLALWPFGIy4DQEHEyMhAvgGMjCxAAxiJMwBLimRjZgaFNiNIjg1dEmowJBqxaDYHYg6QARBDGDigYgzoFjJhcdUKUJLQ1TUVg6QVZgY9PTMxkBhUDtUlIJNgzoGCZ9HRWZIg8b9/QbbAXMcITGgzngMZUsiuwGbABiC2whFmx4A4AMMASgBAgAEAx96Jw4UbHlsAAAAASUVORK5CYII=') 0 0 !important;
+}
+
+/**
+ * Text alignment plugin
+ *
+ * @author David Neilsen <david@panmedia.co.nz>
+ */
+/* line 27, mixins.scss */
+.raptor-ui-align-left .ui-icon, .raptor-ui-align-left.ui-state-hover .ui-icon {
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAItJREFUeNpi/P//PwMlgImBQsACN4mJqRFIaQExIxQzYWEzQfHlf//+lYL0McK8ADSAJJuBBqC6AAjWYrEN2VYPbAZR1QUb0WxEZmPD1lR3wTYCttpSJQxg6mE0sgt2E/AzCLMBMTsQcwCxAskuQE722FwwEYiNsNjKClR8EUjH4w2DActMFBsAEGAAnS84DrgEl1wAAAAASUVORK5CYII=') 0 0 !important;
+}
+
+/* line 27, mixins.scss */
+.raptor-ui-align-right .ui-icon, .raptor-ui-align-right.ui-state-hover .ui-icon {
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAIxJREFUeNpi/P//PwMlgImBQsACN4mJqRFIaQExIxQzYWEzQfHlf//+lYL0McK8ADSAJJuBBqC6AAvYjGYrMhuEHanugo0EbETH1jQPg714bGcGYhOqu2A3AT+DMBvQQnYgzQHECiS7ADnZw9j4wmA61J+sQMUcUFtBtrMC8TEg9kNxwYBlJooNAAgwAJo0OAu5XKT8AAAAAElFTkSuQmCC') 0 0 !important;
+}
+
+/* line 27, mixins.scss */
+.raptor-ui-align-center .ui-icon, .raptor-ui-align-center.ui-state-hover .ui-icon {
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAI1JREFUeNpi/P//PwMlgImBQsACN4mJqRFIaQExIxQzYWEzQfHlf//+lYL0McK8ADSAJJuBBqC6AAlswGErjO2KrJiqLtiIw0Zc2JpmYbCTgM2WFIUBTD2MRnbBbgI2gzAbELMDMQcQK5DsAuRkj80FMDAFiI2RbGUFKuaA2noGiEOwhsGAZSaKDQAIMAB/BzgOq8akNwAAAABJRU5ErkJggg==') 0 0 !important;
+}
+
+/* line 27, mixins.scss */
+.raptor-ui-align-justify .ui-icon, .raptor-ui-align-justify.ui-state-hover .ui-icon {
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAJFJREFUeNpi/P//PwMlgImBQsACN4mJqRFIaQExIxQzYWEzQfHlf//+lYL0McK8ADSAJJuBBqC6AAjWYrEN2VZkNgg7Ut0FGwnYiI6tqe6CbUTYCsPMQGxCdRfsJsJmNqCF7ECaA4gVSHYBcrKHsZFdMBGIjbDYygpUzAG1FWQ7KxAfA2I/FBcMWGai2ACAAAMAvPA4C7ttvJ4AAAAASUVORK5CYII=') 0 0 !important;
+}
+
+/**
+ * Bold text style plugin.
+ *
+ * @author David Neilsen <david@panmedia.co.nz>
+ */
+/* line 27, mixins.scss */
+.raptor-ui-text-bold .ui-icon, .raptor-ui-text-bold.ui-state-hover .ui-icon {
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAKRJREFUeNpi/P//PwMlgImBQjDwBrCgmMbEpA2kGnGofQ3E9UD86t+/fzhdcBWIpwExMxQ3AHEIEK8BYgkgdsLrAih4A8SsaBYwQcWYiDGAEcmAbiwuJBiIIAPYoLgfiMuBeBmUXwHEXIQMYEIy4BUQXwDiy1C+HBBrEPKCDBCzwwwDpVRGRkZksU8ozkVOykCFVkBqOZ5oB3lpAoqe0bzAABBgANfuIyxmXKp/AAAAAElFTkSuQmCC') 0 0 !important;
+}
+
+/**
+ * Italic text style plugin.
+ *
+ * @author David Neilsen <david@panmedia.co.nz>
+ */
+/* line 27, mixins.scss */
+.raptor-ui-text-italic .ui-icon, .raptor-ui-text-italic.ui-state-hover .ui-icon {
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAH1JREFUeNpi/P//PwMlgImBQjDwBrBgmMgEN1MbiBvRpOv//ft3FUUEFIjImJGRERnrAPF6IO6BiaGrZyLCi6xAvJDcMLAA4j9AfJlcA/yBeCe5sWAExAJAfIKkWIAFJBAUATE7kM+M143ooQoEVkD8EA1b4Yy10bzAABBgAC7mS5rTXrDAAAAAAElFTkSuQmCC') 0 0 !important;
+}
+
+/**
+ * strike text style plugin.
+ *
+ * @author David Neilsen <david@panmedia.co.nz>
+ */
+/* line 27, mixins.scss */
+.raptor-ui-text-strike .ui-icon, .raptor-ui-text-strike.ui-state-hover .ui-icon {
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAL5JREFUeNpi/P//PwMlgImBQkCxASwopjHBzbMB4nQg5oTyrwKxNhAXAfGjf//+EXRBFhC/BOI0KAapYwZpxusCJPASquEdlD8FiHWwKWREjgUkL4gDcQ0QfwfiXqiBcIDsBXQD9hATcEADXOAckAEwzMjIiI4lgHgiEM8GYkmYOLIeXAZ4I2sA4vlQjGEArkBsAeJzQAUVYH8yMnIAKTmC6QAaHhpALALEPCBDoOJfgFQ5wVgYmnmBYgMAAgwAEGZWNyZpBykAAAAASUVORK5CYII=') 0 0 !important;
+}
+
+/**
+ * Font size plugin
+ *
+ * @author David Neilsen <david@panmedia.co.nz>
+ */
+/* line 27, mixins.scss */
+.raptor-ui-text-size-increase .ui-icon, .raptor-ui-text-size-increase.ui-state-hover .ui-icon {
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAOhJREFUeNpi/P//PwMlgImBQkCxASxgU5gwzJkOpTORBZ2ilzO8+MjFwMIixnBhnTlOF8gD8U8gFoey4UBSyZooLzgD8Umo65xhgsYu5USHgS0QHwfiE1A2TtuxGaAIxL+B+AEQnwFiaagYg6Qi2AAHIP4PpbEa4AHEz4HYAIi/QL3hgSS/H4gfQmlELCAHNBBLQGlksenP7x9l4Bc3YMTnBRWogbZIuBOIZUFyW2b5EQwDVyA+giYPcionSA6U5Jc0yTK8vrUcVQU0L1gB8RMotkKSXoMkXgQT5BM3A+sDYcahn5kAAgwArro7Z1GYijsAAAAASUVORK5CYII=') 0 0 !important;
+}
+
+/* line 27, mixins.scss */
+.raptor-ui-text-size-decrease .ui-icon, .raptor-ui-text-size-decrease.ui-state-hover .ui-icon {
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAKxJREFUeNpi/P//PwMlgImBQjAMDGBBMY0Jbp4JEFcAcQcQnwEJpLa/Zfj27SvD+fPnGVhYxBgurDPH6wI9IP4DpRmMXcpJ9oIZELcBcRiaOCjOH0BpnAYoAbE6EE8EYnYgtjq7pxMm5wjE8lAapwFOQLwFiIuB+AQ0PBi2zvYHUQeAmBFKYxoATJWWQOwLxJJAfA6I5YE4FyT+9O5hBiSXwAHjaFKm3ACAAAMA85o8WKYZErQAAAAASUVORK5CYII=') 0 0 !important;
+}
+
+/**
+ * Underline text style plugin.
+ *
+ * @author David Neilsen <david@panmedia.co.nz>
+ */
+/* line 27, mixins.scss */
+.raptor-ui-text-underline .ui-icon, .raptor-ui-text-underline.ui-state-hover .ui-icon {
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAKZJREFUeNpi/P//PwMlgImBQkCxASwopjExhQGpMCSheijdiCz279+/q3AeKAxgmJGREYSdgHgdlIaJ6SCLIevB5oXXUJe9RhK7gkUMZxgwAjEzlEYG2MRwGsCKRTErKQawYFHMQqwBn6G2qSCJGULFPmPYhpwSgdEIY6YCcTKa2rlAPBvEAEYjdgNAUYRMowOYWmQ9LFjUPSGQP2RwemFoZiaAAAMAlEI7bVBRJkoAAAAASUVORK5CYII=') 0 0 !important;
+}
+
+/**
+ * Sub script text style plugin.
+ *
+ * @author David Neilsen <david@panmedia.co.nz>
+ */
+/* line 27, mixins.scss */
+.raptor-ui-text-sub .ui-icon, .raptor-ui-text-sub.ui-state-hover .ui-icon {
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAKZJREFUeNpi/P//PwMlgImBQjDwBrDATWJCMWs6lM7Ep/nfv39YXSAPxL+AWALKJtkLLkB8EohZoWySDbAH4uNQQ+xJNUAJiH8DMT8QPwZiWagYDEwA4v1QGgJACQmEGRkZQTgXiI+i4VyoHAy7AfEaEBucCNEM2AzEKkiKu6BiYMuAdAYQLwZiKQwDgGAVED+E0iBgBeUjiy1HErMCWzyaFxgAAgwA5Gw9vTeiCqoAAAAASUVORK5CYII=') 0 0 !important;
+}
+
+/**
+ * Super script text style plugin.
+ *
+ * @author David Neilsen <david@panmedia.co.nz>
+ */
+/* line 27, mixins.scss */
+.raptor-ui-text-super .ui-icon, .raptor-ui-text-super.ui-state-hover .ui-icon {
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAALdJREFUeNpi/P//PwMlgImBQjDwBrCgmMaEYt50KJ0JpRuBWBuIrwJx/b9///C6QB6IfwGxBJQNAvVAPAkqRtALLkB8EohZoWwQiAbiICCuI8YAeyA+DjXEHiqmD8SaQLwIysYMAyhQAuLfQMwPxI+B2AkqVkZsLHgDsQYQTwXiVCBmg4phB6CUCMOMjIwgvBmIVaBsEO6CijEgY5geFAOAYBUQP4TSIGAF5SOLoVjMOJoXGAACDACTRz3jjn6PnwAAAABJRU5ErkJggg==') 0 0 !important;
+}
+
+/**
+ * Basic text style plugin
+ *
+ * @author David Neilsen <david@panmedia.co.nz>
+ */
+/* line 9, tool-tip/tool-tip.scss */
+.raptor-layout [data-title]:after {
+  opacity: 0;
+  content: attr(data-title);
+  display: block;
+  position: absolute;
+  top: 100%;
+  font-size: 12px;
+  font-weight: normal;
+  color: white;
+  padding: 11px 16px 7px;
+  white-space: nowrap;
+  text-shadow: none;
+  overflow: visible;
+  -webkit-pointer-events: none;
+  -moz-pointer-events: none;
+  pointer-events: none;
+  -webkit-transition: opacity 0.23s;
+  -webkit-transition-delay: 0s;
+  -moz-transition: opacity 0.23s 0s;
+  -o-transition: opacity 0.23s 0s;
+  transition: opacity 0.23s 0s;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(5px, rgba(40, 40, 40, 0)), color-stop(6px, #282828), color-stop(100%, #282828)), url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAGAgMAAACKgJcSAAAADFBMVEUAAAAoKCgoKCgoKCj7f2xyAAAAA3RSTlMATLP00ibhAAAAJklEQVR4XgXAMRUAEBQF0GtSwK6KYrKpIIz5P4eBTcvSc808J/UBPj4IdoCAGiAAAAAASUVORK5CYII=') no-repeat 10px 0;
+  background: -webkit-linear-gradient(rgba(40, 40, 40, 0) 5px, #282828 6px, #282828), url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAGAgMAAACKgJcSAAAADFBMVEUAAAAoKCgoKCgoKCj7f2xyAAAAA3RSTlMATLP00ibhAAAAJklEQVR4XgXAMRUAEBQF0GtSwK6KYrKpIIz5P4eBTcvSc808J/UBPj4IdoCAGiAAAAAASUVORK5CYII=') no-repeat 10px 0;
+  background: -moz-linear-gradient(rgba(40, 40, 40, 0) 5px, #282828 6px, #282828), url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAGAgMAAACKgJcSAAAADFBMVEUAAAAoKCgoKCgoKCj7f2xyAAAAA3RSTlMATLP00ibhAAAAJklEQVR4XgXAMRUAEBQF0GtSwK6KYrKpIIz5P4eBTcvSc808J/UBPj4IdoCAGiAAAAAASUVORK5CYII=') no-repeat 10px 0;
+  background: -o-linear-gradient(rgba(40, 40, 40, 0) 5px, #282828 6px, #282828), url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAGAgMAAACKgJcSAAAADFBMVEUAAAAoKCgoKCgoKCj7f2xyAAAAA3RSTlMATLP00ibhAAAAJklEQVR4XgXAMRUAEBQF0GtSwK6KYrKpIIz5P4eBTcvSc808J/UBPj4IdoCAGiAAAAAASUVORK5CYII=') no-repeat 10px 0;
+  background: linear-gradient(rgba(40, 40, 40, 0) 5px, #282828 6px, #282828), url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAGAgMAAACKgJcSAAAADFBMVEUAAAAoKCgoKCgoKCj7f2xyAAAAA3RSTlMATLP00ibhAAAAJklEQVR4XgXAMRUAEBQF0GtSwK6KYrKpIIz5P4eBTcvSc808J/UBPj4IdoCAGiAAAAAASUVORK5CYII=') no-repeat 10px 0;
+}
+
+/* line 30, tool-tip/tool-tip.scss */
+.raptor-layout [data-title]:hover:after {
+  opacity: 1;
+}
+
+/* line 34, tool-tip/tool-tip.scss */
+.raptor-layout .raptor-select-element {
+  position: relative;
+}
+
+/* line 38, tool-tip/tool-tip.scss */
+.raptor-layout .raptor-select-element:after {
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(5px, rgba(40, 40, 40, 0)), color-stop(6px, #282828), color-stop(100%, #282828)), url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAGAgMAAACKgJcSAAAADFBMVEUAAAAoKCgoKCgoKCj7f2xyAAAAA3RSTlMATLP00ibhAAAAJklEQVR4XgXAMRUAEBQF0GtSwK6KYrKpIIz5P4eBTcvSc808J/UBPj4IdoCAGiAAAAAASUVORK5CYII=') no-repeat 3px 0;
+  background: -webkit-linear-gradient(rgba(40, 40, 40, 0) 5px, #282828 6px, #282828), url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAGAgMAAACKgJcSAAAADFBMVEUAAAAoKCgoKCgoKCj7f2xyAAAAA3RSTlMATLP00ibhAAAAJklEQVR4XgXAMRUAEBQF0GtSwK6KYrKpIIz5P4eBTcvSc808J/UBPj4IdoCAGiAAAAAASUVORK5CYII=') no-repeat 3px 0;
+  background: -moz-linear-gradient(rgba(40, 40, 40, 0) 5px, #282828 6px, #282828), url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAGAgMAAACKgJcSAAAADFBMVEUAAAAoKCgoKCgoKCj7f2xyAAAAA3RSTlMATLP00ibhAAAAJklEQVR4XgXAMRUAEBQF0GtSwK6KYrKpIIz5P4eBTcvSc808J/UBPj4IdoCAGiAAAAAASUVORK5CYII=') no-repeat 3px 0;
+  background: -o-linear-gradient(rgba(40, 40, 40, 0) 5px, #282828 6px, #282828), url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAGAgMAAACKgJcSAAAADFBMVEUAAAAoKCgoKCgoKCj7f2xyAAAAA3RSTlMATLP00ibhAAAAJklEQVR4XgXAMRUAEBQF0GtSwK6KYrKpIIz5P4eBTcvSc808J/UBPj4IdoCAGiAAAAAASUVORK5CYII=') no-repeat 3px 0;
+  background: linear-gradient(rgba(40, 40, 40, 0) 5px, #282828 6px, #282828), url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAGAgMAAACKgJcSAAAADFBMVEUAAAAoKCgoKCgoKCj7f2xyAAAAA3RSTlMATLP00ibhAAAAJklEQVR4XgXAMRUAEBQF0GtSwK6KYrKpIIz5P4eBTcvSc808J/UBPj4IdoCAGiAAAAAASUVORK5CYII=') no-repeat 3px 0;
+}
+
+/**
+ * Unsaved edit warning plugin
+ *
+ * @author Michael Robinson <michael@panmedia.co.nz>
+ * @author David Neilsen <david@panmedia.co.nz>
+ */
+/* line 11, unsaved-edit-warning/unsaved-edit-warning.scss */
+.raptor-plugin-unsaved-edit-warning {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  height: 30px;
+  line-height: 30px;
+  border: 1px solid #D4D4D4;
+  padding-right: 7px;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #fffff2), color-stop(100%, #edecbd));
+  background: -webkit-linear-gradient(top, #fffff2, #edecbd);
+  background: -moz-linear-gradient(top, #fffff2, #edecbd);
+  background: -o-linear-gradient(top, #fffff2, #edecbd);
+  background: linear-gradient(top, #fffff2, #edecbd);
+  -webkit-transition: opacity 0.5s;
+  -moz-transition: opacity 0.5s;
+  -o-transition: opacity 0.5s;
+  transition: opacity 0.5s;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+}
+/* line 23, unsaved-edit-warning/unsaved-edit-warning.scss */
+.raptor-plugin-unsaved-edit-warning .ui-icon {
+  display: inline-block;
+  float: left;
+  margin: 8px 5px 0 5px;
+}
+
+/* line 30, unsaved-edit-warning/unsaved-edit-warning.scss */
+.raptor-plugin-unsaved-edit-warning-visible {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1;
+}
+
+/* line 34, unsaved-edit-warning/unsaved-edit-warning.scss */
+.raptor-plugin-unsaved-edit-warning-dirty {
+  outline: 1px dotted #aaa;
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoAQMAAAC2MCouAAAABlBMVEUAAACfn5/FQV4CAAAAAnRSTlMAG/z2BNQAAABPSURBVHhexc2xEYAgEAXRdQwILYFSKA1LsxRKIDRwOG8LMDb9++aO8tAvjps4qXMLaGNf5JglxyyEhWVBXpAfyCvyhrwjD74OySfy8dffFyMcWadc9txXAAAAAElFTkSuQmCC') !important;
+}
+
+/**
+ * View source plugin
+ *
+ * @author Michael Robinson <michael@panmedia.co.nz>
+ * @author David Neilsen <david@panmedia.co.nz>
+ */
+/* line 27, mixins.scss */
+.raptor-ui-view-source .ui-icon, .raptor-ui-view-source.ui-state-hover .ui-icon {
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAKtJREFUeNpi/P//PwMlgImBQkCxAQwgLzAyMqLjMCCehsSfBhVDUQf2PhYDIoB4JhCLIYmJQcUiCBkQBcRzgFgci6vEoXJRuAyIAeIFODQjG7IAqhbFAAMg3gOlGQhguFp0FyQC8UoglgTx0QFUjSRUTSKuMEgG4nUghVgMkITKJROKhXQg3gbUI42kXxokBpUjGI0gDYVAfBzJABC7EFs6YBz6eYFiAwACDAADJlDtLE22CAAAAABJRU5ErkJggg==') 0 0 !important;
+}
+
+/* line 14, view-source/view-source.scss */
+.raptor-ui-view-source-dialog .ui-dialog-content {
+  overflow: visible;
+}
+
+/* line 18, view-source/view-source.scss */
+.raptor-ui-view-source-inner-wrapper {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-box;
+  display: box;
+  -webkit-box-orient: vertical;
+  -moz-box-orient: vertical;
+  -ms-box-orient: vertical;
+  box-orient: vertical;
+}
+
+/* line 25, view-source/view-source.scss */
+.raptor-ui-view-source-dialog textarea {
+  width: 100%;
+  height: 100%;
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  -ms-box-flex: 1;
+  box-flex: 1;
+}
+
+/* line 3, file-manager/theme/file-manager.scss */
+.rfm-sidebar {
+  width: 18.36735%;
+  float: left;
+  margin-right: 2.04082%;
+  display: inline;
+  height: 100%;
+  overflow: auto;
+  padding-bottom: 1em;
+  position: relative;
+}
+
+/* line 11, file-manager/theme/file-manager.scss */
+.rfm-main {
+  width: 79.59184%;
+  float: left;
+  margin-right: 2.04082%;
+  display: inline;
+  margin-right: 0;
+}
+
+/* line 16, file-manager/theme/file-manager.scss */
+.rfm-heading {
+  font-weight: bold;
+  margin-bottom: 8px !important;
+}
+
+/* line 21, file-manager/theme/file-manager.scss */
+.rfm-directories-wrapper {
+  display: none;
+}
+
+/* line 25, file-manager/theme/file-manager.scss */
+.rfm-directory {
+  cursor: pointer;
+}
+
+/* line 29, file-manager/theme/file-manager.scss */
+.rfm-tags {
+  float: none;
+  clear: both;
+  font-size: 0.875em;
+}
+
+/* line 35, file-manager/theme/file-manager.scss */
+.rfm-tag {
+  padding: 8px;
+  cursor: pointer;
+  margin-bottom: -1px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+/* line 44, file-manager/theme/file-manager.scss */
+.rfm-actions {
+  padding: 5.33333px 8px;
+  font-size: 0.875em;
+}
+/* line 48, file-manager/theme/file-manager.scss */
+.rfm-actions .ui-button-text {
+  padding: 5px 8px;
+}
+/* line 52, file-manager/theme/file-manager.scss */
+.rfm-actions .form-text {
+  padding: 4px 8px 5px;
+}
+/* line 57, file-manager/theme/file-manager.scss */
+.rfm-actions .ui-button-text,
+.rfm-actions .form-text {
+  font-size: 0.875em;
+}
+
+/* line 62, file-manager/theme/file-manager.scss */
+.rfm-dialog-wrapper {
+  min-width: 880px;
+  opacity: 0.5;
+  overflow: visible;
+  -webkit-transform: scale(0.5);
+  -moz-transform: scale(0.5);
+  -ms-transform: scale(0.5);
+  -o-transform: scale(0.5);
+  transform: scale(0.5);
+  -webkit-transition: opacity 0.05s linear, -webkit-transform 0.05s ease-in;
+  -moz-transition: opacity 0.05s linear, -moz-transform 0.05s ease-in;
+  -o-transition: opacity 0.05s linear, -o-transform 0.05s ease-in;
+  transition: opacity 0.05s linear, transform 0.05s ease-in;
+}
+/* line 69, file-manager/theme/file-manager.scss */
+.rfm-dialog-wrapper .ui-dialog-content {
+  min-width: 100% !important;
+  min-height: 97% !important;
+  padding-bottom: 3%;
+  overflow: hidden;
+  padding: 0.5em 1em 0.5em 1em;
+  margin: 0;
+  display: inline-block;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transform: translateZ(0);
+  -moz-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  -o-transform: translateZ(0);
+  transform: translateZ(0);
+}
+/* line 81, file-manager/theme/file-manager.scss */
+.rfm-dialog-wrapper .ui-dialog-titlebar {
+  position: relative;
+}
+
+/* line 86, file-manager/theme/file-manager.scss */
+.ui-widget-overlay + .rfm-dialog-wrapper {
+  opacity: 1;
+  -webkit-transform: none;
+  -moz-transform: none;
+  -ms-transform: none;
+  -o-transform: none;
+  transform: none;
+}
+
+/* line 91, file-manager/theme/file-manager.scss */
+.rfm-main {
+  height: 100%;
+  overflow: auto;
+  position: relative;
+}
+
+/* line 97, file-manager/theme/file-manager.scss */
+.rfm-dialog {
+  position: relative;
+  overflow: visible;
+  zoom: 1;
+  display: inline;
+  *zoom: 1;
+}
+/* line 38, c:/ruby/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+.rfm-dialog:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* line 106, file-manager/theme/file-manager.scss */
+.rfm-dialog,
+.rfm-wrapper {
+  height: 100%;
+  width: 100%;
+}
+
+/* line 111, file-manager/theme/file-manager.scss */
+.rfm-wrapper {
+  -webkit-transition: -webkit-transform 0.25s ease-out;
+  -moz-transition: -moz-transform 0.25s ease-out;
+  -o-transition: -o-transform 0.25s ease-out;
+  transition: transform 0.25s ease-out;
+}
+
+/* line 116, file-manager/theme/file-manager.scss */
+.ui-resizable-e,
+.ui-resizable-ne {
+  z-index: 99998;
+}
+
+/* line 120, file-manager/theme/file-manager.scss */
+.rfm-hidden {
+  display: none;
+}
+
+/* line 1, file-manager/theme/files.scss */
+.rfm-table-wrapper {
+  padding: 0 6px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  overflow-x: auto;
+  margin: -1px 0;
+  font-size: 0.875em;
+}
+
+/* line 10, file-manager/theme/files.scss */
+.rfm-table {
+  border-collapse: separate;
+  border-spacing: 0 6px;
+  margin: 0;
+  width: 100%;
+}
+
+/* line 17, file-manager/theme/files.scss */
+.rfm-table td {
+  padding: 4px;
+  vertical-align: middle;
+  font-weight: normal !important;
+}
+/* line 22, file-manager/theme/files.scss */
+.rfm-table td:nth-child(1n+2) + td {
+  border-left: 0 none !important;
+}
+
+/* line 28, file-manager/theme/files.scss */
+.rfm-table td:first-child,
+.rfm-table th:first-child {
+  display: none;
+}
+
+/* line 32, file-manager/theme/files.scss */
+.rfm-table th {
+  padding: 2px 4px 0;
+}
+
+/* line 36, file-manager/theme/files.scss */
+.rfm-table th[data-sort] {
+  cursor: pointer;
+}
+
+/* line 40, file-manager/theme/files.scss */
+.rfm-table .rfm-sort-asc:after {
+  content: "\25B4";
+}
+
+/* line 44, file-manager/theme/files.scss */
+.rfm-table .rfm-sort-desc:after {
+  content: "\25BE";
+}
+
+/* line 97, file-manager/theme/files.scss */
+td.rfm-file-icon {
+  text-align: center;
+}
+
+/* line 103, file-manager/theme/files.scss */
+.rfm-file-check,
+.rfm-file-name,
+.rfm-file-icon {
+  text-align: left;
+}
+
+/* line 110, file-manager/theme/files.scss */
+.rfm-file-size,
+.rfm-file-type,
+.rfm-file-mtime,
+.rfm-file-actions {
+  text-align: right;
+}
+
+/* line 114, file-manager/theme/files.scss */
+.rfm-file-type {
+  width: 1.25em;
+}
+
+/* line 118, file-manager/theme/files.scss */
+.rfm-file-size {
+  width: 3em;
+}
+
+/* line 122, file-manager/theme/files.scss */
+.rfm-file-mtime {
+  width: 8em;
+  word-break: keep-word;
+  -ms-word-break: keep-all;
+  word-break: keep-all;
+}
+
+/* line 129, file-manager/theme/files.scss */
+.rfm-file-actions {
+  white-space: nowrap;
+}
+/* line 132, file-manager/theme/files.scss */
+.rfm-file-actions .ui-button-text {
+  font-size: 0.875em;
+}
+/* line 136, file-manager/theme/files.scss */
+.rfm-file-actions .raptor-layout-toolbar-group {
+  float: right;
+}
+
+/* line 141, file-manager/theme/files.scss */
+.rfm-file-icon img {
+  max-width: 50px;
+  max-height: 50px;
+}
+
+/* line 146, file-manager/theme/files.scss */
+.rfm-file-icon {
+  width: 50px;
+}
+
+/* line 2, file-manager/theme/icons.scss */
+.rfm-table .rfm-file-icon-bg {
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAV9JREFUeNqMkrFOwzAQhs9OAgzkAWBnad8izKzwCrxFq0qVeAAkOlfqhthRJV6hGdhg654IJRFVYzvcXWMrEDfipPNZ5/Pn+22LpmmA7HY6vcFwAcP2Zoz5NFrDy3zOidCu4MLlcjJZ7HGxJjcGNMLtAWmawnK9vsepQP+w+6QDaC0Mbapr9v1uB99VBWVZQlEUHJ9nswXWXWP5VQ+gEUBoiWMUBHAWRXAShhBKCQJzWZbB42oFyWj09L7Z3Nl9YacDSZslY4AhzpSCJElYThzH8JqmeQ+gqIMOwAdRKNHW9gBaKSeha38hdAjV+gAHCagZ2pN8kOAAkH0JmHQdDEACjOoIgO+A74Hfxw8JMK+8EuradWDs+3ogLAFr/RKoA3yqIYhoa/0SbAcDEMp7JeC35bm9g2MQ0an9BfjK81PXZvuh6OeJNjKUvjV6t9YBqrLcno/HD/APQ8jWzn8EGACxU8j1qPzZewAAAABJRU5ErkJggg==');
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+}
+/* line 9, file-manager/theme/icons.scss */
+.rfm-table .rfm-file-icon-php {
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAj9JREFUeNqMU89rE1EQ/nbzNtmQhCbRVrtUyKVVE/EiXoRe4kFEvCkFTzl48J+wLaUFwZunooJYyKEg4sWiFoJgD540BxHqj0MplSZq0zZbs+n+iDMvu5vkYHFgmLcz83073+xb5cb0NNgURblOYRRHW8XzvG+e6+L5woJMiE6nIw8UjaWZmcVDKtrsngeXakG9Wq1iaXX1Dr+L/GvAqEb3MtCbwyBWxWOQbUs/tCy0Dg5gmiaazaaMz+bmFqnvMuHGAwKlVHoKTYtNigQeDg+NnGlbLqIxFdnjUVy4dBInxlJwiLhSqYQ6HpTLd7+srMxLCeTXMpnMcjqdSdAeENe7TS2zgzcvNjB5xUBuPItisSjlpFIpvK5WGwGZIJvN58cS8bjAzo6FbFYPY6uVwPu3G5g4OwI4jpyEzSG54Q5UFflYTMHU1Gmk09pA5PzP2j50TUNUCAhq5ildx+kRNBq/PptmG+XyJ9Tr5kDkfCIFaJFISBLpEqihhHp9a3Zt7cOyYeTkDmo1Uxa2t5skZQs3b52HSnkmYYtQdPoJ6NO9XF//ePXH7++PjWOnJizLga4LjBpJlG5fROFcDp5/F5gkQjKcPgnCHTLRce13++ndR6+ezN/nZs+/QPLsLy4wKcG2exO0k7vdk8OTKlAIxCMzTO2uGegj4VcPSKCHsMZFCT6ChPMDEvi6Bmf/p5Kgf5EwkjAiBO01wksV642iSDDvQfGjJOV7QE6YsFf88Segps1koXAP/2FEshmc/wowAGXtG461qgLPAAAAAElFTkSuQmCC');
+}
+/* line 13, file-manager/theme/icons.scss */
+.rfm-table .rfm-file-icon-pdf {
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAl5JREFUeNqMUz1MU1EU/l55pRFb6Y+CViKExoTakcUwQe3qwGrSicUd0k1IQJKaYEOcOjdpYDBGHEgE00knDXkDXdTYRiIt1JQ2/aM/79Zzbl8fdTHe5Hv35Pbc73zfuafKFwDR1VUoivKYwjv490oJIb4LXcebzU15oPLnSSKBZDjsTaytxVv0Y5shBPRuF10CL03TkDg8fEqhQvjWZ7RYgJcPstludGMjnlNVnNtsKIyMoGC3I+9w4PfWFiqVCqrVKl6vr8ep+iO6d79PoKSB7g0KbMxGaBMuCQ1CjVAn3Dw9RSqVMn28Siaffd3ffy4tdOijE3i3WK243Wzi5/Q0RDYLYZyrpDMYDEo7DlL1XtMuTAuc0DKq6jMzaKfTGA6FpJKWoWiYrDEJNVpe6ui6YhI0ByQPzc2hEIvBubQE2/w8mgaJdnyMX7kcsqSKSfRO54rg0vB6bXERtyIRXF9YAOgF/Lu7mFhZkSQ+nw8ejwderxdDPQJLn0BtGDIfbm8jv7eH84MDFI+OUDk7k8/JBUqlkvRfr9dxd3wcnUECrsB4NzkpD7pGU4URswW32y0JXC4XrNSLzqAFSojxU5UJ3NqisZcM2MJhlMtl5PN5qURaaLevFFCl5czY2PLbYDDyeWfnxY9isafEmMKJ0VFqiYCgmMGl/7Lw0e/Hp0CAT+UjZTIZUy57vud09uZViJ5kyhq0oH6YmqJnqJn/i9DsrCTgatwD3i39oScSvtmo1VSToHxhDpXNnG+qwpWYSDF2JhE8TAS6Y+aq9V51TjqxBwJR/McikpN+/EeAAQBawCQKtZUgAAAAAABJRU5ErkJggg==');
+}
+/* line 18, file-manager/theme/icons.scss */
+.rfm-table .rfm-file-icon-doc,
+.rfm-table .rfm-file-icon-docx {
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAlRJREFUeNqMU01oE1EQ/nazacQ2pAlitEqJBCVtQSu9CEIjoSAoBZGevOhRb3op0iKFYqF6UUS04EEoxCKIePFQAtoqSEGoq1QQWk2g1Oag+YFsErP7dp15zW4opeLA5NvMvP3mm5m3yshoBtjzHoqiDAM4iH/bG9u212wh8HJqSgY0/lHM47C1z12zExMzDUqa7LYN4ThwyNl0XcdsJnOVj5OvuowaHCw4IpRUxCAuj73dUTJ2aC+ujMRQqVTwYnJy5uL4+LVmSpJoZkMkX90/u6vmC9fnuT0UCgU8TKeR6u19/CCdvkWp25KgXrOgf/uNm/eWcOn8UTx7verh9I1T4LymqkilUrKdYDCIeV0vugXUumGh50gYjZrA8GA3HMvxkOOcb9M0ScJK2CwhFI+gZpiw6LBqA5++/kK8K4jlJnKc8/rKCjY2N5HL5SSJsCyPQKtWLJimDb+qYOHDBk4m9mGRsJ+Q45yPx+NSPq0Qvi0CdYcCv6Li3dJPnEhEJPYTugpKpZL0fD4Pv89H8RaBVq9aJMuHJ3eHvMk/f3ROIsc5H4lEpIJwOExKVSZotWD+EYs9p58md1tjItGOcrmMarWKQCCAWDQKYZotBUR8pq29iAPHlkc/zs3d+UH7ZnOat/BwKCR7t3kG5Fx6WwvB/WsIRr9TEHJJ2WzWk8tVuzs7aVJ0nkjk0OjUtha0ji80qNZ3MTQwsDVxVkD/GWW5Jgm/WTMMzSMoF71LFXAfeNdciYmUJjKJzZeJnN4JtO6BYbg9r3f09U3jP4xI1t3nvwIMAK3/OUvIytyOAAAAAElFTkSuQmCC');
+}
+/* line 23, file-manager/theme/icons.scss */
+.rfm-table .rfm-file-icon-xls,
+.rfm-table .rfm-file-icon-xlsx {
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAl1JREFUeNqMU99Lk2EUfr5t6sY2IspiUdCQULbUi2LEgpabdlF001XgCCWC+gMUaamwkuqmSAS9C0bDiLIbEWRQrm6CGEwRXKwisAuj2rT90r4f65x3fZ+LMDrw7hzOOe/zPs8536TbT64gteyCJEnnAbjwb3uhadp7TVUxMzYmEhb+aXXnkPm4+0BsdHTqJxVlPpoGtVpFlQ5bOp1GLJG4SqFEJ6sjMsCCw74VON6+hvGZa389uWfXYfiP9qFYLOJpNDp1IRLRmwSIRVblwPDFhztyvvm4n+Uhl8thIh5H0OOZHI/Hh6l0SwBsKptEVcVIPCwu9Ieu4+Xyc3z6soJo7yNw3WIyIRgMCjlOpxPz6XTekMANSlURjZd7bmByfkQU3Ps9Rr7vnQMqzYUGiGc+QFFVSQcwVeSKaAx3DWJiLkJ+AJw76Tkn8hyzhdy1YbIcVVG2AcpKmSYuYzYVA8cP5oZwKTQkPOc5123LQ1pbF95cAzAZEnQGB5uPiMN2f3ZAeJ1BtzUPv9eLJK2yweyCUg/AGiWzhLO+XmPyesx5rjtsNrxeWhK5BhqoUieB15gM3/MHdlpj+yEfipUKTnV0YIEYCAmyvM2AvrXTWwU7fmRbB99OT989k4JYV1fjNwQbv4vp261WvPrNgJ+ul2AqfN6H3EqLoKXz6mmpRSfa2mgbHhTKZQQ6O2sXqOsPCV+zTnIl43/BlvjADIA3mYxgwJZcXDQYVEolo9eykTc+qiZx+VitrYpmkrIXvH2WxF4jL9EQ6U6TAVAuide5adXh9d7BfxiBrOrxLwEGAMLoMMb95CNJAAAAAElFTkSuQmCC');
+}
+
+/* line 1, file-manager/theme/pagination.scss */
+.rfm-pagination {
+  padding: 5.33333px 8px;
+  font-size: 0.875em;
+}
+
+/* line 6, file-manager/theme/pagination.scss */
+.rfm-total {
+  float: left;
+  padding: 5.33333px;
+  font-weight: normal;
+}
+
+/* line 12, file-manager/theme/pagination.scss */
+.rfm-pages-wrapper {
+  float: right;
+}
+
+/* line 16, file-manager/theme/pagination.scss */
+.rfm-page .ui-button-text {
+  padding: 4px 8px !important;
+  font-size: 0.875em;
+}
+
+/* line 21, file-manager/theme/pagination.scss */
+.rfm-clear {
+  clear: both;
+}
+
+/* line 1, file-manager/theme/preview.scss */
+.rfm-preview-wrapper {
+  display: none;
+}
+
+/* line 5, file-manager/theme/preview.scss */
+.rfm-preview-visible {
+  display: block;
+}
+
+/* line 9, file-manager/theme/preview.scss */
+.rfm-preview-visible ~ * {
+  display: none;
+}
+
+/* line 13, file-manager/theme/preview.scss */
+.rfm-preview img {
+  max-width: 80%;
+  max-height: 80%;
+}
+
+/**
+ * File Manager plugin.
+ *
+ * @author David Neilsen <david@panmedia.co.nz>
+ */
+/* line 27, mixins.scss */
+.raptor-ui-file-manager .ui-icon, .raptor-ui-file-manager.ui-state-hover .ui-icon {
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAcVJREFUeNrEkz1rFFEUhp+587nzmY2JYXeNki1isWKihZ0gaGFjIULA3sYfEQikFVsrwTaF+gdsY2ljF4KdYuNmY9yM2bkz47kzECxlU3jgMncu87znPS9zrbquuUgpLljO1s7OI3n25+S/OWVZDt7u7r6ah36yvf3cKbW2Ksnh7ksLZYFriy1ZMw0mnrQjK5AzGXa4BKMe6Aq2btcY1tFaq1K+3Lhi4TmQCbAUwfef0HHbdxPz5BRuyKAbAzidgWEM6+iiaAT60T7rvTW6Ub/pfH0FVpJWKBdgeKl1cqZb0UZA2EZAVxUfPr3mYxDy8NZj7o3uN5aNI2M7L2AxhKJsz0LXjFG1AoURELWDwwMWsgX2Tt5wfPKV1eWr9BZXuZx26XjS2gpb2GtH+13VFI3AbKZKUTs7HvDjl8N07PFu8plOcEgURsRRTBzHJHFClqQi3GdtecCdaz6GPXcw7D3A8zx83ycMQ5IkJssSut1UlsBZRCohRJGL8hW6zs8d2JU4+LvqJuGSXNJTKpe9YjqtOToqCYKgaXJzVBkHtjMZjz3bdXn/4uk//j6mWY7tehjWyjY3n4mD4VwXSakv1n+/jX8EGAAI68BpoWbP4wAAAABJRU5ErkJggg==') 0 0 !important;
+}
+
+/* line 1, file-manager/theme/search.scss */
+.rfm-search {
+  float: left;
+}
+/* line 4, file-manager/theme/search.scss */
+.rfm-search .ui-button {
+  -moz-border-radius-topleft: 0;
+  -webkit-border-top-left-radius: 0;
+  border-top-left-radius: 0;
+  -moz-border-radius-bottomleft: 0;
+  -webkit-border-bottom-left-radius: 0;
+  border-bottom-left-radius: 0;
+  margin-left: 0 !important;
+}
+
+/* line 11, file-manager/theme/search.scss */
+.rfm-search-input {
+  width: auto !important;
+  margin-right: -0.45em;
+  opacity: 0.8;
+  -moz-border-radius-topright: 0 !important;
+  -webkit-border-top-right-radius: 0 !important;
+  border-top-right-radius: 0 !important;
+  -moz-border-radius-bottomright: 0 !important;
+  -webkit-border-bottom-right-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+  -webkit-transition: opacity 0.25s ease;
+  -moz-transition: opacity 0.25s ease;
+  -o-transition: opacity 0.25s ease;
+  transition: opacity 0.25s ease;
+}
+/* line 18, file-manager/theme/search.scss */
+.rfm-search-input:focus {
+  outline: 0 none;
+  opacity: 1;
+}
+
+/* line 1, file-manager/theme/upload.scss */
+.rfm-upload {
+  margin-bottom: 1em;
+}
+
+/* line 5, file-manager/theme/upload.scss */
+.rfm-upload-container {
+  overflow: hidden;
+}
+
+/* line 11, file-manager/theme/upload.scss */
+.rfm-upload-drop {
+  font-size: 1.5em;
+  text-align: center;
+  padding: 16px;
+  margin-bottom: 4px;
+  clear: both;
+  float: none !important;
+  width: 100% !important;
+  cursor: alias;
+  cursor: copy;
+  vertical-align: middle;
+  opacity: 0.9;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: opacity 0.15s cubic-bezier(0.645, 0.045, 0.355, 1);
+  -moz-transition: opacity 0.15s cubic-bezier(0.645, 0.045, 0.355, 1);
+  -o-transition: opacity 0.15s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: opacity 0.15s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+/* line 26, file-manager/theme/upload.scss */
+.rfm-upload-drop:hover {
+  opacity: 1;
+}
+
+/* line 31, file-manager/theme/upload.scss */
+.rfm-upload-files {
+  max-height: 500px;
+  overflow: auto;
+  margin: 0.65em 0;
+}
+
+/* line 37, file-manager/theme/upload.scss */
+.rfm-upload-file {
+  *zoom: 1;
+  margin-bottom: 0.35em;
+}
+/* line 38, c:/ruby/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+.rfm-upload-file:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* line 42, file-manager/theme/upload.scss */
+.rfm-upload-browse {
+  clear: both;
+  vertical-align: middle;
+}
+/* line 46, file-manager/theme/upload.scss */
+.rfm-upload-browse .ui-button-text {
+  font-size: 14px;
+  font-size: 0.875rem;
+}
+
+/* line 52, file-manager/theme/upload.scss */
+.rfm-upload-or {
+  font-size: 14px;
+  font-size: 0.875rem;
+  font-style: italic;
+  vertical-align: middle;
+  padding: 0 0.25em;
+  opacity: 0.8;
+}
+
+/* line 61, file-manager/theme/upload.scss */
+.rfm-upload-file-name {
+  float: left;
+  background: #eee;
+  margin: 0.4em 0.6em;
+  border: 1px solid #999;
+  padding: 0.4em 0.6em;
+  display: inline-block;
+  max-width: 80%;
+  width: auto;
+  font-size: 0.875em;
+}
+
+/* line 73, file-manager/theme/upload.scss */
+.rfm-upload-file-size {
+  display: inline;
+}
+
+/* line 78, file-manager/theme/upload.scss */
+.rfm-upload-file-actions, .rfm-upload-file-actions button {
+  float: right;
+}
+
+/* line 83, file-manager/theme/upload.scss */
+.rfm-upload-file-remove {
+  margin: 0.45em 0.5em 0 0;
+}
+/* line 86, file-manager/theme/upload.scss */
+.rfm-upload-file-remove .ui-button-text {
+  padding: 0.4em 0.6em;
+}
+
+/* line 92, file-manager/theme/upload.scss */
+.rfm-sidebar,
+.rfm-main {
+  -webkit-transform: translate(0, 0) translateZ(0);
+  -moz-transform: translate(0, 0) translateZ(0);
+  -ms-transform: translate(0, 0) translateZ(0);
+  -o-transform: translate(0, 0) translateZ(0);
+  transform: translate(0, 0) translateZ(0);
+}
+
+/* line 97, file-manager/theme/upload.scss */
+.rfm-upload-files-wrapper {
+  display: block;
+  position: absolute;
+  width: 0;
+  overflow: hidden;
+  margin-right: -100%;
+  margin-left: 100%;
+  float: right;
+  left: 1em;
+  -webkit-transform: translate(1em, 0) translateZ(0);
+  -moz-transform: translate(1em, 0) translateZ(0);
+  -ms-transform: translate(1em, 0) translateZ(0);
+  -o-transform: translate(1em, 0) translateZ(0);
+  transform: translate(1em, 0) translateZ(0);
+  -webkit-transition: width 0.001s linear, -webkit-transform 0.001s linear;
+  -moz-transition: width 0.001s linear, -moz-transform 0.001s linear;
+  -o-transition: width 0.001s linear, -o-transform 0.001s linear;
+  transition: width 0.001s linear, transform 0.001s linear;
+  -webkit-transition-delay: 0.15s, 0.15s;
+  -moz-transition-delay: 0.15s, 0.15s;
+  -o-transition-delay: 0.15s, 0.15s;
+  transition-delay: 0.15s, 0.15s;
+}
+/* line 110, file-manager/theme/upload.scss */
+.rfm-upload-files-wrapper .ui-button-text {
+  font-size: 0.875em;
+}
+/* line 115, file-manager/theme/upload.scss */
+.lt-ie9 .rfm-upload-files-wrapper, .lte-ie8 .rfm-upload-files-wrapper {
+  display: none;
+}
+
+/* line 120, file-manager/theme/upload.scss */
+.rfm-upload-file-progress-wrapper {
+  width: 100%;
+  border: 0;
+}
+/* line 124, file-manager/theme/upload.scss */
+.rfm-upload-file-progress-wrapper > div {
+  position: relative;
+  *zoom: 1;
+}
+/* line 38, c:/ruby/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+.rfm-upload-file-progress-wrapper > div:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* line 129, file-manager/theme/upload.scss */
+.rfm-upload-file-progress-wrapper * {
+  z-index: 5;
+  position: relative;
+}
+/* line 134, file-manager/theme/upload.scss */
+.rfm-upload-file-progress-wrapper .ui-button-text {
+  font-size: 0.75em;
+}
+
+/* line 139, file-manager/theme/upload.scss */
+.rfm-upload-file-progress {
+  margin: -1px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 0;
+  -webkit-transition: all 0.15s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  -moz-transition: all 0.15s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  -o-transition: all 0.15s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  transition: all 0.15s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+
+/* line 150, file-manager/theme/upload.scss */
+.rfm-sidebar,
+.rfm-main {
+  opacity: 1;
+  -webkit-transform: translate(0, 0) translateZ(0);
+  -moz-transform: translate(0, 0) translateZ(0);
+  -ms-transform: translate(0, 0) translateZ(0);
+  -o-transform: translate(0, 0) translateZ(0);
+  transform: translate(0, 0) translateZ(0);
+}
+
+/* line 155, file-manager/theme/upload.scss */
+.rfm-uploading {
+  right: 0;
+  width: 100%;
+  -webkit-transform: translate(0, 0) translateZ(0);
+  -moz-transform: translate(0, 0) translateZ(0);
+  -ms-transform: translate(0, 0) translateZ(0);
+  -o-transform: translate(0, 0) translateZ(0);
+  transform: translate(0, 0) translateZ(0);
+}
+/* line 160, file-manager/theme/upload.scss */
+.lt-ie9 .rfm-uploading, .lte-ie8 .rfm-uploading {
+  display: block;
+}
+
+/* line 166, file-manager/theme/upload.scss */
+.rfm-wrapper-uploading {
+  -webkit-transform: translate3D(-16px, 0, 0) translate(-100%, 0) translateZ(0);
+  -moz-transform: translate3D(-16px, 0, 0) translate(-100%, 0) translateZ(0);
+  -ms-transform: translate3D(-16px, 0, 0) translate(-100%, 0) translateZ(0);
+  -o-transform: translate3D(-16px, 0, 0) translate(-100%, 0) translateZ(0);
+  transform: translate3D(-16px, 0, 0) translate(-100%, 0) translateZ(0);
+}
+/* line 172, file-manager/theme/upload.scss */
+.lt-ie9 .rfm-wrapper-uploading .rfm-sidebar,
+.lt-ie9 .rfm-wrapper-uploading .rfm-main, .lte-ie8 .rfm-wrapper-uploading .rfm-sidebar,
+.lte-ie8 .rfm-wrapper-uploading .rfm-main {
+  display: none;
+}
+
+/* line 179, file-manager/theme/upload.scss */
+.rfm-upload-file-error-message {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  display: none;
+}
+
+/* line 184, file-manager/theme/upload.scss */
+.rfm-file-upload-error .rfm-upload-file-error-message {
+  width: 28.57143%;
+  float: left;
+  margin-right: 2.04082%;
+  display: inline;
+}
+
+/* line 188, file-manager/theme/upload.scss */
+.rfm-file-upload-error .rfm-upload-file-progress-wrapper {
+  display: none;
+}
+
+/* line 1, file-manager/theme/buttons.scss */
+.raptor-ui-cancel .ui-icon, .raptor-ui-class-menu .ui-icon, .raptor-ui-clean-block .ui-icon, .raptor-ui-clear-formatting .ui-icon, .raptor-ui-click-button-to-edit .ui-icon, .raptor-ui-close .ui-icon, .raptor-ui-dock-to-screen .ui-icon, .raptor-ui-dock-to-element .ui-icon, .raptor-ui-embed .ui-icon, .raptor-ui-float-left .ui-icon, .raptor-ui-float-none .ui-icon, .raptor-ui-float-right .ui-icon, .raptor-ui-guides .ui-icon, .raptor-ui-history-undo .ui-icon, .raptor-ui-history-redo .ui-icon, .raptor-ui-hr-create .ui-icon, .raptor-ui-image-resize .ui-icon, .raptor-ui-image-swap .ui-icon, .raptor-ui-insert-file .ui-icon, .raptor-ui-link-create .ui-icon, .raptor-ui-link-remove .ui-icon, .raptor-ui-list-unordered .ui-icon, .raptor-ui-list-ordered .ui-icon, .raptor-ui-save .ui-icon, .raptor-ui-snippet-menu .ui-icon, .raptor-ui-special-characters .ui-icon, .raptor-ui-table-create .ui-icon, .raptor-ui-table-insert-row .ui-icon, .raptor-ui-table-insert-column .ui-icon, .raptor-ui-table-delete-row .ui-icon, .raptor-ui-table-delete-column .ui-icon, .raptor-ui-table-merge-cells .ui-icon, .raptor-ui-table-split-cells .ui-icon, .raptor-ui-tag-menu .ui-icon, .raptor-ui-align-left .ui-icon, .raptor-ui-align-right .ui-icon, .raptor-ui-align-center .ui-icon, .raptor-ui-align-justify .ui-icon, .raptor-ui-text-bold .ui-icon, .raptor-ui-text-italic .ui-icon, .raptor-ui-text-strike .ui-icon, .raptor-ui-text-size-increase .ui-icon, .raptor-ui-text-size-decrease .ui-icon, .raptor-ui-text-underline .ui-icon, .raptor-ui-text-sub .ui-icon, .raptor-ui-text-super .ui-icon, .raptor-ui-view-source .ui-icon, .raptor-ui-file-manager .ui-icon, .raptor-plugin-delete .ui-icon, .raptor-plugin-rename .ui-icon, .raptor-plugin-edit .ui-icon, .raptor-plugin-view .ui-icon, .raptor-plugin-download .ui-icon, .raptor-plugin-insert .ui-icon, .raptor-plugin-cancel .ui-icon, .raptor-plugin-crop .ui-icon, .raptor-plugin-flip-h .ui-icon, .raptor-plugin-flip-v .ui-icon, .raptor-plugin-redo .ui-icon, .raptor-plugin-resize .ui-icon, .raptor-plugin-revert .ui-icon, .raptor-plugin-rotate-left .ui-icon, .raptor-plugin-rotate-right .ui-icon, .raptor-plugin-save .ui-icon, .raptor-plugin-undo .ui-icon, .raptor-plugin-upload .ui-icon, .raptor-ui-image-editor .ui-icon, .raptor-ui-lorem-ipsum .ui-icon, .raptor-ui-revisions .ui-icon, .raptor-ui-revisions-preview-button .ui-icon, .raptor-ui-revisions-apply-button .ui-icon, .raptor-ui-revisions-diff-button .ui-icon, .raptor-section-add-item .ui-icon, .raptor-section-remove .ui-icon, .raptor-section-add-layout .ui-icon, .raptor-section-guides .ui-icon, .raptor-section-save .ui-icon {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=85);
+  opacity: 0.85;
+}
+
+/* line 5, file-manager/theme/buttons.scss */
+.raptor-ui-cancel:hover .ui-icon, .raptor-ui-class-menu:hover .ui-icon, .raptor-ui-clean-block:hover .ui-icon, .raptor-ui-clear-formatting:hover .ui-icon, .raptor-ui-click-button-to-edit:hover .ui-icon, .raptor-ui-close:hover .ui-icon, .raptor-ui-dock-to-screen:hover .ui-icon, .raptor-ui-dock-to-element:hover .ui-icon, .raptor-ui-embed:hover .ui-icon, .raptor-ui-float-left:hover .ui-icon, .raptor-ui-float-none:hover .ui-icon, .raptor-ui-float-right:hover .ui-icon, .raptor-ui-guides:hover .ui-icon, .raptor-ui-history-undo:hover .ui-icon, .raptor-ui-history-redo:hover .ui-icon, .raptor-ui-hr-create:hover .ui-icon, .raptor-ui-image-resize:hover .ui-icon, .raptor-ui-image-swap:hover .ui-icon, .raptor-ui-insert-file:hover .ui-icon, .raptor-ui-link-create:hover .ui-icon, .raptor-ui-link-remove:hover .ui-icon, .raptor-ui-list-unordered:hover .ui-icon, .raptor-ui-list-ordered:hover .ui-icon, .raptor-ui-save:hover .ui-icon, .raptor-ui-snippet-menu:hover .ui-icon, .raptor-ui-special-characters:hover .ui-icon, .raptor-ui-table-create:hover .ui-icon, .raptor-ui-table-insert-row:hover .ui-icon, .raptor-ui-table-insert-column:hover .ui-icon, .raptor-ui-table-delete-row:hover .ui-icon, .raptor-ui-table-delete-column:hover .ui-icon, .raptor-ui-table-merge-cells:hover .ui-icon, .raptor-ui-table-split-cells:hover .ui-icon, .raptor-ui-tag-menu:hover .ui-icon, .raptor-ui-align-left:hover .ui-icon, .raptor-ui-align-right:hover .ui-icon, .raptor-ui-align-center:hover .ui-icon, .raptor-ui-align-justify:hover .ui-icon, .raptor-ui-text-bold:hover .ui-icon, .raptor-ui-text-italic:hover .ui-icon, .raptor-ui-text-strike:hover .ui-icon, .raptor-ui-text-size-increase:hover .ui-icon, .raptor-ui-text-size-decrease:hover .ui-icon, .raptor-ui-text-underline:hover .ui-icon, .raptor-ui-text-sub:hover .ui-icon, .raptor-ui-text-super:hover .ui-icon, .raptor-ui-view-source:hover .ui-icon, .raptor-ui-file-manager:hover .ui-icon, .raptor-plugin-delete:hover .ui-icon, .raptor-plugin-rename:hover .ui-icon, .raptor-plugin-edit:hover .ui-icon, .raptor-plugin-view:hover .ui-icon, .raptor-plugin-download:hover .ui-icon, .raptor-plugin-insert:hover .ui-icon, .raptor-plugin-cancel:hover .ui-icon, .raptor-plugin-crop:hover .ui-icon, .raptor-plugin-flip-h:hover .ui-icon, .raptor-plugin-flip-v:hover .ui-icon, .raptor-plugin-redo:hover .ui-icon, .raptor-plugin-resize:hover .ui-icon, .raptor-plugin-revert:hover .ui-icon, .raptor-plugin-rotate-left:hover .ui-icon, .raptor-plugin-rotate-right:hover .ui-icon, .raptor-plugin-save:hover .ui-icon, .raptor-plugin-undo:hover .ui-icon, .raptor-plugin-upload:hover .ui-icon, .raptor-ui-image-editor:hover .ui-icon, .raptor-ui-lorem-ipsum:hover .ui-icon, .raptor-ui-revisions:hover .ui-icon, .raptor-ui-revisions-preview-button:hover .ui-icon, .raptor-ui-revisions-apply-button:hover .ui-icon, .raptor-ui-revisions-diff-button:hover .ui-icon, .raptor-section-add-item:hover .ui-icon, .raptor-section-remove:hover .ui-icon, .raptor-section-add-layout:hover .ui-icon, .raptor-section-guides:hover .ui-icon, .raptor-section-save:hover .ui-icon {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1;
+}
+
+/* line 12, file-manager/theme/buttons.scss */
+.raptor-plugin-delete .ui-icon, .raptor-plugin-delete.ui-state-hover .ui-icon {
+  width: 16px;
+  height: 16px;
+  display: block;
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAtFBMVEX///+nAABhAACnAACjAACCAACgAACHAACjAAByAAB1AAByAACDAACnAACCAACHAACgAACNAACbAACXAACMAACSAABfAACYAACRAACjAACbAAChAACqAACNAACcAACHAACqAADEERGsERHQERG+NjaiERHUTEzYERG4ERGlFBSfFRX/d3f6cnK0JSWoHh7qYmLkXFyvFRXmXl7vZ2fNRUX4cHDXT0/+dnbbU1O3Li7GPT26MTG2f8oMAAAAIXRSTlMASEjMzADMzAAASMxIAMwAAMzMzEjMzEhISABIzABISEg/DPocAAAAj0lEQVR4Xo3PVw6DMBBF0RgXTO+hBYhtILX3sv99RRpvgPcxVzp/M5syb7lYepxDABDeYcQ5wg+MAMhr3JOyJKfxTABqduuvjD37O6sBwjZ+f76/7TFuQw1VnhyGYZPklYagKbKLlDIrmkBDGq1hUaqhM4UQJpwOwFdK+a4LAbCdlWNTCgGwjLlhUQqZ8uofSk8NKY1Fm8EAAAAASUVORK5CYII=') 0 0 !important;
+}
+/* line 18, file-manager/theme/buttons.scss */
+.raptor-plugin-delete .ui-icon:before {
+  display: none;
+}
+
+/* line 12, file-manager/theme/buttons.scss */
+.raptor-plugin-rename .ui-icon, .raptor-plugin-rename.ui-state-hover .ui-icon {
+  width: 16px;
+  height: 16px;
+  display: block;
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAk1BMVEX///8/Pz8BAQF8fHwJCQkCAgIJCQl8fHx9fX0AAABJSUkBAQENDQ0wMDBVVVUAAABra2t0dHR7e3thYWEBAQEAAAAAAAABAQEAAAAgICABAQEBAQH8/Pzw8PDp6en39/fj4+Pe3t41V9I/YeWKioqDg4N9fX0jRa8wUrVoaGhkhuxWeNx1dXVCZMhvb28kRqsqTL4KidXxAAAAHHRSTlMAAABndwAAAAA0blVZcm1naWhNa6hrcJ8AAKRU4jk/3gAAAHVJREFUeF6FyMUCwjAUBdEbaQupUMOjqMv/fx1dQN6yZ3aDcWnyw6ezoRWNYc15kqKQZCFlgTKQQwgllL/dn5f3+bPb+6P3CpWNw56srdCZOMzDmA61i8O9nKvRaHLVukEryFKIFtnkj7ENYxmNdd5v+5xj1BcJ/w9Kj6K7ZAAAAABJRU5ErkJggg==') 0 0 !important;
+}
+/* line 18, file-manager/theme/buttons.scss */
+.raptor-plugin-rename .ui-icon:before {
+  display: none;
+}
+
+/* line 12, file-manager/theme/buttons.scss */
+.raptor-plugin-edit .ui-icon, .raptor-plugin-edit.ui-state-hover .ui-icon {
+  width: 16px;
+  height: 16px;
+  display: block;
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2lpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wUmlnaHRzPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvcmlnaHRzLyIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcFJpZ2h0czpNYXJrZWQ9IkZhbHNlIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjcwQjlGRTM4MDM4NzExRTFBREUyQ0JDMzAwQUI1NjI2IiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjcwQjlGRTM3MDM4NzExRTFBREUyQ0JDMzAwQUI1NjI2IiB4bXA6Q3JlYXRvclRvb2w9IkFkb2JlIFBob3Rvc2hvcCBDUzMgV2luZG93cyI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ1dWlkOkFDMUYyRTgzMzI0QURGMTFBQUI4QzUzOTBEODVCNUIzIiBzdFJlZjpkb2N1bWVudElEPSJ1dWlkOkM5RDM0OTY2NEEzQ0REMTFCMDhBQkJCQ0ZGMTcyMTU2Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+jLCN8AAAAjlJREFUeNqMk01oE1EQx/+7eYkXFUP3JPEDE9C2FAsBhYBE8YNUcpJilPZgonhQ8NAcpEJRtNKDoEIOFkSUSIPVWJGIaJuq1VgrUkGxiVEPjVHaQtvEJLvNZru7vhYK6bqrDgzMvDe/ecO8GcZms6FUKqFcLkNRFMiyjGo55FXho3q7v3nRvxKN1s8DbQUg/AMYIjCQJVAjGz5zXNvuYDAw3N5uUwDC6oEPuhU92CFJ0n5XJhMQx8fR0NKyr6Sqpxi/dzUqUgUNjRLqHIp+OSp2Zqe4o/5gpjWZTMJqtSJSW/t4XaXSQfY0FsAwwMr1jCEsSTh94mTQE3+0A5ucd+FyuTrXmkwRh9mcMuxBNXzgcJdHliXY7Xb03ah/yPMkmmaYVNpsBvkfWBQFTE5+w/uR+0OOjQgpCvthKYz8C+b5PHK5n0g8u/OKPthpIsxgdSj5G5zPT4Hnc3gS60lYzLhACOLacGIET09nIIpz6OsND1ssOK8SDOgVS/TgiYmvdCrn0XMrPELhc6rKDBi1ajGBqmKzUMRxn7/Lk82OUV/BzeuRt7Tss/TuD3gbHfmtVH9RmxVEWAoC9jb5njeNjsax8F3docg7uhILcL8WXvWFLoEo4hgt9yBVtigwTocz0Myw7BprTatw9VJvQpbVDgo/1cKp73XYcnn5tJKZIrzbdx1xx+6FPr4cjL6mZxHLCiS08Ju0G7NFjlpjyxNcDKtnZvLua3R1YtR/QXVOC3M1wOwnTreJvwUYACjgD2NsoiY9AAAAAElFTkSuQmCC') 0 0 !important;
+}
+/* line 18, file-manager/theme/buttons.scss */
+.raptor-plugin-edit .ui-icon:before {
+  display: none;
+}
+
+/* line 12, file-manager/theme/buttons.scss */
+.raptor-plugin-view .ui-icon, .raptor-plugin-view.ui-state-hover .ui-icon {
+  width: 16px;
+  height: 16px;
+  display: block;
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAjpJREFUeNpi/P//P4O/vz8DOmBmZgZhQUZGRn0gVwqIuYH4KxA/A+q5+Pfv3/dAzMDCgBsocvHwO5o5+2kaGpmqSInySfz6+fPdyZMnb+7Zslbp88d3+4Fq7oMN+PfvH4pOoK2CnDx8zgGJRbZi4mKKsiLc3EyMDIysXJySDg4OEmIyymKLp7Yzffrwdi0TSAPIKcj4z58/RuZOflq8gsLygtxsbCDNMMNBbDkZSRUb9wBdkDqwC379+oXufFlVHWM5EOPZ++8/QBhdgZa+ieKa+ZNlwQb8/v0bXZ6fg5NT6O+//2COpjQfH7qCJ+++swL18eNywbd/v398ZmBm58emGeyVv78+A/V9A4fBz58/0fGT6+eOP2NhZmL+/ef/X3TNIIddOXfsKUgd2AB+fn4GXl5eBh4eHgZubm4GNja22xtXzn/C+ufL719/UWOIiYmR+ePbl6/mTptw/evXr6eZ0E0HJhJ5VlZW/8z0jJaUCN+TOzauuvX/949vnGzMHIx/f37fsXHNjVB/r6PXrl7Z9uPHjzeMoJTo6OgITgtArMXFxR1UVFTaHBsb1fL+/bvlQDN1gFgZiEFh8QmI7wLxAS4urlcCAgKIlAg0yEJUVNyvuLiyMjY2rBeoeRFQ+DYQX8OTWhlgKdFbWVndtbCwMj82Nnj648ePlkM1EwYgL5ibm5fcuvXqv7298zyg/11YWFgYCGE+YOzKyclBXPD9+/dtVlZaAh8/frwBNHAPAwkAHIiUAIAAAwBqzgLpAxVURwAAAABJRU5ErkJggg==') 0 0 !important;
+}
+/* line 18, file-manager/theme/buttons.scss */
+.raptor-plugin-view .ui-icon:before {
+  display: none;
+}
+
+/* line 12, file-manager/theme/buttons.scss */
+.raptor-plugin-download .ui-icon, .raptor-plugin-download.ui-state-hover .ui-icon {
+  width: 16px;
+  height: 16px;
+  display: block;
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2lpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wUmlnaHRzPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvcmlnaHRzLyIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcFJpZ2h0czpNYXJrZWQ9IkZhbHNlIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjMzMDU2NTA3RDU1RDExRTA5QjRBRjk5NzJEQzkzRjBGIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjMzMDU2NTA2RDU1RDExRTA5QjRBRjk5NzJEQzkzRjBGIiB4bXA6Q3JlYXRvclRvb2w9IkFkb2JlIFBob3Rvc2hvcCBDUzMgV2luZG93cyI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ1dWlkOkFDMUYyRTgzMzI0QURGMTFBQUI4QzUzOTBEODVCNUIzIiBzdFJlZjpkb2N1bWVudElEPSJ1dWlkOkM5RDM0OTY2NEEzQ0REMTFCMDhBQkJCQ0ZGMTcyMTU2Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+AQmg0wAAAklJREFUeNqkU81LG0EUf5udiTGmm+wmNAHRBsEItihtD9JqjYrgoSy04CXBi9ceCpJLDz32VCi99N7/QAoBsQdRY3PooREbQugKzYeahqaITWI2Jrs7nVlJ3aSXggM/3pv38Zv35s1whBC4zkKLi88BYwwIIXA6nR27NDR084kkCbNsc3paTRwd/fzAVMMwzABN00wgK5uu68DzvDQzM/FWlh9EAgEvPj9vQbFYie7tpcLJZHqNkVhz+JGRKZYENpsNWDvDw/7oysrSi2AwgBHiob/fzgrlRVEYNwztjiTdWMIYSWdn9QKtRkXWkn0+z+zgoI8GuXGzqV2dwnPgdgt4dfWxzK7s5KQS3dhIhre3v6wh2oc0P3+flhyOeDxuXKupwJJ1/epymU3TdGi3CXAcgN/vxdPTdyPZ7PcECgTEpwsLUxFRFHGr1QJVVaFcbtMTXbQtnpKpUK+rcDktQlvqozEXtCobdrkcD9HAQN+jRqOBc7li13iq1SoIgmDKzqJxpmRktVrtolA4PkDr6x/fVau/vb3zHR29FVpelkPtdhu2tj4ph4cFpeMjxLgolX4l8vkf7022DhyOe/Q9TJiQ5Wfx/f082d39SpjesVvjGbreQbPZhLGxYCwUCs5RhNh47XY7MJ2644qS36HyTVepVjaAcfPkbLZMNjc/k3T6mKRSOVNnNubrreAfAorJWOz1t0ymRKxgNub7H4K/JIpSIQydZObrJeCsv5Hjblu7m5TluVdMicd3XlJxcNlypusKuOt+5z8CDADDoGLH+XrJdAAAAABJRU5ErkJggg==') 0 0 !important;
+}
+/* line 18, file-manager/theme/buttons.scss */
+.raptor-plugin-download .ui-icon:before {
+  display: none;
+}
+
+/* line 12, file-manager/theme/buttons.scss */
+.raptor-plugin-insert .ui-icon, .raptor-plugin-insert.ui-state-hover .ui-icon {
+  width: 16px;
+  height: 16px;
+  display: block;
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAehJREFUeNpi/P//PwMlgImBQsACIhhnCAFZjEAGkANy0B8gwQ00m5kRogpEMYHl5YF4LZBXw/D3/47/Ea/xuOD7PwaGX1AMMvDvfwGGf/8nprkkGQPZLUAVHqR4gY3hH0Ofoby+6ZcvXxjinWL0Gf4wtMC9QAAwAjXXK0jIO8gLyUl9/Pzx98Fjh24AXdOA7gIPoP/PwJwGdvoPoNP/MGQIcwkGq4mrKHz5+uXf0UtH7wBdMRGodgvCgP9ATX/+tyT5JxqCaDAfIu7DwcSWJckjqfzgwQOGU5dP3f3w4cNSoJq5DL//I0Xjn38tMX4xes+ePWOK8IowAPGBmnNZ/jPVS4vLqH7985Xl5YcXDz99+rAJGIDtQAxxIcKA/zVLViy8xM7J9uvU7VPMDnaOOkAb4sVkxTV+sPxgf/fhzdOP797vZ/gLjD4Ghn8oAQRKiYx9/AxADaAwaDF2NtN6+vMZpwCnAMP7b+8Zfrz49vrj3fdHGJgZkhhYmT4wsELTC8iHWe+RAvE/ww6g02vO7jhxjfkv49fXjK8Zvn/5+uHTzXcXgSGeC1TxAWdKRDHk81+Gp5vutnCZ8Mt8v/DpDtCBeUBrnuJNyigAmEQZ3v9h+LbzTQsw+ZYwCLJcBydjXIlkwHMjQIABAIHQ3hY9qLekAAAAAElFTkSuQmCC') 0 0 !important;
+}
+/* line 18, file-manager/theme/buttons.scss */
+.raptor-plugin-insert .ui-icon:before {
+  display: none;
+}
+
+/* line 1, image-editor/theme/buttons.scss */
+.raptor-ui-cancel .ui-icon, .raptor-ui-class-menu .ui-icon, .raptor-ui-clean-block .ui-icon, .raptor-ui-clear-formatting .ui-icon, .raptor-ui-click-button-to-edit .ui-icon, .raptor-ui-close .ui-icon, .raptor-ui-dock-to-screen .ui-icon, .raptor-ui-dock-to-element .ui-icon, .raptor-ui-embed .ui-icon, .raptor-ui-float-left .ui-icon, .raptor-ui-float-none .ui-icon, .raptor-ui-float-right .ui-icon, .raptor-ui-guides .ui-icon, .raptor-ui-history-undo .ui-icon, .raptor-ui-history-redo .ui-icon, .raptor-ui-hr-create .ui-icon, .raptor-ui-image-resize .ui-icon, .raptor-ui-image-swap .ui-icon, .raptor-ui-insert-file .ui-icon, .raptor-ui-link-create .ui-icon, .raptor-ui-link-remove .ui-icon, .raptor-ui-list-unordered .ui-icon, .raptor-ui-list-ordered .ui-icon, .raptor-ui-save .ui-icon, .raptor-ui-snippet-menu .ui-icon, .raptor-ui-special-characters .ui-icon, .raptor-ui-table-create .ui-icon, .raptor-ui-table-insert-row .ui-icon, .raptor-ui-table-insert-column .ui-icon, .raptor-ui-table-delete-row .ui-icon, .raptor-ui-table-delete-column .ui-icon, .raptor-ui-table-merge-cells .ui-icon, .raptor-ui-table-split-cells .ui-icon, .raptor-ui-tag-menu .ui-icon, .raptor-ui-align-left .ui-icon, .raptor-ui-align-right .ui-icon, .raptor-ui-align-center .ui-icon, .raptor-ui-align-justify .ui-icon, .raptor-ui-text-bold .ui-icon, .raptor-ui-text-italic .ui-icon, .raptor-ui-text-strike .ui-icon, .raptor-ui-text-size-increase .ui-icon, .raptor-ui-text-size-decrease .ui-icon, .raptor-ui-text-underline .ui-icon, .raptor-ui-text-sub .ui-icon, .raptor-ui-text-super .ui-icon, .raptor-ui-view-source .ui-icon, .raptor-ui-file-manager .ui-icon, .raptor-plugin-delete .ui-icon, .raptor-plugin-rename .ui-icon, .raptor-plugin-edit .ui-icon, .raptor-plugin-view .ui-icon, .raptor-plugin-download .ui-icon, .raptor-plugin-insert .ui-icon, .raptor-plugin-cancel .ui-icon, .raptor-plugin-crop .ui-icon, .raptor-plugin-flip-h .ui-icon, .raptor-plugin-flip-v .ui-icon, .raptor-plugin-redo .ui-icon, .raptor-plugin-resize .ui-icon, .raptor-plugin-revert .ui-icon, .raptor-plugin-rotate-left .ui-icon, .raptor-plugin-rotate-right .ui-icon, .raptor-plugin-save .ui-icon, .raptor-plugin-undo .ui-icon, .raptor-plugin-upload .ui-icon, .raptor-ui-image-editor .ui-icon, .raptor-ui-lorem-ipsum .ui-icon, .raptor-ui-revisions .ui-icon, .raptor-ui-revisions-preview-button .ui-icon, .raptor-ui-revisions-apply-button .ui-icon, .raptor-ui-revisions-diff-button .ui-icon, .raptor-section-add-item .ui-icon, .raptor-section-remove .ui-icon, .raptor-section-add-layout .ui-icon, .raptor-section-guides .ui-icon, .raptor-section-save .ui-icon {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=85);
+  opacity: 0.85;
+}
+
+/* line 5, image-editor/theme/buttons.scss */
+.raptor-ui-cancel:hover .ui-icon, .raptor-ui-class-menu:hover .ui-icon, .raptor-ui-clean-block:hover .ui-icon, .raptor-ui-clear-formatting:hover .ui-icon, .raptor-ui-click-button-to-edit:hover .ui-icon, .raptor-ui-close:hover .ui-icon, .raptor-ui-dock-to-screen:hover .ui-icon, .raptor-ui-dock-to-element:hover .ui-icon, .raptor-ui-embed:hover .ui-icon, .raptor-ui-float-left:hover .ui-icon, .raptor-ui-float-none:hover .ui-icon, .raptor-ui-float-right:hover .ui-icon, .raptor-ui-guides:hover .ui-icon, .raptor-ui-history-undo:hover .ui-icon, .raptor-ui-history-redo:hover .ui-icon, .raptor-ui-hr-create:hover .ui-icon, .raptor-ui-image-resize:hover .ui-icon, .raptor-ui-image-swap:hover .ui-icon, .raptor-ui-insert-file:hover .ui-icon, .raptor-ui-link-create:hover .ui-icon, .raptor-ui-link-remove:hover .ui-icon, .raptor-ui-list-unordered:hover .ui-icon, .raptor-ui-list-ordered:hover .ui-icon, .raptor-ui-save:hover .ui-icon, .raptor-ui-snippet-menu:hover .ui-icon, .raptor-ui-special-characters:hover .ui-icon, .raptor-ui-table-create:hover .ui-icon, .raptor-ui-table-insert-row:hover .ui-icon, .raptor-ui-table-insert-column:hover .ui-icon, .raptor-ui-table-delete-row:hover .ui-icon, .raptor-ui-table-delete-column:hover .ui-icon, .raptor-ui-table-merge-cells:hover .ui-icon, .raptor-ui-table-split-cells:hover .ui-icon, .raptor-ui-tag-menu:hover .ui-icon, .raptor-ui-align-left:hover .ui-icon, .raptor-ui-align-right:hover .ui-icon, .raptor-ui-align-center:hover .ui-icon, .raptor-ui-align-justify:hover .ui-icon, .raptor-ui-text-bold:hover .ui-icon, .raptor-ui-text-italic:hover .ui-icon, .raptor-ui-text-strike:hover .ui-icon, .raptor-ui-text-size-increase:hover .ui-icon, .raptor-ui-text-size-decrease:hover .ui-icon, .raptor-ui-text-underline:hover .ui-icon, .raptor-ui-text-sub:hover .ui-icon, .raptor-ui-text-super:hover .ui-icon, .raptor-ui-view-source:hover .ui-icon, .raptor-ui-file-manager:hover .ui-icon, .raptor-plugin-delete:hover .ui-icon, .raptor-plugin-rename:hover .ui-icon, .raptor-plugin-edit:hover .ui-icon, .raptor-plugin-view:hover .ui-icon, .raptor-plugin-download:hover .ui-icon, .raptor-plugin-insert:hover .ui-icon, .raptor-plugin-cancel:hover .ui-icon, .raptor-plugin-crop:hover .ui-icon, .raptor-plugin-flip-h:hover .ui-icon, .raptor-plugin-flip-v:hover .ui-icon, .raptor-plugin-redo:hover .ui-icon, .raptor-plugin-resize:hover .ui-icon, .raptor-plugin-revert:hover .ui-icon, .raptor-plugin-rotate-left:hover .ui-icon, .raptor-plugin-rotate-right:hover .ui-icon, .raptor-plugin-save:hover .ui-icon, .raptor-plugin-undo:hover .ui-icon, .raptor-plugin-upload:hover .ui-icon, .raptor-ui-image-editor:hover .ui-icon, .raptor-ui-lorem-ipsum:hover .ui-icon, .raptor-ui-revisions:hover .ui-icon, .raptor-ui-revisions-preview-button:hover .ui-icon, .raptor-ui-revisions-apply-button:hover .ui-icon, .raptor-ui-revisions-diff-button:hover .ui-icon, .raptor-section-add-item:hover .ui-icon, .raptor-section-remove:hover .ui-icon, .raptor-section-add-layout:hover .ui-icon, .raptor-section-guides:hover .ui-icon, .raptor-section-save:hover .ui-icon {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1;
+}
+
+/* line 12, image-editor/theme/buttons.scss */
+.raptor-plugin-cancel .ui-icon, .raptor-plugin-cancel.ui-state-hover .ui-icon {
+  width: 16px;
+  height: 16px;
+  display: block;
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAtFBMVEX///+nAABhAACnAACjAACCAACgAACHAACjAAByAAB1AAByAACDAACnAACCAACHAACgAACNAACbAACXAACMAACSAABfAACYAACRAACjAACbAAChAACqAACNAACcAACHAACqAADEERGsERHQERG+NjaiERHUTEzYERG4ERGlFBSfFRX/d3f6cnK0JSWoHh7qYmLkXFyvFRXmXl7vZ2fNRUX4cHDXT0/+dnbbU1O3Li7GPT26MTG2f8oMAAAAIXRSTlMASEjMzADMzAAASMxIAMwAAMzMzEjMzEhISABIzABISEg/DPocAAAAj0lEQVR4Xo3PVw6DMBBF0RgXTO+hBYhtILX3sv99RRpvgPcxVzp/M5syb7lYepxDABDeYcQ5wg+MAMhr3JOyJKfxTABqduuvjD37O6sBwjZ+f76/7TFuQw1VnhyGYZPklYagKbKLlDIrmkBDGq1hUaqhM4UQJpwOwFdK+a4LAbCdlWNTCgGwjLlhUQqZ8uofSk8NKY1Fm8EAAAAASUVORK5CYII=') 0 0 !important;
+}
+/* line 18, image-editor/theme/buttons.scss */
+.raptor-plugin-cancel .ui-icon:before {
+  display: none;
+}
+
+/* line 12, image-editor/theme/buttons.scss */
+.raptor-plugin-crop .ui-icon, .raptor-plugin-crop.ui-state-hover .ui-icon {
+  width: 16px;
+  height: 16px;
+  display: block;
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAjhJREFUeNqMU01oE0EU/mZ3szFxW0rpT2qhCG2vUhV/VgzJwXgoXiwIvVhBD/bgKRQq5CDSg2JpwVMU0YUi6K0nD9L6ExWEYmtBoTSlgohgUSpismmnOzPOjHGrh8Q+mB2G977vfe/te+T5eQsCAAGG5dV9v+fLISFE+uxqB+qZqN4GfoPBBXqTo1MjlNJU5vMAdmoWqpklY4pRikrFR2Lj9fh/cKvy3NIEKnPq8lR26ZEHzjl8v4xj2bsj9dCvJi5MhgrGjJcHr17nSIq9a7k0ay+VSshM9NQEz2RXVLlGSCCzpjvZAo7ye3kWHBj2fR9zD0+ETfrbjgzOapX/ELjMgxt4YIDJGdM94ELgVJ7AicrmciBmA00xaJ+QMUwIMyQ4vKXBykweBNjc3EIgUW7XIvZ19cEyTcQiwLoPPJY+JmMYR0hgyAeqRytgTGiC6cI1PF3MoyX+DYnGDfR1cu3TMTL2D84KuNjuh2QnxJSBDF8/NWDmRxHvVm4j0daORGur9qkYyaMVPKNDimB7JhS7YUS1gj3Nx+E4jqy9CY7djHi0RfqWQgVeZRwfxX5JwEKCiOqwbceRHJxTs4Wy/K5pV1kf5VMKntCh0xJ8jhCjYP2kYQkNQhLMXnxRcwb6vX6tYKB7vnEs04sHN3PU8mm4HEVv8opTbwLttjOuUvlh+f36m7e5ZUJQtMLtErik/n8t+77LlSXsFqZhgDIxL8EnVbi1061b6JhGhJDCnRs5W2Um1ZX+JcAAx0kYnoSRZbYAAAAASUVORK5CYII=') 0 0 !important;
+}
+/* line 18, image-editor/theme/buttons.scss */
+.raptor-plugin-crop .ui-icon:before {
+  display: none;
+}
+
+/* line 12, image-editor/theme/buttons.scss */
+.raptor-plugin-flip-h .ui-icon, .raptor-plugin-flip-h.ui-state-hover .ui-icon {
+  width: 16px;
+  height: 16px;
+  display: block;
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAWlJREFUeNrEU81Kw0AY7O7GmPQXpdCWFmMFScBGS6Ro7E3w2EMpgt59B5/Bd/ABvPQJPHvUk0cvXsRDJdQW2mxM4veVVZMaQbDgwmT2mxkmC9mQMAxTf1lkIQW759fzukoIscC7AW4D34E2iQZuL45mTPGBJVHAagDXhVcX83zmqyAIgk+Amc6rkgF7KjSKM+rR3I8FAPO0vWZFC8Rs/qYgk1fZVqdV3YM9ExrDGXX0Ewt8358BjJ1jW2u4XkBhpkKnOKOO/kc26QTZnMLMw+2yMfV8L3qCh+fx42a1UEjLDEuyiScA0eodaMbLiPPBKx+CxsTbmB+EzBnzoNOqbWDu2wk8z8upS6Rp6yXtyZkO3Tc/BE0GoCdLlCzDh5Nso7yuSKSJ+VgB59zu7ms6pTRfWVFKzmjCXddVAClkZzzhtVW1klGkYtfWdMzHbmLx5LIH3IhdUULugfqARG9wddZf3L/wrwXvAgwAigJGZgHdTRIAAAAASUVORK5CYII=') 0 0 !important;
+}
+/* line 18, image-editor/theme/buttons.scss */
+.raptor-plugin-flip-h .ui-icon:before {
+  display: none;
+}
+
+/* line 12, image-editor/theme/buttons.scss */
+.raptor-plugin-flip-v .ui-icon, .raptor-plugin-flip-v.ui-state-hover .ui-icon {
+  width: 16px;
+  height: 16px;
+  display: block;
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAZZJREFUeNpi/P//PwMlgAXGUMlYw8DMzMzAxMSEghkZGWE0FxBrAZWyn+lwOQrTx0SEJVxAV5rxcjAHRdnIhfz9+1cJqwuwAG6gRl0+LlaNEAs5LSMlIWUmJkb+Bfvu3CRkAEijAdBGzUhbRS0nXQn1N59//X7y7vtHKUEO7j9//rDgMgCk0YiPk0U73lFFO8BC3uTXn3+MP37//c3MxPhRjJ9d6P2Xn5/RDWCExYJS2irPf//+aRAKEGCA3rg3K2w7hguAEtuBobydkAGgWMHqBRYWFhdQbBIRK3eAeA+GAUCvHAfinwLcbDrxTiragRYKxqAwuPPiy8O///4zszAxsn/+/utH2YJTzFgNAIKvQAMOv/v843zfhstG83bfvBFtr6KuISfE9eHr73/AkGKREeKUBKYDZkLR+AUYmIdef/h6rn/DBTMeTlb9ICslWTtdGSkWZiaWX79+sRGbkEAG7Xv/6dvpOdsvW648cMMwwkFdAWgAO7EGwMBnoEG73n/+fnz65gs2oKSNNR2QC5gYKAQAAQYAyKSoTwoazjwAAAAASUVORK5CYII=') 0 0 !important;
+}
+/* line 18, image-editor/theme/buttons.scss */
+.raptor-plugin-flip-v .ui-icon:before {
+  display: none;
+}
+
+/* line 12, image-editor/theme/buttons.scss */
+.raptor-plugin-redo .ui-icon, .raptor-plugin-redo.ui-state-hover .ui-icon {
+  width: 16px;
+  height: 16px;
+  display: block;
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAd9JREFUeNrEU89LG0EUfjP7KyvEGsRorRhoySGCuSyht0IPgicFQZCcvXsvHoP/Q8FDKZRCpQityKIHvZT2YI6t6MUfCJqQKpt1d7Ozu7N9O9vWhIIUcvDBt/OY4X3z3vfNkjiOoZ+g0GfIyaf46gtQSQJF0wQIvePN5nJiJYS8xmUzDAIz8H1gnQ74npcS3BeubYOm60lqCKQjm/89QhSG0HEcSG6tzo4bAWM1JJntGaE7UNQKcL6EaQkxknQfcS6Imk0GizOTxrvPx7Xf4pvdBAOc85VBnVTLU6OPhx8NZBVZUjmPIYpStNsMGo0I5l8+NT5sfxckggCFAYrFzyaHlo1yoYDdSs2WD9e2A/atC4wFooMkJBT79EqBF88Lxu7eYU0QMN+v5Eey1enSRKF1y6ULFoKFAFUDntMgwpsiDuAEMbgBhydDKmxtH9TRmdWUwPOWSsXi2Fmr7RyfNG6sa9vzbI+FHT+MI3730hbmjIwEcLTxSRSrup5qgH6Wvn39cd76ae9TSndw6wzRQNiSooQxiohjHij4Pqy379PiTMb86wJalL+6ZB+pLK9RSv+x0XddkQfrb9K2VdXssRHZk4M1mRDc6XXWsaw/aT15ibKimN3n5MF/pr4JfgkwANDA599q/NhJAAAAAElFTkSuQmCC') 0 0 !important;
+}
+/* line 18, image-editor/theme/buttons.scss */
+.raptor-plugin-redo .ui-icon:before {
+  display: none;
+}
+
+/* line 12, image-editor/theme/buttons.scss */
+.raptor-plugin-resize .ui-icon, .raptor-plugin-resize.ui-state-hover .ui-icon {
+  width: 16px;
+  height: 16px;
+  display: block;
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAeBJREFUeNqkU8tu00AUPWOPZ2JnnLahacNDYVEkNm3FDiGoPIItH1DBGr6BPwCJD0DAR7BjU1Wyl+yQEJt2ySoqquqkcerYsbkek6gIShYZaTSPe+acc2fusLIssUzjL9+cGgbGWJTnmU6SBFmW/QV0HAee54FzJyTRoNr78KrN+Hic0GErStMLPZ1Or1SqSOM4hm3bWsoGkRRE0gYnxYjUNQFCy7KCRZYJF5GQJhehSaEoCj0YxNU8OPx4H/+7EUb9yYsvRqTVWtGGII7PcH4+NICCLvTpOwYlaV4ArgBWXWCrA2xfBx7fLTEcDgx2dvm83+/PFXI69aD3Fbu9e+C2DdcBThOg0wRurdXx0Sgx2NnI0zT7g+BT9Bo/dzSe7e3DdxV6awKSW/Abdfwy3hCUpTVfVK9w8sPHQXyEb8fv0d3YRLfToXEDu7fv4OFNH5fxhsDzrhHraO7gRvsRlFKU+yqUaMOT65A0nqRNik/oGRsGK2WzJpByhViZWTSoWD6/3b/iDVKKCwihfhO0agIqotD3N/VkMor2nn9fWAdSqkgIcpOnVR1ocqCCioQ29Xh8trD2XUqtKPLQth0jZlWWHMcLOJfkpEu1Lv79aWi/jsuwws9SYcv+RgtLtl8CDABaJ7dGG392fAAAAABJRU5ErkJggg==') 0 0 !important;
+}
+/* line 18, image-editor/theme/buttons.scss */
+.raptor-plugin-resize .ui-icon:before {
+  display: none;
+}
+
+/* line 12, image-editor/theme/buttons.scss */
+.raptor-plugin-revert .ui-icon, .raptor-plugin-revert.ui-state-hover .ui-icon {
+  width: 16px;
+  height: 16px;
+  display: block;
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gIYCB4zbg/0ngAAAklJREFUOMulk09IFHEcxT/z25md3Z3ZnR1d/6y6xVq5VLIpLhGF0MHjdvRQnYQuUVB07eBB6BRdKuxQoSBBSHXxEih0qS6LHrJsRS0IQQx311QW59+vgxR0Kcl3+z6+PB689xQpJQeBup+n6cnCeYCBwdKb6cmCHBgsKb84ZXB4+ALQ9jeBfONy15nWhVuuWZhq1paL6+6RKW27VJz7fvS26vt++4uRkdF/uVj7MsHq8nixt/csc3Pviu2Fm4w+LVdU3/OUQEr67ykIBbQQqCFwPJASElG40VjAtm26u3OIWD/d3RvMz49zNV8dVT3PE76UnOpQCKtgRSFlwNoPiGp79ydKNO+Ow/wEudxjyuUNWrKXGX798brqua7wpaTNeEtXOotttCEl5FqgJb4n5NRKRNfvI49do1x+RiJzic+zD8insjnhua7wgoDp2SeMzdxh4dsMrRZ0JMHQoTMF6SRk+h7RmBmiWq2Sygxx/NxDAj9QVNd1hScli0uLJK0kz7fG2NxaJdN0iHRDhuaEjdlwAiMSQwH6iiWiGiipXt5/bVxRXccRfhCwu9nOxrbKTiXMy9oHopEljJiBaZiYpkncjGPFE2Sa2sg2tXP6sI7rOOK3g870AOFwGF3XicVixOMmlhXHthPYdhzLMkgkIhiGhtAFnqzjuq5QXccJBUHwR+ZSSjzPp153EKKO5wl2diTVqk8kEkHXdfInA1zHCam1SiUc0jRe3b24z/YHQJ2QFqZWqYQVq6fnShAEnf8zJCHEinLQNQoOiJ+Xa+I4gAkrsgAAAABJRU5ErkJggg==') 0 0 !important;
+}
+/* line 18, image-editor/theme/buttons.scss */
+.raptor-plugin-revert .ui-icon:before {
+  display: none;
+}
+
+/* line 12, image-editor/theme/buttons.scss */
+.raptor-plugin-rotate-left .ui-icon, .raptor-plugin-rotate-left.ui-state-hover .ui-icon {
+  width: 16px;
+  height: 16px;
+  display: block;
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAgJJREFUeNrEk01oE0EUx9/Mzn4mmrQltCGlaNRDQfDSgqWCsX70UNNohUrj4sGDV4/Bix7tpRevntWrIHg03j2JH1jxUrEJVqUJm42zMzu7viWSGiSnHFx4zDLz9vf+//d2SBzHMMpDRga4974ObGialmeMbSG42mrtg+OkIAgCDA5hGGLIgXzaOzwIIcTdbre74ft+cl5SSsVKhUMVsHa7dUCjtGCZmitk31adc76Da0J4E0VRFdftoQCUXzu7lP/y/GVzDGFgGMY5BNQtyyIofx5jE9OuDgA8z+s1gxCsztzK+akPj5/9KVKkr3RgRLIQqE9eI+zRPxaE6DelVrkw3RzPGFnOA2A5BgxoSabDbyKWH9WEivUf7IXSFSST4yQAX/lAAXTcYAWmMXf9crHd4WEniihEEQFs4Ikzs7kr6H0VC0wE4wJESkLgCJBarzDV9TQwZtfKF4/tUlTrcxXoegotaQmA3VmZLd9fP7UymbGuY/5ConpgjKZ5uOCksu7y0uRO/f33t9sNb9eysjgRI5k7a7b4/iHHyD64Obe8dnpmFeW6+N2RPsCyMrXKpemGYVLz+FR6Rvxiedseg8QaNs1u/Ox4hBKby8i8tlhcfHh7oXw059xAWxVMSpPSrcYTnMDG37KwSU/35Kfqnvy8hu8nh/7GhLwj//8yjQr4LcAAnsjzDtrNFcMAAAAASUVORK5CYII=') 0 0 !important;
+}
+/* line 18, image-editor/theme/buttons.scss */
+.raptor-plugin-rotate-left .ui-icon:before {
+  display: none;
+}
+
+/* line 12, image-editor/theme/buttons.scss */
+.raptor-plugin-rotate-right .ui-icon, .raptor-plugin-rotate-right.ui-state-hover .ui-icon {
+  width: 16px;
+  height: 16px;
+  display: block;
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAghJREFUeNrEUztvE0EQnl3vee/sQ3YezkMgZCAkMooUoAEkkPIQSRGcIBcJkfwDUpEihUta/BugDg2iQYooEKSiSUuDBEgg2SckIAm+O+/t7d0y5yLYRlQuWGl0e/P49pv9ZonWGgZZFAZcbHn7ExBy/MfBDDQGnJtoHHzfg3x+CHPInlJqN4oipwegu7h7RZFCY0l/C57nHVBKt3D/HUEe9gD0F8ZxPINJyWlzQogv6HqLX5LE0gapiiCqY07jFMB13X6Mx9jCNtohFmrTNBeklAkwlBcnv75849SwjVMWDOn1AzzBosO2KUCZivyy8YDPcSewvnTNfb7/EVmoOqrXYUEd6xskSTIbQmgriLnePxlpgc/bBP9LmDOvzkQgRADDuXR+5c6EEwSyJmUIiXVkDFMhBBnZAQmGZeIaQcprt0uF+0j3chwTbIGCK5S7ce/iCUuxqtbsLIDx1xwkl3prPGduPtqYW91ZLZURAJVKgWFkwRNRQBkJy3cvNRizaoZh96hQBK3nKzfPz6zdKF45cmXgHIsjVINxmoW0mYMPzVYDfT9XFseLr9/5VR3TegJgI92lC4XM7G7l6vVCPlNotZVPKKHNH24LlbA4jIJlDYFss8mpCdtOc8rXl881Xx14NTL64GkFb3T2X6OKE/h+zJh6MWZM7+F+qzuGdc/If39MAwP8FmAAQz7yii/xf50AAAAASUVORK5CYII=') 0 0 !important;
+}
+/* line 18, image-editor/theme/buttons.scss */
+.raptor-plugin-rotate-right .ui-icon:before {
+  display: none;
+}
+
+/* line 12, image-editor/theme/buttons.scss */
+.raptor-plugin-save .ui-icon, .raptor-plugin-save.ui-state-hover .ui-icon {
+  width: 16px;
+  height: 16px;
+  display: block;
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAVNJREFUeNqkU71ugzAQPowtwdAdqRLK3odg6161a+cukZonoGrElgWWDqhb16oP0AfoytStirows0QRMj/unQsohAQi5aTD5vju4/Pd2VBKwTnG6cEYe8bl6s73P09Jel8ur3H5ruv6CUiBYRgfQRAosnrCyQhLOZTLG1ImpYQSA1VVjf7dNE0gLOV0R6AXlAMSk4uiGCUQ6ITdJzDpz0SQTxAoxlqVZo+gLEuQyDxFwIQAwg4IiPV3vYbL2WyUgDBHFbxG0Um9t237sIIkSeDYYGHbur3neQMCTgqoRWEYDToh8NyLxSO4rgtpmrY14D0CUsA5h80mh/n8QQdXq7CTTN/ILMtqa9AjEDjOGrTdSnAcRwdpr1unzB5BMweiGwY8tx/H8U+WZbmUSoPJlfr3NrZLgDkXujbNXaD9DfoLAt8OFRHPfb8X+sLcW+Pc6/wnwABHMdnKf4KT4gAAAABJRU5ErkJggg==') 0 0 !important;
+}
+/* line 18, image-editor/theme/buttons.scss */
+.raptor-plugin-save .ui-icon:before {
+  display: none;
+}
+
+/* line 12, image-editor/theme/buttons.scss */
+.raptor-plugin-undo .ui-icon, .raptor-plugin-undo.ui-state-hover .ui-icon {
+  width: 16px;
+  height: 16px;
+  display: block;
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAe1JREFUeNrEUzFrFEEU/mazu7d3x8U9g0ROwkHEwrSrNmksJBxok1RRwUIEz0awFStZoqQw5B9ok1jYiRDBwl4PSaFJVLCMMfHWS7zb3ZndGd9ssgdXiVzhwGNnH+/75n3vm2FKKQyzDAy5zKmHLRSKRdiOA6tQgGlZDcrPUme3dcFBEPSLlZQQcZyFTFN8WZiGOUCnVCMRws9/4zD8BwkEFpz7N66c8vQJUbeLNEn+LuEQqxo8jv0716e8/f0UPIp0+n1OTbFLsUF1z+n7boAgA0eRf/em521tdeE4BuYunfa0OYehEMUJ3wt6Fza+7s4EkVwh3DJFLyPgYejfa0576+u/MsZe70g/tX8QRujSHDgXtpTpmOvarkjYrZ97Qg/xUTYDOv3B46U3rcnJMqRUUKaBtsXwzWDYJmfax1y0x07gx/FxfLbckd+1Wj0dYddI8vlcwhp1gcUnr/z55mXvbcfA99WXrVwjMwzGHNs0yiWbVSpFXqtVMTFxkrU+zOt55ENc04N7tvTCP9O86mn76D6cIzDSODYRhhUEnXFguy4/bs6gWr1IubN9F3KShHN8Wn6a3QNtZaFU0lvtZXAUm1LK13Jn5z7Vzw0Q9EmE0NvZDNnpoDw6OuC7voFUs0C19Uzif39MQxP8EWAA91//GdkHdYEAAAAASUVORK5CYII=') 0 0 !important;
+}
+/* line 18, image-editor/theme/buttons.scss */
+.raptor-plugin-undo .ui-icon:before {
+  display: none;
+}
+
+/* line 12, image-editor/theme/buttons.scss */
+.raptor-plugin-upload .ui-icon, .raptor-plugin-upload.ui-state-hover .ui-icon {
+  width: 16px;
+  height: 16px;
+  display: block;
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2lpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wUmlnaHRzPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvcmlnaHRzLyIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcFJpZ2h0czpNYXJrZWQ9IkZhbHNlIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjMzM0MzQjFBRDU1RDExRTA5QjRBRjk5NzJEQzkzRjBGIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjMzM0MzQjE5RDU1RDExRTA5QjRBRjk5NzJEQzkzRjBGIiB4bXA6Q3JlYXRvclRvb2w9IkFkb2JlIFBob3Rvc2hvcCBDUzMgV2luZG93cyI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ1dWlkOkFDMUYyRTgzMzI0QURGMTFBQUI4QzUzOTBEODVCNUIzIiBzdFJlZjpkb2N1bWVudElEPSJ1dWlkOkM5RDM0OTY2NEEzQ0REMTFCMDhBQkJCQ0ZGMTcyMTU2Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+uTcxiQAAAjJJREFUeNrEU7tr22AQPz2+GmpiyZIdHGGTBBN3KaUEOpj60Wyh2CFZCsoSunRIptRL/onEW9YO3UyGQgMlSwkOGbqUQrcqJq7dyHkoNrixJVmW1e/cOs3QzUM/OOnud3e/u/sejOd5MM5ixiXgl5a2gOO4W/mzpFhsclmSAhk0ms12uV6/fIfqKAALDwYD4P9BKqVSj4r5fFKNRGTS6fSgVrtaPTr6nD0+/rp5l2TYwV0DGaenIyu5XFKlf4KYz0eg1/NIKjWv0rrBmxuzeX39k3Z0MexoRCBFo+HlUEjITE3JDyVJIJbVvyXmOAYEIUDW1p7n0dZ1Y/Xg4FO2XP6yydOqUibzuLi4mFRFUSSm6YBtD+DsTIe9vY/7mJDPZ3OiGATH8YBhAMJhmaTT86qm1cq8osgrCwtPVEEQiet6wLIsnbkBu7ulnfPzZgEJqlV9e339xWuOC1ECBlx3AH6/nwiCP80GAvfThNwj7XYHLMsGw7iCYvHtTqVSL3S7XUBBHbFG44LaFnQ6JiVx6Um4Eks/suM4NNlCAEqlD/ua9h2TH4wIUEcMfRiDsSi9Xo/hTdNy0MDWfD4eZmaUBHW8p21/Oz3VhyPMziqvEEfp9/t0j+zhPcBc9uSkemgYho2gYbSAbk5iY0PNyfJEotVqAQrqiKEPY37HGjbmMsHg04m5udhLRZnMsCzjGx1dpfLjkM6+jXo8HivE49Fnf++LZ+v6ZVnT6m+Y//6Yxib4JcAAvjkyKRAGkXsAAAAASUVORK5CYII=') 0 0 !important;
+}
+/* line 18, image-editor/theme/buttons.scss */
+.raptor-plugin-upload .ui-icon:before {
+  display: none;
+}
+
+/* line 1, image-editor/theme/image-editor.scss */
+.rie {
+  text-align: center;
+}
+
+/* line 5, image-editor/theme/image-editor.scss */
+.rie-hidden {
+  display: none;
+}
+
+/* line 9, image-editor/theme/image-editor.scss */
+.rie-canvas {
+  outline: 3px dashed #aaa;
+}
+
+/* line 13, image-editor/theme/image-editor.scss */
+.rie-actions {
+  display: inline-block;
+}
+
+/* line 17, image-editor/theme/image-editor.scss */
+.rie-actions:after {
+  content: " ";
+  display: table;
+  clear: both;
+}
+
+/* line 23, image-editor/theme/image-editor.scss */
+.rie-file {
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+
+/* line 29, image-editor/theme/image-editor.scss */
+.rie-canvas-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+/* line 34, image-editor/theme/image-editor.scss */
+.rie-crop-handle {
+  border: 1px dashed black;
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* line 44, image-editor/theme/image-editor.scss */
+.rie-range-min,
+.rie-range-max {
+  display: inline-block;
+  width: 27px;
+  position: relative;
+  top: 1px;
+}
+
+/* line 51, image-editor/theme/image-editor.scss */
+.rie-range-min {
+  text-align: right;
+}
+
+/* line 55, image-editor/theme/image-editor.scss */
+.rie-number {
+  width: 80px;
+}
+
+/* line 59, image-editor/theme/image-editor.scss */
+.rie-range {
+  position: relative;
+  top: 6px;
+}
+
+/* line 64, image-editor/theme/image-editor.scss */
+.rie-tools-fields {
+  float: left;
+}
+
+/* line 68, image-editor/theme/image-editor.scss */
+.rie-tools-image {
+  float: right;
+}
+
+/* line 79, image-editor/theme/image-editor.scss */
+#nwgrip,
+#negrip,
+#swgrip,
+#segrip,
+#ngrip,
+#egrip,
+#sgrip,
+#wgrip {
+  width: 10px;
+  height: 10px;
+  background-color: #ffffff;
+  outline: 1px solid #000000;
+}
+
+/* line 86, image-editor/theme/image-editor.scss */
+#nwgrip {
+  left: -5px;
+  top: -5px;
+}
+
+/* line 91, image-editor/theme/image-editor.scss */
+#negrip {
+  top: -5px;
+  right: -5px;
+}
+
+/* line 96, image-editor/theme/image-editor.scss */
+#swgrip {
+  bottom: -5px;
+  left: -5px;
+}
+
+/* line 101, image-editor/theme/image-editor.scss */
+#segrip {
+  bottom: -5px;
+  right: -5px;
+}
+
+/* line 106, image-editor/theme/image-editor.scss */
+#ngrip {
+  top: -5px;
+  left: 50%;
+  margin-left: -5px;
+}
+
+/* line 112, image-editor/theme/image-editor.scss */
+#sgrip {
+  bottom: -5px;
+  left: 50%;
+  margin-left: -5px;
+}
+
+/* line 118, image-editor/theme/image-editor.scss */
+#wgrip {
+  left: -5px;
+  top: 50%;
+  margin-top: -5px;
+}
+
+/* line 124, image-editor/theme/image-editor.scss */
+#egrip {
+  right: -5px;
+  top: 50%;
+  margin-top: -5px;
+}
+
+/**
+ * File Manager plugin.
+ *
+ * @author David Neilsen <david@panmedia.co.nz>
+ */
+/* line 12, image-editor/theme/buttons.scss */
+.raptor-ui-image-editor .ui-icon, .raptor-ui-image-editor.ui-state-hover .ui-icon {
+  width: 16px;
+  height: 16px;
+  display: block;
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAmJJREFUeNqkk11IFFEUx/8z3p3dnZ1xdzbN1o+iEc3S2ClCAgkCFWKhhygXeuihWIggsLd6kTYWikIrfMgXi6AnoQ96iR6EAmmjHqISMcVKxcoN3HZTd3HnYzszCyK0T3rgcJnL+f3P/547lysWi9hK8NhisGg8fpzW2k3yP5lpmnVPEomhzdAn+/ouMNMwOIvmcOQ2B54DXBVki7JgAPZ4Kr2UHtqjw6pVQGsIMCwgerAIm2WGYfAmVYbrOQgM8BNQ5QMW/wJeV+nbHnMmB7TRQcN1QK4A2IzNMkPXHYFa3xs0h3ZD8dU6nffUADVySShPgLqt5GTNKIk6AsQ6AoZlYfTDfSQ9Io4dOIGjrZ2OZduRbTuvA0ER0M3SHvv4Hum7N9C2utrMdFuA1KZnphHwBzCy/BDZ5R9oqN6JULAB2ysVeAVqzYkOvPJnEQtTn9GpadAGBiJMLxR4kxysZeuwtMKwmhbwNDMOr2cGPtEHySdBkiTIkox6zxSyv6pw7fwZDCUSeBcOj647UENdEAQBbrcboihCliX4/TIUpZJSxg7hE6TUGCJRDVcGh3GqpwcPZmdneHJQYZGDjVF0JmwiT9PLZvPQU6+BrwOIdGgYHnkLde8+NDY1wWZZJp0WKlwuPOs/XfZnWf49htTEIxw+1I7nL5Lo6L6M6l3tsBmb5fyaFiMHajlYDeaDse6FrtjZS403++/MvxyvTk6klO/rD4nnvzGCh+kq/4eVHM7tn796sfdL471bLa+8KF6fW3KPbqxl5IKV62zlcpiYnENvEvHJ+ZbHdLuDAQVj5Wr/CTAAkUf46KM72ykAAAAASUVORK5CYII=') 0 0 !important;
+}
+/* line 18, image-editor/theme/buttons.scss */
+.raptor-ui-image-editor .ui-icon:before {
+  display: none;
+}
+
+/**
+ * Horizontal rule plugin
+ *
+ * @author David Neilsen <david@panmedia.co.nz>
+ */
+/* line 12, image-editor/theme/buttons.scss */
+.raptor-ui-lorem-ipsum .ui-icon, .raptor-ui-lorem-ipsum.ui-state-hover .ui-icon {
+  width: 16px;
+  height: 16px;
+  display: block;
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAPBJREFUeNpi/P//PwNFgJGRcQ0Qg2gGkGHEYpgeJqAZzJQ4gAWIWaHsaCYmpkggvRyILwFxOxAvAzkSiEHiVUDcBlV7GYh1wWqBztgJdQ4+OhaKMeRALmCDmoqPXgxlJ6HLMUE5RkC8BIiPQmlkRTBxLySxKzA1jCCnUBqNe2FRQg5mBhKgEH1BgQMYjwBpGyA+AhWbD8TnodEmgSSHrOYCEBuA1QINOA51DjZaEo8cmGaCJiYGLHQwEG/CIQenWYDpmhvIMAdiEH0NiKdCJfcA8VMgNgXiBVA5GLgKpbmRw+MROYHIjJYvjpFqAECAAQDLL1QeEMDiXQAAAABJRU5ErkJggg==') 0 0 !important;
+}
+/* line 18, image-editor/theme/buttons.scss */
+.raptor-ui-lorem-ipsum .ui-icon:before {
+  display: none;
+}
+
+/**
+ * Revision history plugin.
+ *
+ * @author Michael Robinson <michael@panmedia.co.nz>
+ * @author David Neilsen <david@panmedia.co.nz>
+ */
+/* line 12, image-editor/theme/buttons.scss */
+.raptor-ui-revisions .ui-icon, .raptor-ui-revisions.ui-state-hover .ui-icon {
+  width: 16px;
+  height: 16px;
+  display: block;
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAfRJREFUeNqMU89LAlEQnn27WiFUl0ASCbp0Cgm6dulWEHXoIF26Vv9Bh4Io6B5C5yDp1K1TUGQQCAqK1wLFyLIfaz9Eaddd++bxVhaxaGAc39uZ7/tmmKcRbHJ+niamp0nTNGq32xwXcD1Kve3CcZw7p9WSucby9nankI3/IyFyvLNzaCPJdl36dhxy8D2Xy9HR+fk6p8FvOd/oQpfM+Dpzmc1SCwAuCm0ARMNhqtfrdLq7e7i0ubmh8m81TwEbmNd+Y27ifF8sUn8gIHMPkskthD3jv8wrc3N0gvNYJEJR+Fkm8yFbcIEM+7Xn8uMjVapVSiSTkqlUKtFqPE4t2xYSgKfJQ3FRJJm5GLFpWT2Zr9Np6hOCbAUguAguBOags+s69RsGDQSDZJqmZH6DitTNDekoJCgMMIBlCTgZkCKBGECoBGIQXC5iP1jJQCjUYWaFnOsp6ABoSgF1gbD5mR0PwLJ0CWB7CuSPKu4CET5mXjgGfDfN4HM+T7IP7sebASf7I8/Ez7yXSFyNTE3tv5bLX03THO8o8NZY9/T4lPiZrUYj+1UoJFR3TfH+8CD7kUOEaz2U+JlrT08VFHJnHGvGXSo1PDY7G1STJPWiSAOjyyD8yHBWzLxNNWb2Hg+v8hD6+RyMxfbpD3MbjRdVWPHf/wgwAAuqSbfOGi3pAAAAAElFTkSuQmCC') 0 0 !important;
+}
+/* line 18, image-editor/theme/buttons.scss */
+.raptor-ui-revisions .ui-icon:before {
+  display: none;
+}
+
+/* line 16, revisions/revisions.scss */
+.raptor-ui-revisions-apply-button,
+.raptor-ui-revisions-preview-button {
+  margin-right: 10px;
+}
+
+/* line 12, image-editor/theme/buttons.scss */
+.raptor-ui-revisions-preview-button .ui-icon, .raptor-ui-revisions-preview-button.ui-state-hover .ui-icon {
+  width: 16px;
+  height: 16px;
+  display: block;
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAltJREFUeNqMUktoE1EUPW++SfNp1RowFFwoBRFEigtdBRUtLlzo3v9CkCoIQt2IguDKnbEKQpEq4gdKQRQUuigiuDNYCpaqdAo2NJNOM0kmv2ZmvG+SaSZQxQeHefPuvefdc95lqdvTaK+ThCT+vSjZ/QHXhTbzDIszE5DowA8OjF9PjVXrTdiOA9t24TgUc1vxBS2Hx9OLV2jL+O/O1BlwCF5CC2J9vQmzUkOhXINRrCBnWMjmy1jWSyiVK3gxenSM8oaJYNC/tYuAMQZBACRJgCyLUBQBoiiAn+tGAU8nP+H4oPqAWfotAjiCEkTeXIvE9Uj81WgA+/bspjtcJLfH8HG++tWPSXCdjT3VUjEj7diUxLbbua4jBQjcDgG14MvYjGR2PovMdw1lq6Ja5JXAPA8ctCG3OvBldMh8T4pk5MVTB/FTW46v6EZKzxvdEoIeOA5DrdbAWtGCvlqGUbDozEFWNzH3fOTG/rNphVLFIIHMJQQ96I2H0N8Xwd5dO6BKEiSxIyczMXLtwIW00kXQ6qBjZJHPw5qFlbyJ/GoJVrWO08eGkEz04dCl9LgsYCpoosxHjEvgT8tJYtEQohEVA8mt3hO+efvFKz5y+eFrVWSTddv9IJhLsxsm8utZ2we/E99I/u2Nqbj3aAqJ/i3VeCzyjpkahMzLOzCXvoE56xG/g7+RDB8ewtXzJyAKTLCNX9De3wd3JZx5dTeBZm2bRFlhSUZYVtAjy+hRFEQI0ZCCWEhFPKxClWmGKNeroVo+UWFCorA0lzt388ln/Mcq/F7I8RpC848AAwBUZQYbBk0VIwAAAABJRU5ErkJggg==') 0 0 !important;
+}
+/* line 18, image-editor/theme/buttons.scss */
+.raptor-ui-revisions-preview-button .ui-icon:before {
+  display: none;
+}
+
+/* line 12, image-editor/theme/buttons.scss */
+.raptor-ui-revisions-apply-button .ui-icon, .raptor-ui-revisions-apply-button.ui-state-hover .ui-icon {
+  width: 16px;
+  height: 16px;
+  display: block;
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAqZJREFUeNp0k01IFVEUx/9z753XpCBqQWjfi1pE6quoiBA/yKWrei3a1KawTdGuRSCYYJt2hoGLEnsu0jZRmotQqJWRXyUiDWJBUanzevk+5vt27vQePMwOHObMnXN/55z/vaMlOjvbAdTiX3sd+L7p+z6qy2+BMdbMOZ8IgkALwxBFF5S0e7Crq8+jRCcI4JJPz8xgYHz8OkE08k+F5AmCfaZ3n3xOSnmJnkuMFpmkTQSC9Dx4to1MJoNn3d199K2Nkg5v2COguCWfz+2np3Acp8O28/ccx4YCaEzTwMl1IVAWi8GyLPQmk2irq3uwOD9/8ePcGHasJydV+1Wrg/j1e+mdbdv95BCe57EIwBioT4AgifZ25FwXumHg+dRU+qg1jYq1J6gmVzaJWdTuvDxqxA5A+K7LFYApgLICpIzClbm3OGgtNFY4KXezwF9XH5uRiK7rsuII2ASx0+vo6b6fsF0nEZJOktZXTBPDgy86CiCTeY7DlNS8AFGdqHEiYCgRSCDvesiTwFkaSwm8MDz8kKqfo22HmFsywmaIDAPQ2VMznNZ4FCuBk713cacl3lf/ZfKK2EinY6oXVhhBdcOkREhxGAEEAUTUL500TjU1gU4D5XRa78cGVsWP5WWrMh7v2eIm4kxF/vTTkZetqnLRFCQqSAV8P+AiY5qP6L1yK8CuxtqQNrcWOyiFaAT1g0CI4xemc7TWnF2fHc2uzaDmyDV8X+xHvTYEnSFXOkKpcdLEow6Yrhsgv1pVc/bkvoabSiy5t/5Gc0BHRgkiEjQS8i+oGCuw+k62HZqm3SYfInAD57r6YSZefbCqzh+rNDiPwdgGKGAY+JGAIc2gbkwm5xhRb7R5SdPYCVWNMV2mvr1pUbqs/Mxm2hr29OI/lrZl6o8AAwDbC1i/F0MeZgAAAABJRU5ErkJggg==') 0 0 !important;
+}
+/* line 18, image-editor/theme/buttons.scss */
+.raptor-ui-revisions-apply-button .ui-icon:before {
+  display: none;
+}
+
+/* line 12, image-editor/theme/buttons.scss */
+.raptor-ui-revisions-diff-button .ui-icon, .raptor-ui-revisions-diff-button.ui-state-hover .ui-icon {
+  width: 16px;
+  height: 16px;
+  display: block;
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAgpJREFUeNpiTGl7c4CRkdGeAQv4////wV+/fjosbpQBcTcBMRMQM0Kxl5Z1LgNjXMPT/yn+wtj0M2w7+pnh6eufB3/+/Olw7egkFDkt6zyGf//+MrB8+/YVyBVmmDlrFshKBjD8z8CQmZHB4GXNy7Bu3w/7Jy///tewzEYxAKQZ5EJGj6xz/6tStRjIAW2zrzGwfPnyBcyZPmMG1AVgzzNkZWWhKJ40eRLD/38Q+f///zEUFhQygPRCvQBxMj6Ql5uHIQbSy/L9+w8wZ9q0aRD/Q23JzckBi/fOPclw6/47rIYCY+8gy69ff8AcdCeDQOfMYww37709+OvjdYdv766iyHEJaTNwi+gyMCq5rDkA5NvjcPlBRsb/Dvf2hIHYh6HxD0sLlhpeW8EGMPz4cI3hx3tUGzgEtRk4BLQY2NkFwFH29s4SFHlhlRgGJiZmBhY+PhmG+3tDQWK7kUwH0Q66/kdAmh0YGH7tF1WLxxIGTAcZTcIugjnPr81AkZTUygBr/vv31/68OBUGVQUeDANymy4wsABNAecFaZ1sDAUgJ3o5SII1t7W3M/z7+5fhz98/DH/+/GVoaW4Geo+HgVFaJwvkFKwhKCBh6SAoZb0/JVSYQVGaFUO+esILsH/5gZgT6Io1yGEATOeBYEMkrRwMvdYvxWbBh+fHDsENgGomFvwD4u+gxAgQYABaINAvYKeykgAAAABJRU5ErkJggg==') 0 0 !important;
+}
+/* line 18, image-editor/theme/buttons.scss */
+.raptor-ui-revisions-diff-button .ui-icon:before {
+  display: none;
+}
+
+/* line 33, revisions/revisions.scss */
+.raptor-ui-revisions-loading-revisions {
+  text-align: center;
+  padding: 20px;
+}
+
+/* line 40, revisions/revisions.scss */
+.raptor-ui-revisions-table thead th {
+  display: table-cell;
+}
+/* line 45, revisions/revisions.scss */
+.raptor-ui-revisions-table tbody tr.ui-state-hover {
+  cursor: pointer;
+}
+/* line 48, revisions/revisions.scss */
+.raptor-ui-revisions-table tbody td {
+  vertical-align: middle;
+}
+/* line 50, revisions/revisions.scss */
+.raptor-ui-revisions-table tbody td.raptor-ui-revisions-controls {
+  white-space: pre;
+}
+
+/* line 57, revisions/revisions.scss */
+.raptor-ui-revisions-diff-button-diff {
+  font-family: monospace;
+}
+/* line 59, revisions/revisions.scss */
+.raptor-ui-revisions-diff-button-diff del {
+  background-color: #FFC8C8;
+}
+/* line 63, revisions/revisions.scss */
+.raptor-ui-revisions-diff-button-diff ins {
+  background-color: #BEF0BE;
+}
+
+/* line 6, section/theme/guides.scss */
+.raptor-section-guide .raptor-section-item,
+.raptor-section-guide .raptor-section-layout-pane,
+.raptor-section-guide .raptor-section-layout,
+.raptor-section-guide .raptor-section {
+  position: relative !important;
+  margin-top: 20px !important;
+  margin-bottom: 5px !important;
+  padding-top: 5px !important;
+  padding-bottom: 5px !important;
+}
+
+/* line 17, section/theme/guides.scss */
+.raptor-section-guide .raptor-section-item:before,
+.raptor-section-guide .raptor-section-layout-pane:before,
+.raptor-section-guide .raptor-section-layout:before,
+.raptor-section-guide .raptor-section:before {
+  font-size: 11px;
+  font-family: "Courer New", monospace;
+  color: white;
+  padding: 0 2px;
+  position: absolute;
+  height: 15px;
+  top: -17px;
+  left: 0;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  max-width: calc(100% - 3px);
+  line-height: 1;
+}
+
+/* line 33, section/theme/guides.scss */
+.raptor-section-guide .raptor-section-item {
+  outline: 1px solid #40a6ff !important;
+}
+
+/* line 37, section/theme/guides.scss */
+.raptor-section-guide .raptor-section-item:before {
+  content: "Item";
+  background-color: #40a6ff;
+  outline: 1px solid #40a6ff !important;
+}
+
+/* line 43, section/theme/guides.scss */
+.raptor-section-guide .raptor-section-layout-pane {
+  outline: 1px solid #0d8eff !important;
+}
+
+/* line 47, section/theme/guides.scss */
+.raptor-section-guide .raptor-section-layout-pane:before {
+  content: "Layout Pane";
+  background-color: #0d8eff;
+  outline: 1px solid #0d8eff !important;
+}
+
+/* line 53, section/theme/guides.scss */
+.raptor-section-guide .raptor-section-layout {
+  outline: 1px solid #0074d9 !important;
+}
+
+/* line 57, section/theme/guides.scss */
+.raptor-section-guide .raptor-section-layout:before {
+  content: "Layout";
+  background-color: #0074d9;
+  outline: 1px solid #0074d9 !important;
+}
+
+/* line 63, section/theme/guides.scss */
+.raptor-section-guide .raptor-section {
+  outline: 1px solid #0059a6 !important;
+}
+
+/* line 67, section/theme/guides.scss */
+.raptor-section-guide .raptor-section:before {
+  content: "Section";
+  background-color: #0059a6;
+  outline: 1px solid #0059a6 !important;
+}
+
+/* line 77, section/theme/guides.scss */
+.raptor-section-guide .raptor-section-item:after,
+.raptor-section-guide .raptor-section-layout-pane:after,
+.raptor-section-guide .raptor-section-layout:after,
+.raptor-section-guide .raptor-section:after {
+  content: " ";
+  display: table;
+  clear: both;
+}
+
+/* line 1, section/theme/section.scss */
+.raptor-ui-cancel .ui-icon, .raptor-ui-class-menu .ui-icon, .raptor-ui-clean-block .ui-icon, .raptor-ui-clear-formatting .ui-icon, .raptor-ui-click-button-to-edit .ui-icon, .raptor-ui-close .ui-icon, .raptor-ui-dock-to-screen .ui-icon, .raptor-ui-dock-to-element .ui-icon, .raptor-ui-embed .ui-icon, .raptor-ui-float-left .ui-icon, .raptor-ui-float-none .ui-icon, .raptor-ui-float-right .ui-icon, .raptor-ui-guides .ui-icon, .raptor-ui-history-undo .ui-icon, .raptor-ui-history-redo .ui-icon, .raptor-ui-hr-create .ui-icon, .raptor-ui-image-resize .ui-icon, .raptor-ui-image-swap .ui-icon, .raptor-ui-insert-file .ui-icon, .raptor-ui-link-create .ui-icon, .raptor-ui-link-remove .ui-icon, .raptor-ui-list-unordered .ui-icon, .raptor-ui-list-ordered .ui-icon, .raptor-ui-save .ui-icon, .raptor-ui-snippet-menu .ui-icon, .raptor-ui-special-characters .ui-icon, .raptor-ui-table-create .ui-icon, .raptor-ui-table-insert-row .ui-icon, .raptor-ui-table-insert-column .ui-icon, .raptor-ui-table-delete-row .ui-icon, .raptor-ui-table-delete-column .ui-icon, .raptor-ui-table-merge-cells .ui-icon, .raptor-ui-table-split-cells .ui-icon, .raptor-ui-tag-menu .ui-icon, .raptor-ui-align-left .ui-icon, .raptor-ui-align-right .ui-icon, .raptor-ui-align-center .ui-icon, .raptor-ui-align-justify .ui-icon, .raptor-ui-text-bold .ui-icon, .raptor-ui-text-italic .ui-icon, .raptor-ui-text-strike .ui-icon, .raptor-ui-text-size-increase .ui-icon, .raptor-ui-text-size-decrease .ui-icon, .raptor-ui-text-underline .ui-icon, .raptor-ui-text-sub .ui-icon, .raptor-ui-text-super .ui-icon, .raptor-ui-view-source .ui-icon, .raptor-ui-file-manager .ui-icon, .raptor-plugin-delete .ui-icon, .raptor-plugin-rename .ui-icon, .raptor-plugin-edit .ui-icon, .raptor-plugin-view .ui-icon, .raptor-plugin-download .ui-icon, .raptor-plugin-insert .ui-icon, .raptor-plugin-cancel .ui-icon, .raptor-plugin-crop .ui-icon, .raptor-plugin-flip-h .ui-icon, .raptor-plugin-flip-v .ui-icon, .raptor-plugin-redo .ui-icon, .raptor-plugin-resize .ui-icon, .raptor-plugin-revert .ui-icon, .raptor-plugin-rotate-left .ui-icon, .raptor-plugin-rotate-right .ui-icon, .raptor-plugin-save .ui-icon, .raptor-plugin-undo .ui-icon, .raptor-plugin-upload .ui-icon, .raptor-ui-image-editor .ui-icon, .raptor-ui-lorem-ipsum .ui-icon, .raptor-ui-revisions .ui-icon, .raptor-ui-revisions-preview-button .ui-icon, .raptor-ui-revisions-apply-button .ui-icon, .raptor-ui-revisions-diff-button .ui-icon, .raptor-section-add-item .ui-icon, .raptor-section-remove .ui-icon, .raptor-section-add-layout .ui-icon, .raptor-section-guides .ui-icon, .raptor-section-save .ui-icon {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=85);
+  opacity: 0.85;
+}
+
+/* line 5, section/theme/section.scss */
+.raptor-ui-cancel:hover .ui-icon, .raptor-ui-class-menu:hover .ui-icon, .raptor-ui-clean-block:hover .ui-icon, .raptor-ui-clear-formatting:hover .ui-icon, .raptor-ui-click-button-to-edit:hover .ui-icon, .raptor-ui-close:hover .ui-icon, .raptor-ui-dock-to-screen:hover .ui-icon, .raptor-ui-dock-to-element:hover .ui-icon, .raptor-ui-embed:hover .ui-icon, .raptor-ui-float-left:hover .ui-icon, .raptor-ui-float-none:hover .ui-icon, .raptor-ui-float-right:hover .ui-icon, .raptor-ui-guides:hover .ui-icon, .raptor-ui-history-undo:hover .ui-icon, .raptor-ui-history-redo:hover .ui-icon, .raptor-ui-hr-create:hover .ui-icon, .raptor-ui-image-resize:hover .ui-icon, .raptor-ui-image-swap:hover .ui-icon, .raptor-ui-insert-file:hover .ui-icon, .raptor-ui-link-create:hover .ui-icon, .raptor-ui-link-remove:hover .ui-icon, .raptor-ui-list-unordered:hover .ui-icon, .raptor-ui-list-ordered:hover .ui-icon, .raptor-ui-save:hover .ui-icon, .raptor-ui-snippet-menu:hover .ui-icon, .raptor-ui-special-characters:hover .ui-icon, .raptor-ui-table-create:hover .ui-icon, .raptor-ui-table-insert-row:hover .ui-icon, .raptor-ui-table-insert-column:hover .ui-icon, .raptor-ui-table-delete-row:hover .ui-icon, .raptor-ui-table-delete-column:hover .ui-icon, .raptor-ui-table-merge-cells:hover .ui-icon, .raptor-ui-table-split-cells:hover .ui-icon, .raptor-ui-tag-menu:hover .ui-icon, .raptor-ui-align-left:hover .ui-icon, .raptor-ui-align-right:hover .ui-icon, .raptor-ui-align-center:hover .ui-icon, .raptor-ui-align-justify:hover .ui-icon, .raptor-ui-text-bold:hover .ui-icon, .raptor-ui-text-italic:hover .ui-icon, .raptor-ui-text-strike:hover .ui-icon, .raptor-ui-text-size-increase:hover .ui-icon, .raptor-ui-text-size-decrease:hover .ui-icon, .raptor-ui-text-underline:hover .ui-icon, .raptor-ui-text-sub:hover .ui-icon, .raptor-ui-text-super:hover .ui-icon, .raptor-ui-view-source:hover .ui-icon, .raptor-ui-file-manager:hover .ui-icon, .raptor-plugin-delete:hover .ui-icon, .raptor-plugin-rename:hover .ui-icon, .raptor-plugin-edit:hover .ui-icon, .raptor-plugin-view:hover .ui-icon, .raptor-plugin-download:hover .ui-icon, .raptor-plugin-insert:hover .ui-icon, .raptor-plugin-cancel:hover .ui-icon, .raptor-plugin-crop:hover .ui-icon, .raptor-plugin-flip-h:hover .ui-icon, .raptor-plugin-flip-v:hover .ui-icon, .raptor-plugin-redo:hover .ui-icon, .raptor-plugin-resize:hover .ui-icon, .raptor-plugin-revert:hover .ui-icon, .raptor-plugin-rotate-left:hover .ui-icon, .raptor-plugin-rotate-right:hover .ui-icon, .raptor-plugin-save:hover .ui-icon, .raptor-plugin-undo:hover .ui-icon, .raptor-plugin-upload:hover .ui-icon, .raptor-ui-image-editor:hover .ui-icon, .raptor-ui-lorem-ipsum:hover .ui-icon, .raptor-ui-revisions:hover .ui-icon, .raptor-ui-revisions-preview-button:hover .ui-icon, .raptor-ui-revisions-apply-button:hover .ui-icon, .raptor-ui-revisions-diff-button:hover .ui-icon, .raptor-section-add-item:hover .ui-icon, .raptor-section-remove:hover .ui-icon, .raptor-section-add-layout:hover .ui-icon, .raptor-section-guides:hover .ui-icon, .raptor-section-save:hover .ui-icon {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1;
+}
+
+/* line 23, section/theme/section.scss */
+.raptor-section {
+  min-height: 10px;
+}
+
+/* line 27, section/theme/section.scss */
+.raptor-section-ui {
+  position: absolute;
+  padding: 5px;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #f7f7f7), color-stop(100%, #fafafa));
+  background: -webkit-linear-gradient(#f7f7f7, #fafafa);
+  background: -moz-linear-gradient(#f7f7f7, #fafafa);
+  background: -o-linear-gradient(#f7f7f7, #fafafa);
+  background: linear-gradient(#f7f7f7, #fafafa);
+}
+
+/* line 33, section/theme/section.scss */
+.raptor-section-ui .ui-button {
+  margin: 0;
+}
+
+/* line 37, section/theme/section.scss */
+.raptor-section-ui-inner {
+  position: relative;
+}
+
+/* line 41, section/theme/section.scss */
+.raptor-section-menu {
+  position: absolute;
+  top: 36px;
+}
+
+/* line 46, section/theme/section.scss */
+.raptor-section-visible {
+  display: block;
+}
+
+/* line 50, section/theme/section.scss */
+.raptor-section-hidden {
+  display: none;
+}
+
+/* line 12, section/theme/section.scss */
+.raptor-section-add-item .ui-icon, .raptor-section-add-item.ui-state-hover .ui-icon {
+  width: 16px;
+  height: 16px;
+  display: block;
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAYRJREFUeNqkU71KA0EQnt3EUxNsbRTEVrRaS4n4APoIgoXkNWx8iHSCzyDYCKJtLmBjIQiKYGGhRvF+N7vO7Nx5t0mssrDZ3ZuZb7/v24mw1sIso0k/6mQHBhsPfkRAj0LFKQQLXS8+1GCP3xlgsHIPEAmARVklWFBHe4eKGJ5dn/vgsfEZuKFRSoSB+QokjmPejGrFKeaM7BQAl4iBBBPmBOemKTiPyoIcV2MnPfAGJWS4IpEkSRiA2BHrKYaXAD3SXOnngizLwBjDAAD9sdoQZ7dZ6Ff7uweKNNON5SzPnc2Oqn+XUsLt3U2NAd6Q57mbTIDPw68hRFHE8nUO1nBxEAQlqz+A8PLqYkLf6vqaMg0Dr88v4URQOAkFADVJ3R/rzOzrBV15IMU2CPjXxNor4My4UXQLu43Q6PloDaR7nf8B6KafqmvMkuFnTE3VRO0GVokpANSeb5mHZ9uFrk9dfaT9MprYkmMAj7HPzUL4cfrEeylCT/835m612ctZ/86/AgwAeFDT7aictlMAAAAASUVORK5CYII=') 0 0 !important;
+}
+/* line 18, section/theme/section.scss */
+.raptor-section-add-item .ui-icon:before {
+  display: none;
+}
+
+/* line 12, section/theme/section.scss */
+.raptor-section-remove .ui-icon, .raptor-section-remove.ui-state-hover .ui-icon {
+  width: 16px;
+  height: 16px;
+  display: block;
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAtFBMVEX///+nAABhAACnAACjAACCAACgAACHAACjAAByAAB1AAByAACDAACnAACCAACHAACgAACNAACbAACXAACMAACSAABfAACYAACRAACjAACbAAChAACqAACNAACcAACHAACqAADEERGsERHQERG+NjaiERHUTEzYERG4ERGlFBSfFRX/d3f6cnK0JSWoHh7qYmLkXFyvFRXmXl7vZ2fNRUX4cHDXT0/+dnbbU1O3Li7GPT26MTG2f8oMAAAAIXRSTlMASEjMzADMzAAASMxIAMwAAMzMzEjMzEhISABIzABISEg/DPocAAAAj0lEQVR4Xo3PVw6DMBBF0RgXTO+hBYhtILX3sv99RRpvgPcxVzp/M5syb7lYepxDABDeYcQ5wg+MAMhr3JOyJKfxTABqduuvjD37O6sBwjZ+f76/7TFuQw1VnhyGYZPklYagKbKLlDIrmkBDGq1hUaqhM4UQJpwOwFdK+a4LAbCdlWNTCgGwjLlhUQqZ8uofSk8NKY1Fm8EAAAAASUVORK5CYII=') 0 0 !important;
+}
+/* line 18, section/theme/section.scss */
+.raptor-section-remove .ui-icon:before {
+  display: none;
+}
+
+/* line 12, section/theme/section.scss */
+.raptor-section-add-layout .ui-icon, .raptor-section-add-layout.ui-state-hover .ui-icon {
+  width: 16px;
+  height: 16px;
+  display: block;
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAARZJREFUeNqkUktqhEAQrdKKSDauk0Wu4cIzzAGydBNnE8jCuFIQvERm72W8RjbeIP41/RoCjuMwSedBQ1HV7/HqdXOe5wcieiAz1DKO42NRFB8m7CzLjjJNE6VpGpkIzPPMFMfxUYksyok+qJMkeVn39g7m4GIFhgulplUty6Ku62jd2wPugSvDMOiLIPwAAtveHsCVvu95fZmZqW1bWpZF19eAObhwoFfYCoRheDNY13XvLhxgt6ZpqCzL060Moih6FbXvmYBt29qBCggWrwo4joOs+MIB6t+EiLnOACpoiMjZK2x7ewCXgyB4U5a/TH6iCvFe6rqWqqpO2PkvgDvf99/Z87xntc+TiQP1Ep+MD/EffAswAIdz96wtUrFAAAAAAElFTkSuQmCC') 0 0 !important;
+}
+/* line 18, section/theme/section.scss */
+.raptor-section-add-layout .ui-icon:before {
+  display: none;
+}
+
+/* line 12, section/theme/section.scss */
+.raptor-section-guides .ui-icon, .raptor-section-guides.ui-state-hover .ui-icon {
+  width: 16px;
+  height: 16px;
+  display: block;
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAHZJREFUeNpi/P//PwNFAGQAIyMjDK9BYqNgXHqZ0MSYcFmEyxBGsClMTGS5+t+/fxg2biLGAGTXoBvATGoYkuUFGMDmhd2kGjL4vHCUUi9cIjcpnwPi2UAsBaXPQZPwOXxscD5Cy0xLSbUc3YDnJLue0uwMEGAA2O1APJOrHFQAAAAASUVORK5CYII=') 0 0 !important;
+}
+/* line 18, section/theme/section.scss */
+.raptor-section-guides .ui-icon:before {
+  display: none;
+}
+
+/* line 12, section/theme/section.scss */
+.raptor-section-save .ui-icon, .raptor-section-save.ui-state-hover .ui-icon {
+  width: 16px;
+  height: 16px;
+  display: block;
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAVNJREFUeNqkU71ugzAQPowtwdAdqRLK3odg6161a+cukZonoGrElgWWDqhb16oP0AfoytStirows0QRMj/unQsohAQi5aTD5vju4/Pd2VBKwTnG6cEYe8bl6s73P09Jel8ur3H5ruv6CUiBYRgfQRAosnrCyQhLOZTLG1ImpYQSA1VVjf7dNE0gLOV0R6AXlAMSk4uiGCUQ6ITdJzDpz0SQTxAoxlqVZo+gLEuQyDxFwIQAwg4IiPV3vYbL2WyUgDBHFbxG0Um9t237sIIkSeDYYGHbur3neQMCTgqoRWEYDToh8NyLxSO4rgtpmrY14D0CUsA5h80mh/n8QQdXq7CTTN/ILMtqa9AjEDjOGrTdSnAcRwdpr1unzB5BMweiGwY8tx/H8U+WZbmUSoPJlfr3NrZLgDkXujbNXaD9DfoLAt8OFRHPfb8X+sLcW+Pc6/wnwABHMdnKf4KT4gAAAABJRU5ErkJggg==') 0 0 !important;
+}
+/* line 18, section/theme/section.scss */
+.raptor-section-save .ui-icon:before {
+  display: none;
+}
+
+/* line 74, section/theme/section.scss */
+.raptor-section-ui .ui-button-icon-only {
+  height: 32px;
+  width: 32px;
+  float: left;
+  margin-left: -1px;
+  z-index: 2;
+}
+
+/* line 82, section/theme/section.scss */
+.raptor-section-ui .ui-button-icon-only:hover {
+  z-index: 3;
+}
+
+/* line 86, section/theme/section.scss */
+.raptor-section-ui .ui-button-icon-only:first-child {
+  margin-left: 0px;
+}
+
+/* line 90, section/theme/section.scss */
+.raptor-section-placeholder {
+  padding: 5px;
+}
+
+/* line 1, section/theme/sortable.scss */
+.raptor-section-sortable-placeholder {
+  height: 0 !important;
+  padding: 0;
+  margin: 0;
+  border-top: 1px dashed #ff4136;
+}
+
+/* line 9, section/theme/sortable.scss */
+.raptor-section-sortable-placeholder:before,
+.raptor-section-sortable-placeholder:after {
+  position: relative;
+  font-size: 14px;
+  font-family: "Courer New", monospace;
+  font-weight: bold;
+  color: #ff4136;
+  top: -9px;
+  line-height: 1;
+}
+
+/* line 19, section/theme/sortable.scss */
+.raptor-section-sortable-placeholder:before {
+  content: ">";
+  float: left;
+  left: -10px;
+}
+
+/* line 25, section/theme/sortable.scss */
+.raptor-section-sortable-placeholder:after {
+  content: "<";
+  float: right;
+  right: -10px;
+}

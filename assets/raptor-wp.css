@@ -1,0 +1,8 @@
+/* Move Raptor above the WP admin bar */
+.raptor-layout-toolbar-outer {
+    z-index: 100000;
+}
+
+.ui-pnotify {
+    z-index: 100001;
+}

@@ -12,6 +12,7 @@ Allows editing posts and titles inline on the front end of you website using Rap
 
 == Description ==
 
+Allows editing posts and titles inline on the front end of you website using Raptor WYSIWYG editor.
 
 == Installation ==
 

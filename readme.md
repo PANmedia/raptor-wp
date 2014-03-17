@@ -24,7 +24,7 @@ Extract the file to `~/mywebsite.com/wp-content/plugins/raptor-editor`
 
 ## Screenshots ##
 
-1. Editing a post inline.
+![Editing a post inline.](https://raw.github.com/PANmedia/raptor-wp/master/assets/screenshot-1.png)
 
 ## Changelog ##
 

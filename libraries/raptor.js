@@ -52,105 +52,10 @@ ajax.post = function(url, data, callback, async) {
 // File end: c:\work\modules\raptor-gold\raptor-common/ajax.js
 ;
 // File start: c:\work\modules\raptor-gold\raptor-common/debug.js
-// <debug>
-/**
- * Minimum debugging level (only available in dev and debug build)
- * @type int
- * @constant
- */
-var MIN = 100;
-/**
- * Medium debugging level (only available in dev and debug build)
- * @type int
- * @constant
- */
-var MID = 500;
-/**
- * Maximum debugging level (only available in development and debug build)
- * @type int
- * @constant
- */
-var MAX = 1000;
-/**
- * Current debugging level
- * @type int
- */
-var debugLevel = typeof(window.debugLevel) !== 'undefined' ? window.debugLevel : MIN;
+// <debug/>
 
 
-/**
- * Output a informational message, by default to the JS console (only avalible in development and debug build).
- *
- * @param {String} message1
- * @param {String} [message2...]
- */
-function info() {
-    var args = Array.prototype.slice.call(arguments);
-    args.unshift('[Raptor]: ');
-    (console.info || console.log).apply(console, args);
-}
-
-/**
- * Output a debug message, by default to the JS console (only avalible in development and debug build).
- *
- * @param {String} message1
- * @param {String} [message2...]
- */
-function debug() {
-    var args = Array.prototype.slice.call(arguments);
-    args.unshift('[Raptor]: ');
-    (console.debug || console.log).apply(console, args);
-}
-
-var abortLoopCount = null;
-function abortLoop(i) {
-    if (abortLoopCount === null) {
-        abortLoopCount = i;
-    }
-    if (abortLoopCount <= 0) {
-        throw new Error('Aborting loop');
-    }
-    abortLoopCount--;
-}
-// </debug>
-
-
-// <strict>
-
-/**
- * Handles an error message by either displaying it in the JS console, or throwing
- * and exception (only avalible in development and strict build).
- * @static
- * @param {String} errorMessage The error message to display or throw
- */
-function handleError(errorMessage) {
-    if (console && console.error) {
-        var args = Array.prototype.slice.call(arguments);
-
-        // <ie>
-        if (!console.error.apply) {
-            for (var i = 0, l = args.length;i < l; i++) {
-                console.error(args[i]);
-            }
-            return;
-        }
-        // </ie>
-
-
-        console.error.apply(console, args);
-        if (args[0] instanceof Error) {
-            console.error.apply(console, [args[0].toString()]);
-            console.error.apply(console, [args[0].stack]);
-        }
-    } else {
-        throw errorMessage;
-    }
-}
-
-function handleInvalidArgumentError(errorMessage, argument) {
-    handleError(errorMessage + ', got: ', argument, typeof argument);
-}
-// </strict>
+// <strict/>
 ;
 // File end: c:\work\modules\raptor-gold\raptor-common/debug.js
 ;
@@ -179,13 +84,7 @@ function eventEventable(object) {
         }
     };
     object.prototype.bind = function(name, callback) {
-        // <strict>
-        if (typeof callback === 'undefined' ||
-                !$.isFunction(callback)) {
-            handleError('Must bind a valid callback, ' + name + ' was a ' + typeof callback);
-            return;
-        }
-        // </strict>
+        // <strict/>
         var names = name.split(/,\s*/);
         for (var i = 0, l = names.length; i < l; i++) {
             if (!this.events[names[i]]) {
@@ -197,11 +96,7 @@ function eventEventable(object) {
     object.prototype.fire = function(name, args) {
         var result = [];
 
-        // <debug>
-        if (debugLevel === MAX) {
-            debug('Firing event: ' + name);
-        }
-        // </debug>
+        // <debug/>
 
         if (this.events[name]) {
             for (var i = 0; i < this.events[name].length; i++) {
@@ -267,16 +162,8 @@ var localeNames = {};
  * @param {Object} [strings] Locale keys mapped to phrases.
  */
 function registerLocale(name, nativeName, strings) {
-    // <strict>
-    if (locales[name]) {
-        handleError('Locale ' + name + ' has already been registered, and will be overwritten.');
-    }
-    // </strict>
-    // <debug>
-    if (debugLevel > MIN) {
-        handleError('Locale ' + name + ' registered.');
-    }
-    // </debug>
+    // <strict/>
+    // <debug/>
 
     locales[name] = strings;
     localeNames[name] = nativeName;
@@ -294,11 +181,7 @@ function extendLocale(languageCode, nativeName, strings) {
     if (typeof locales[languageCode] === 'undefined') {
         registerLocale(languageCode, nativeName, strings);
     } else {
-        // <debug>
-        if (debugLevel > MIN) {
-            handleError('Locale ' + languageCode + ' extended.');
-        }
-        // </debug>
+        // <debug/>
 
         // Allow only passing the nativeName once.
         strings = strings || nativeName;
@@ -314,9 +197,7 @@ function extendLocale(languageCode, nativeName, strings) {
  */
 function setLocale(key) {
     if (currentLocale !== key) {
-        // <debug>
-        debug('Changing locale', key);
-        // </debug>
+        // <debug/>
 
         currentLocale = key;
         Raptor.eachInstance(function() {
@@ -355,11 +236,7 @@ function getLocalizedString(string, allowMissing) {
         return false;
     }
 
-    // <debug>
-    if (debugLevel >= MIN) {
-        handleError('Missing locale string: ' + string);
-    }
-    // </debug>
+    // <debug/>
     return string;
 }
 
@@ -486,17 +363,7 @@ Plugin.prototype.init = function() {}
 
 function pluginPluggable(object) {
     object.registerPlugin = function(plugin) {
-        // <strict>
-        if (typeof plugin !== 'object') {
-            handleError('Plugin "' + plugin + '" is invalid (must be an object)');
-            return;
-        } else if (typeof plugin.name !== 'string') {
-            handleError('Plugin "'+ plugin + '" is invalid (must have a name property)');
-            return;
-        } else if (this.prototype.plugins[plugin.name]) {
-            handleError('Plugin "' + plugin.name + '" has already been registered, and will be overwritten');
-        }
-        // </strict>
+        // <strict/>
 
         this.prototype.plugins[plugin.name] = plugin;
     };
@@ -518,11 +385,7 @@ function pluginPrepare(pluggable, plugin, pluginOptions, pluginAttributes) {
         instance[key] = pluginAttributes[key];
     }
 
-    // <strict>
-    if (!instance.init) {
-        handleError('Component missing init function: ' + instance.name);
-    }
-    // </strict>
+    // <strict/>
     var ui = instance.init();
 
     return {
@@ -625,8 +488,7 @@ var templateCache = {
     "table.create-menu": "<table class=\"{{baseClass}}-menu\"> <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr> <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr> <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr> <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr> <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr> <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr> <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr> <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr> </table>",
     "tag-menu.menu": "<li><a data-value=\"na\">tr('tagMenuTagNA')</a></li> <li><a data-value=\"p\">tr('tagMenuTagP')</a></li> <li><a data-value=\"h1\">tr('tagMenuTagH1')</a></li> <li><a data-value=\"h2\">tr('tagMenuTagH2')</a></li> <li><a data-value=\"h3\">tr('tagMenuTagH3')</a></li> <li><a data-value=\"h4\">tr('tagMenuTagH4')</a></li> <li><a data-value=\"div\">tr('tagMenuTagDiv')</a></li> <li><a data-value=\"pre\">tr('tagMenuTagPre')</a></li> <li><a data-value=\"address\">tr('tagMenuTagAddress')</a></li>",
     "unsaved-edit-warning.warning": "<div class=\"{{baseClass}} ui-corner-tl\"> <span class=\"ui-icon ui-icon-alert\"></span> <span>tr('unsavedEditWarningText')</span> </div>",
-    "view-source.dialog": "<div class=\"{{baseClass}}-inner-wrapper\"> <textarea></textarea> </div>",
-    "lorem-ipsum.lorem-ipsum": "<h1>Sed erat aequius Triarium aliquid de dissensione nostra iudicare.</h1> <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Si mala non sunt, iacet omnis ratio Peripateticorum. Sic enim censent, oportunitatis esse beate vivere. Cum id fugiunt, re eadem defendunt, quae Peripatetici, verba. <i>Istam voluptatem, inquit, Epicurus ignorat?</i> Ita fit cum gravior, tum etiam splendidior oratio. Expectoque quid ad id, quod quaerebam, respondeas. Maximas vero virtutes iacere omnis necesse est voluptate dominante. Duo Reges: constructio interrete. <a href='http://loripsum.net/' target='_blank'>Erat enim res aperta.</a> </p> <p>Cum id fugiunt, re eadem defendunt, quae Peripatetici, verba. Hic ambiguo ludimur. Quae quidem sapientes sequuntur duce natura tamquam videntes; Dic in quovis conventu te omnia facere, ne doleas. ALIO MODO. Qui enim existimabit posse se miserum esse beatus non erit. Haec bene dicuntur, nec ego repugno, sed inter sese ipsa pugnant. Nec lapathi suavitatem acupenseri Galloni Laelius anteponebat, sed suavitatem ipsam neglegebat; Hoc est non dividere, sed frangere. Potius ergo illa dicantur: turpe esse, viri non esse debilitari dolore, frangi, succumbere. <a href='http://loripsum.net/' target='_blank'>Quod vestri non item.</a> Quid est enim aliud esse versutum? </p> <h2>Profectus in exilium Tubulus statim nec respondere ausus;</h2> <p>Atque hoc loco similitudines eas, quibus illi uti solent, dissimillimas proferebas. Quae contraria sunt his, malane? <code>Eam tum adesse, cum dolor omnis absit;</code> Efficiens dici potest. Erat enim res aperta. <a href='http://loripsum.net/' target='_blank'>Traditur, inquit, ab Epicuro ratio neglegendi doloris.</a> Nonne videmus quanta perturbatio rerum omnium consequatur, quanta confusio? </p> <ol> <li>Ergo, si semel tristior effectus est, hilara vita amissa est?</li> <li>An vero displicuit ea, quae tributa est animi virtutibus tanta praestantia?</li> <li>Illa tamen simplicia, vestra versuta.</li> </ol> <ul> <li>Vide, quantum, inquam, fallare, Torquate.</li> <li>Ratio quidem vestra sic cogit.</li> <li>Atque hoc loco similitudines eas, quibus illi uti solent, dissimillimas proferebas.</li> <li>Istam voluptatem, inquit, Epicurus ignorat?</li> </ul> <h3>Dici enim nihil potest verius.</h3> <p>Et non ex maxima parte de tota iudicabis? Non minor, inquit, voluptas percipitur ex vilissimis rebus quam ex pretiosissimis. Omnes enim iucundum motum, quo sensus hilaretur. Varietates autem iniurasque fortunae facile veteres philosophorum praeceptis instituta vita superabat. Est enim tanti philosophi tamque nobilis audacter sua decreta defendere. Et ille ridens: Video, inquit, quid agas; At enim hic etiam dolore. Deinde disputat, quod cuiusque generis animantium statui deceat extremum. Beatus autem esse in maximarum rerum timore nemo potest. Rationis enim perfectio est virtus; Nemo igitur esse beatus potest. Hoc enim constituto in philosophia constituta sunt omnia. </p> <dl> <dt><dfn>Immo videri fortasse.</dfn></dt> <dd>Graecis hoc modicum est: Leonidas, Epaminondas, tres aliqui aut quattuor;</dd> <dt><dfn>Tubulo putas dicere?</dfn></dt> <dd>Honesta oratio, Socratica, Platonis etiam.</dd> <dt><dfn>Praeteritis, inquit, gaudeo.</dfn></dt> <dd>Et quidem saepe quaerimus verbum Latinum par Graeco et quod idem valeat;</dd> <dt><dfn>Scaevolam M.</dfn></dt> <dd>Cum autem venissemus in Academiae non sine causa nobilitata spatia, solitudo erat ea, quam volueramus.</dd> </dl> <h4>In schola desinis.</h4> <p>Tuo vero id quidem, inquam, arbitratu. <b>At, si voluptas esset bonum, desideraret.</b> Duo enim genera quae erant, fecit tria. Obsecro, inquit, Torquate, haec dicit Epicurus? </p> <blockquote cite='http://loripsum.net'> Atque haec contra Aristippum, qui eam voluptatem non modo summam, sed solam etiam ducit, quam omnes unam appellamus voluptatem. </blockquote> <pre> Idem fecisset Epicurus, si sententiam hanc, quae nunc Hieronymi est, coniunxisset cum Aristippi vetere sententia. Aut haec tibi, Torquate, sunt vituperanda aut patrocinium voluptatis repudiandum. </pre>"
+    "view-source.dialog": "<div class=\"{{baseClass}}-inner-wrapper\"> <textarea></textarea> </div>"
  };
 
 function templateRegister(name, content) {
@@ -669,11 +531,7 @@ function templateConvertTokens(template, variables) {
     variables = $.extend({}, this.options, variables || {});
     variables = templateGetVariables(variables);
     template = template.replace(/\{\{(.*?)\}\}/g, function(match, variable) {
-        // <debug>
-        if (typeof variables[variable] === 'undefined') {
-            handleError(new Error('Missing template variable: ' + variable));
-        }
-        // </debug>
+        // <debug/>
         return variables[variable];
     });
 
@@ -718,14 +576,7 @@ function toolbarLayout(pluggable, uiOrder, panelElement, pluginAttributes) {
         // Loop each UI in the group
         var uiGroup = uiOrder[i];
         for (var ii = 0, ll = uiGroup.length; ii < ll; ii++) {
-            // <strict>
-            // Check the UI has been registered
-            if (!pluggable.plugins[uiGroup[ii]]) {
-                handleError('Plugin identified by key "' + uiGroup[ii] + '" does not exist');
-                continue;
-            }
-
-            // </strict>
+            // <strict/>
             var pluginOptions = pluggable.plugins[uiGroup[ii]];
             if (pluginOptions === false) {
                 continue;
@@ -854,11 +705,7 @@ function typeIsJQueryCompatible(object) {
  * @returns {Element} The modified element.
  */
 function aButton(element, options) {
-    // <strict>
-    if (!typeIsJQueryCompatible(element)) {
-        handleInvalidArgumentError('Parameter 1 to aButton is expected to be a jQuery compatible object', element);
-    }
-    // </strict>
+    // <strict/>
 
     return $(element).button(options);
 }
@@ -871,11 +718,7 @@ function aButton(element, options) {
  * @returns {Element} The labelled button.
  */
 function aButtonSetLabel(element, text) {
-    // <strict>
-    if (!typeIsJQueryCompatible(element)) {
-        handleInvalidArgumentError('Parameter 1 to aButtonSetLabel is expected to be a jQuery compatible object', element);
-    }
-    // </strict>
+    // <strict/>
 
     $(element).button('option', 'text', true);
     return $(element).button('option', 'label', text);
@@ -889,11 +732,7 @@ function aButtonSetLabel(element, text) {
  * @returns {Element} The modified button.
  */
 function aButtonSetIcon(element, icon) {
-    // <strict>
-    if (!typeIsJQueryCompatible(element)) {
-        handleInvalidArgumentError('Parameter 1 to aButtonSetIcon is expected to be a jQuery compatible object', element);
-    }
-    // </strict>
+    // <strict/>
 
     return $(element).button('option', 'icons', {
         primary: icon
@@ -907,11 +746,7 @@ function aButtonSetIcon(element, icon) {
  * @returns {Element} The enabled button.
  */
 function aButtonEnable(element) {
-    // <strict>
-    if (!typeIsJQueryCompatible(element)) {
-        handleInvalidArgumentError('Parameter 1 to aButtonEnable is expected to be a jQuery compatible object', element);
-    }
-    // </strict>
+    // <strict/>
 
     return $(element).button('option', 'disabled', false);
 }
@@ -927,11 +762,7 @@ function aButtonIsEnabled(element) {
  * @returns {Element} The disabled button.
  */
 function aButtonDisable(element) {
-    // <strict>
-    if (!typeIsJQueryCompatible(element)) {
-        handleInvalidArgumentError('Parameter 1 to aButtonDisable is expected to be a jQuery compatible object', element);
-    }
-    // </strict>
+    // <strict/>
 
     return $(element).button('option', 'disabled', true);
 }
@@ -943,11 +774,7 @@ function aButtonDisable(element) {
  * @returns {Element} The highlighted button.
  */
 function aButtonActive(element) {
-    // <strict>
-    if (!typeIsJQueryCompatible(element)) {
-        handleInvalidArgumentError('Parameter 1 to aButtonActive is expected to be a jQuery compatible object', element);
-    }
-    // </strict>
+    // <strict/>
 
     return $(element).addClass('ui-state-highlight');
 }
@@ -959,11 +786,7 @@ function aButtonActive(element) {
  * @returns {Element} The button back in its normal state.
  */
 function aButtonInactive(element) {
-    // <strict>
-    if (!typeIsJQueryCompatible(element)) {
-        handleInvalidArgumentError('Parameter 1 to aButtonInactive is expected to be a jQuery compatible object', element);
-    }
-    // </strict>
+    // <strict/>
 
     return $(element).removeClass('ui-state-highlight');
 }
@@ -976,11 +799,7 @@ function aButtonInactive(element) {
  * @returns {Element} The menu.
  */
 function aMenu(element, options) {
-    // <strict>
-    if (!typeIsJQueryCompatible(element)) {
-        handleInvalidArgumentError('Parameter 1 to aMenu is expected to be a jQuery compatible object', element);
-    }
-    // </strict>
+    // <strict/>
 
     return $(element).menu(options);
 }
@@ -993,11 +812,7 @@ function aMenu(element, options) {
  * @returns {Element} A dialog.
  */
 function aDialog(element, options) {
-    // <strict>
-    if (!typeIsJQueryCompatible(element)) {
-        handleInvalidArgumentError('Parameter 1 to aDialog is expected to be a jQuery compatible object', element);
-    }
-    // </strict>
+    // <strict/>
 
     options.dialogClass = typeof options.dialogClass !== 'undefined' ? options.dialogClass + ' ui-dialog-fixed' : 'ui-dialog-fixed';
     var dialog = $(element).dialog(options);
@@ -1015,11 +830,7 @@ function aDialog(element, options) {
  * @returns {Element}
  */
 function aDialogOpen(element) {
-    // <strict>
-    if (!typeIsJQueryCompatible(element)) {
-        handleInvalidArgumentError('Parameter 1 to aDialogOpen is expected to be a jQuery compatible object', element);
-    }
-    // </strict>
+    // <strict/>
 
     return $(element).dialog('open');
 }
@@ -1031,21 +842,13 @@ function aDialogOpen(element) {
  * @returns {Element}
  */
 function aDialogClose(element) {
-    // <strict>
-    if (!typeIsJQueryCompatible(element)) {
-        handleInvalidArgumentError('Parameter 1 to aDialogClose is expected to be a jQuery compatible object', element);
-    }
-    // </strict>
+    // <strict/>
 
     return $(element).dialog('close');
 }
 
 function aDialogRemove(element) {
-    // <strict>
-    if (!typeIsJQueryCompatible(element)) {
-        handleInvalidArgumentError('Parameter 1 to aDialogClose is expected to be a jQuery compatible object', element);
-    }
-    // </strict>
+    // <strict/>
 
     return $(element).dialog('destroy').remove();
 }
@@ -1058,11 +861,7 @@ function aDialogRemove(element) {
  * @returns {Element}
  */
 function aTabs(element, options) {
-    // <strict>
-    if (!typeIsJQueryCompatible(element)) {
-        handleInvalidArgumentError('Parameter 1 to aTabs is expected to be a jQuery compatible object', element);
-    }
-    // </strict>
+    // <strict/>
 
     return $(element).tabs(options);
 }
@@ -1478,11 +1277,7 @@ extendLocale('en', 'English', {
  * @returns {Object} ??
  */
 function actionPreview(previewState, target, action) {
-    // <strict>
-    if (!typeIsElement(target)) {
-        handleError("Target must be a jQuery instance when previewing an action", target);
-    }
-    // </strict>
+    // <strict/>
 
     actionPreviewRestore(previewState, target);
 
@@ -1596,12 +1391,7 @@ function cleanUnwrapElements(selector) {
  * @param {array} attributes This is an array of the elements attributes.
  */
 function cleanEmptyAttributes(element, attributes) {
-    // <strict>
-    if (!typeIsElement(element)) {
-        handleInvalidArgumentError('Paramter 1 to cleanEmptyAttributes is expected a jQuery element');
-        return;
-    }
-    // </strict>
+    // <strict/>
 
     for (i = 0; i < attributes.length; i++) {
         if (!$.trim(element.attr(attributes[i]))) {
@@ -1623,12 +1413,7 @@ function cleanEmptyAttributes(element, attributes) {
  * @return {jQuery} The modified parent.
  */
 function cleanRemoveComments(parent) {
-    // <strict>
-    if (!typeIsElement(parent)) {
-        handleInvalidArgumentError('Paramter 1 to cleanRemoveComments is expected a jQuery element');
-        return;
-    }
-    // </strict>
+    // <strict/>
 
     parent.contents().each(function() {
         if (this.nodeType == Node.COMMENT_NODE) {
@@ -1650,12 +1435,7 @@ function cleanRemoveComments(parent) {
  * @return {jQuery} The modified parent.
  */
 function cleanEmptyElements(parent, tags) {
-    // <strict>
-    if (!typeIsElement(parent)) {
-        handleInvalidArgumentError('Paramter 1 to cleanEmptyElements is expected a jQuery element');
-        return;
-    }
-    // </strict>
+    // <strict/>
     var found;
     // Need to loop incase removing an empty element, leaves another one.
     do {
@@ -1677,12 +1457,7 @@ function cleanEmptyElements(parent, tags) {
  * @param  {String} tag The tag to use from wrapping the text nodes.
  */
 function cleanWrapTextNodes(node, tag) {
-    // <strict>
-    if (!typeIsNode(node)) {
-        handleInvalidArgumentError('Paramter 1 to cleanWrapTextNodes is expected a node.');
-        return;
-    }
-    // </strict>
+    // <strict/>
 
     var textNodes = nodeFindTextNodes(node);
     for (var i = 0, l = textNodes.length; i < l; i++) {
@@ -2034,20 +1809,10 @@ function elementIsValid(element, validTags) {
  * @return {Node}           [description]
  */
 function elementFirstInvalidElementOfValidParent(element, validTags, wrapper) {
-    // <strict>
-    if (!typeIsNode(element)) {
-        handleInvalidArgumentError('Parameter 1 to elementFirstInvalidElementOfValidParent must be a node', element);
-        return;
-    }
-    // </strict>
+    // <strict/>
     var parent = element.parentNode;
     if (parent[0] === wrapper[0]) {
-        // <strict>
-        if (!elementIsValid(parent, validTags)) {
-            handleError('elementFirstInvalidElementOfValidParent requires a valid wrapper');
-            return;
-        }
-        // </strict>
+        // <strict/>
         return element;
     }
     if (elementIsValid(parent, validTags)) {
@@ -2063,12 +1828,7 @@ function elementFirstInvalidElementOfValidParent(element, validTags, wrapper) {
  * @return {Object} Visible rectangle for the element.
  */
 function elementVisibleRect(element) {
-    // <strict>
-    if (!typeIsJQueryCompatible(element)) {
-        handleInvalidArgumentError('Parameter 1 to elementVisibleRect is expected to be a jQuery compatible object', element);
-        return;
-    }
-    // </strict>
+    // <strict/>
     element = $(element);
 
     var rect = {
@@ -2196,12 +1956,7 @@ function elementSwapStyles(element1, element2, style) {
  * @returns {Boolean} Returns true if element is empty.
  */
 function elementIsEmpty(element) {
-    // <strict>
-    if (!typeIsElement(element)) {
-        handleInvalidArgumentError('Parameter 1 to elementIsEmpty must be a jQuery element', element);
-        return;
-    }
-    // </strict>
+    // <strict/>
 
     // Images and elements containing images are not empty
     if (element.is('img') || element.find('img').length) {
@@ -2251,16 +2006,7 @@ function elementDetachedManip(element, manip) {
  * @returns {jQuery} Closest element that is not display inline or null, or null if the parent element is the same as the limit element.
  */
 function elementClosestBlock(element, limitElement) {
-    // <strict>
-    if (!typeIsElement(element)) {
-        handleInvalidArgumentError('Parameter 1 to elementClosestBlock must be a jQuery element', element);
-        return;
-    }
-    if (!typeIsElement(limitElement)) {
-        handleInvalidArgumentError('Parameter 2 to elementClosestBlock must be a jQuery element', limitElement);
-        return;
-    }
-    // </strict>
+    // <strict/>
     while (element.length > 0 &&
         element[0] !== limitElement[0] &&
         (element[0].nodeType === Node.TEXT_NODE || element.css('display') === 'inline')) {
@@ -2294,11 +2040,7 @@ function elementUniqueId() {
  * @returns {Element}
  */
 function elementChangeTag(element, newTag) {
-    // <strict>
-    if (!typeIsElement(element)) {
-        handleInvalidArgumentError('Parameter 1 to elementChangeTag must be a jQuery element', element);
-    }
-    // </strict>
+    // <strict/>
     var tags = [];
     for (var i = element.length - 1; 0 <= i ; i--) {
         var node = document.createElement(newTag);
@@ -2549,11 +2291,7 @@ var listValidPParents = [
  */
 function listEnforceValidChildren(list, listItem, validChildren, removeEmpty) {
     removeEmpty = typeof removeEmpty === 'undefined' ? true : removeEmpty;
-    // <strict>
-    if (!typeIsElement(list)) {
-        handleInvalidArgumentError('Parameter 1 for listEnforceValidChildren must be a jQuery element', list);
-    }
-    // </strict>
+    // <strict/>
     var removeEmptyElements = function(node) {
         if ($(node).is('img') || $(node).find('img').length) {
             return;
@@ -2704,11 +2442,7 @@ function listConvertItemsForList(items, listItem) {
  * @return {Element|null} Result of the final conversion.
  */
 function listConvertListItem(listItem, listType, tag) {
-     // <strict>
-    if (!typeIsElement(listItem)) {
-        handleInvalidArgumentError('Parameter 1 for listConvertListItem must be a jQuery element', listItem);
-    }
-    // </strict>
+     // <strict/>
     var listItemChildren = listItem.contents();
     if (listItemChildren.length) {
         listItemChildren.each(function() {
@@ -2733,11 +2467,7 @@ function listConvertListItem(listItem, listType, tag) {
  * @param  {string} listType
  */
 function listUnwrap(list, listItem, listType) {
-    // <strict>
-    if (!typeIsElement(list)) {
-        handleInvalidArgumentError('Parameter 1 for listUnwrap must be a jQuery element', list);
-    }
-    // </strict>
+    // <strict/>
     var convertedItem = null;
     list.find(listItem).each(function() {
         listConvertListItem($(this), listType, 'p');
@@ -2754,11 +2484,7 @@ function listUnwrap(list, listItem, listType) {
  * @param  {string} listItem
  */
 function listTidyModified(list, listType, listItem) {
-    // <strict>
-    if (!typeIsElement(list)) {
-        handleInvalidArgumentError('Parameter 1 for listTidyModified must be a jQuery element', list);
-    }
-    // </strict>
+    // <strict/>
     listRemoveEmptyItems(list, listType, listItem);
     listRemoveEmpty(list, listType, listItem);
 }
@@ -2771,11 +2497,7 @@ function listTidyModified(list, listType, listItem) {
  * @param  {string} listItem
  */
 function listRemoveEmptyItems(list, listType, listItem) {
-    // <strict>
-    if (!typeIsElement(list)) {
-        handleInvalidArgumentError('Parameter 1 for listRemoveEmptyItems must be a jQuery element', list);
-    }
-    // </strict>
+    // <strict/>
     if (!list.is(listType)) {
         return;
     }
@@ -2794,11 +2516,7 @@ function listRemoveEmptyItems(list, listType, listItem) {
  * @param  {string} listItem
  */
 function listRemoveEmpty(list, listType, listItem) {
-    // <strict>
-    if (!typeIsElement(list)) {
-        handleInvalidArgumentError('Parameter 1 for listRemoveEmpty must be a jQuery element', list);
-    }
-    // </strict>
+    // <strict/>
     if (!list.is(listType)) {
         return;
     }
@@ -3183,12 +2901,7 @@ function persistGet(key) {
  * @param {RangyRange} range The range to expand.
  */
 function rangeExpandToParent(range) {
-    // <strict>
-    if (!typeIsRange(range)) {
-        handleInvalidArgumentError('Parameter 1 to rangeExpandToParent is expected to be a range', range);
-        return;
-    }
-    // </strict>
+    // <strict/>
     range.setStartBefore(range.startContainer);
     range.setEndAfter(range.endContainer);
 }
@@ -3200,30 +2913,12 @@ function rangeExpandToParent(range) {
  * @param  {Element} element
  */
 function rangeSelectElement(range, element) {
-    // <strict>
-    if (!typeIsRange(range)) {
-        handleInvalidArgumentError('Parameter 1 to rangeSelectElement is expected to be a range', range);
-        return;
-    }
-    if (!typeIsElement(element)) {
-        handleInvalidArgumentError('Parameter 2 to rangeSelectElement is expected to be a jQuery element', element);
-        return;
-    }
-    // </strict>
+    // <strict/>
     range.selectNode($(element)[0]);
 }
 
 function rangeSelectElementContent(range, element) {
-    // <strict>
-    if (!typeIsRange(range)) {
-        handleInvalidArgumentError('Parameter 1 to rangeSelectElementContent is expected to be a range', range);
-        return;
-    }
-    if (!typeIsElement(element) && !typeIsNode(element)) {
-        handleInvalidArgumentError('Parameter 2 to rangeSelectElementContent is expected to be a jQuery element or node', element);
-        return;
-    }
-    // </strict>
+    // <strict/>
     range.selectNodeContents($(element).get(0));
 }
 
@@ -3234,16 +2929,7 @@ function rangeSelectElementContent(range, element) {
  * @param {array} elements An array of elements to check the current range against.
  */
 function rangeExpandTo(range, elements) {
-    // <strict>
-    if (!typeIsRange(range)) {
-        handleInvalidArgumentError('Parameter 1 to rangeReplace is expected to be a range', range);
-        return;
-    }
-    if (!typeIsArray(elements)) {
-        handleInvalidArgumentError('Parameter 2 to rangeExpandTo is expected to be an array', elements);
-        return;
-    }
-    // </strict>
+    // <strict/>
     do {
         rangeExpandToParent(range);
         for (var i = 0, l = elements.length; i < l; i++) {
@@ -3262,16 +2948,7 @@ function rangeExpandTo(range, elements) {
  * @return {Node[]} Array of new nodes inserted.
  */
 function rangeReplace(range, html) {
-    // <strict>
-    if (!typeIsRange(range)) {
-        handleInvalidArgumentError('Parameter 1 to rangeReplace is expected to be a range', range);
-        return;
-    }
-    if (!typeIsElement(html) && !typeIsString(html)) {
-        handleInvalidArgumentError('Parameter 2 to rangeReplace is expected to be a string or jQuery element', html);
-        return;
-    }
-    // </strict>
+    // <strict/>
 
     var result = [],
         nodes = $('<div/>').append(html)[0].childNodes;
@@ -3306,11 +2983,7 @@ function rangeEmptyTag(range) {
  * @return {Node} The range's start element.
  */
 function rangeGetStartElement(range) {
-    // <strict>
-    if (!typeIsRange(range)) {
-        handleInvalidArgumentError('Parameter 1 to rangeGetStartElement is expected to be a range', range);
-    }
-    // </strict>
+    // <strict/>
     return nodeFindParent(range.startContainer);
 }
 
@@ -3319,11 +2992,7 @@ function rangeGetStartElement(range) {
  * @return {Node} The range's end element.
  */
 function rangeGetEndElement(range) {
-    // <strict>
-    if (!typeIsRange(range)) {
-        handleInvalidArgumentError('Parameter 1 to rangeGetEndElement is expected to be a range', range);
-    }
-    // </strict>
+    // <strict/>
     return nodeFindParent(range.endContainer);
 }
 
@@ -3335,11 +3004,7 @@ function rangeGetEndElement(range) {
  * @return {Element} The range's common ancestor.
  */
 function rangeGetCommonAncestor(range) {
-    // <strict>
-    if (!typeIsRange(range)) {
-        handleInvalidArgumentError('Parameter 1 to rangeGetCommonAncestor is expected to be a range', range);
-    }
-    // </strict>
+    // <strict/>
     return nodeFindParent(range.commonAncestorContainer);
 }
 
@@ -3350,11 +3015,7 @@ function rangeGetCommonAncestor(range) {
  * @param {RangyRange} range The range to check if it is empty
  */
 function rangeIsEmpty(range) {
-    // <strict>
-    if (!typeIsRange(range)) {
-        handleInvalidArgumentError('Parameter 1 to rangeGetCommonAncestor is expected to be a range', range);
-    }
-    // </strict>
+    // <strict/>
     return range.startOffset === range.endOffset &&
            range.startContainer === range.endContainer;
 }
@@ -3365,14 +3026,7 @@ function rangeIsEmpty(range) {
  * @return {boolean} True if the range is entirely contained by the given node.
  */
 function rangeIsContainedBy(range, node) {
-    // <strict>
-    if (!typeIsRange(range)) {
-        handleInvalidArgumentError('Parameter 1 to rangeIsContainedBy is expected to be a range', range);
-    }
-    if (!typeIsNode(node)) {
-        handleInvalidArgumentError('Parameter 1 to rangeIsContainedBy is expected to be a node', node);
-    }
-    // </strict>
+    // <strict/>
     var nodeRange = range.cloneRange();
     nodeRange.selectNodeContents(node);
     return nodeRange.containsRange(range);
@@ -3384,14 +3038,7 @@ function rangeIsContainedBy(range, node) {
  * @return {Boolean} True if node is contained within the range, false otherwise.
  */
 function rangeContainsNode(range, node) {
-    // <strict>
-    if (!typeIsRange(range)) {
-        handleInvalidArgumentError('Parameter 1 to rangeContainsNode is expected to be a range', range);
-    }
-    if (!typeIsNode(node)) {
-        handleInvalidArgumentError('Parameter 1 to rangeContainsNode is expected to be a node', node);
-    }
-    // </strict>
+    // <strict/>
     return range.containsNode(node);
 }
 
@@ -3406,14 +3053,7 @@ function rangeContainsNode(range, node) {
  * @return {Boolean}
  */
 function rangeContainsNodeText(range, node) {
-    // <strict>
-    if (!typeIsRange(range)) {
-        handleInvalidArgumentError('Parameter 1 to rangeContainsText is expected to be a range', range);
-    }
-    if (!typeIsNode(node)) {
-        handleInvalidArgumentError('Parameter 1 to rangeContainsText is expected to be a node', node);
-    }
-    // </strict>
+    // <strict/>
     return range.containsNodeText(node);
 }
 
@@ -3423,11 +3063,7 @@ function rangeContainsNodeText(range, node) {
  * @param {RangyRange} range This is the range of selected text.
  */
 function rangeTrim(range) {
-    // <strict>
-    if (!typeIsRange(range)) {
-        handleInvalidArgumentError('Parameter 1 to rangeTrim is expected to be a range', range);
-    }
-    // </strict>
+    // <strict/>
     if (range.startContainer.data) {
         while (/\s/.test(range.startContainer.data.substr(range.startOffset, 1))) {
             range.setStart(range.startContainer, range.startOffset + 1);
@@ -3449,14 +3085,7 @@ function rangeTrim(range) {
  * @returns {String} A string of the serialized ranges separated by '|'.
  */
 function rangeSerialize(range, rootNode) {
-    // <strict>
-    if (!typeIsRange(range)) {
-        handleInvalidArgumentError('Parameter 1 to rangeSerialize is expected to be an range', range);
-    }
-    if (!typeIsNode(rootNode)) {
-        handleInvalidArgumentError('Parameter 1 to rangeSerialize is expected to be a node', rootNode);
-    }
-    // </strict>
+    // <strict/>
     return rangy.serializeRange(range, true, rootNode);
 }
 
@@ -3468,11 +3097,7 @@ function rangeSerialize(range, rootNode) {
  * @returns {Array} An array of deserialized ranges.
  */
 function rangeDeserialize(serialized, rootNode) {
-    // <strict>
-    if (!typeIsString(serialized)) {
-        handleInvalidArgumentError('Parameter 1 to rangeDeserialize is expected to be a string', serialized);
-    }
-    // </strict>
+    // <strict/>
     var serializedRanges = serialized.split("|"),
         ranges = [];
     for (var i = 0, l = serializedRanges.length; i < l; i++) {
@@ -3488,11 +3113,7 @@ function rangeDeserialize(serialized, rootNode) {
  * @param  {jQuery|Element|string} html The html to replace selection with.
  */
 function rangeReplaceSplitInvalidTags(range, html, wrapper, validTagNames) {
-    // <strict>
-    if (!typeIsRange(range)) {
-        handleInvalidArgumentError('Parameter 1 to rangeReplaceSplitInvalidTags is expected to be a range', range);
-    }
-    // </strict>
+    // <strict/>
     var commonAncestor = rangeGetCommonAncestor(range);
 
     if (!elementIsValid(commonAncestor, validTagNames)) {
@@ -3699,12 +3320,7 @@ function selectionSelectInner(element, selection) {
  * @param {RangySelection} [selection] A RangySelection, or by default, the current selection.
  */
 function selectionSelectInner(node, selection) {
-    // <strict>
-    if (!typeIsNode(node)) {
-        handleInvalidArgumentError('Parameter 1 to selectionSelectInner is expected a Node', node);
-        return;
-    }
-    // </strict>
+    // <strict/>
     selection = selection || rangy.getSelection();
     var range = rangy.createRange();
     range.selectNodeContents(node);
@@ -3719,12 +3335,7 @@ function selectionSelectInner(node, selection) {
  * @param {RangySelection} [selection] A RangySelection, or null to use the current selection.
  */
 function selectionSelectOuter(node, selection) {
-    // <strict>
-    if (!typeIsNode(node)) {
-        handleInvalidArgumentError('Parameter 1 to selectionSelectOuter must be a node', node);
-        return;
-    }
-    // </strict>
+    // <strict/>
     var range = rangy.createRange();
     range.selectNode(node);
     rangy.getSelection().setSingleRange(range);
@@ -3776,12 +3387,7 @@ function selectionSelectStart(element, selection) {
  * @param  {RangySelection|null} selection
  */
 function selectionSelectToEndOfElement(element, selection) {
-    // <strict>
-    if (!typeIsElement(element)) {
-        handleInvalidArgumentError('Parameter 1 to selectionSelectToEndOfElement is expected to be Element', element);
-        return;
-    }
-    // </strict>
+    // <strict/>
     selection = selection || rangy.getSelection();
     var range = selectionRange();
     selection.removeAllRanges();
@@ -3990,11 +3596,7 @@ function selectionExists() {
  * @returns {RangyRange} Returns true if there is at least one range selected.
  */
 function selectionRange() {
-    // <strict>
-    if (!selectionExists()) {
-        handleError('Tried to get selection range when there is no selection');
-    }
-    // </strict>
+    // <strict/>
     return rangy.getSelection().getRangeAt(0);
 }
 
@@ -4105,20 +3707,7 @@ function selectionToggleBlockStyle(styles, limit) {
  * @param {undefined|Sring} blockContainer Thia parameter is unused for some reason.
  */
 function selectionEachBlock(callback, limitElement, blockContainer) {
-    // <strict>
-    if (!$.isFunction(callback)) {
-        handleInvalidArgumentError('Paramter 1 to selectionEachBlock is expected to be a function', callback);
-        return;
-    }
-    if (!(limitElement instanceof jQuery)) {
-        handleInvalidArgumentError('Paramter 2 to selectionEachBlock is expected a jQuery element', limitElement);
-        return;
-    }
-    if (typeof blockContainer !== 'undefined' && typeof blockContainer !== 'string') {
-        handleInvalidArgumentError('Paramter 3 to selectionEachBlock is expected be undefined or a string', blockContainer);
-        return;
-    }
-    // </strict>
+    // <strict/>
     selectionEachRange(function(range) {
         // Loop range parents until a block element is found, or the limit element is reached
         var startBlock = elementClosestBlock($(range.startContainer), limitElement),
@@ -4155,24 +3744,7 @@ function selectionEachBlock(callback, limitElement, blockContainer) {
  * @param {undefined|String} blockContainer Thia parameter is unused for some reason.
  */
 function selectionToggleBlockClasses(addClasses, removeClasses, limitElement, blockContainer) {
-    // <strict>
-    if (!$.isArray(addClasses)) {
-        handleInvalidArgumentError('Paramter 1 to selectionToggleBlockClasses is expected to be an array of classes', addClasses);
-        return;
-    }
-    if (!$.isArray(removeClasses)) {
-        handleInvalidArgumentError('Paramter 2 to selectionToggleBlockClasses is expected to be an array of classes', removeClasses);
-        return;
-    }
-    if (!(limitElement instanceof jQuery)) {
-        handleInvalidArgumentError('Paramter 3 to selectionToggleBlockClasses is expected a jQuery element', limitElement);
-        return;
-    }
-    if (typeof blockContainer !== 'undefined' && typeof blockContainer !== 'string') {
-        handleInvalidArgumentError('Paramter 4 to selectionToggleBlockClasses is expected be undefined or a string', blockContainer);
-        return;
-    }
-    // </strict>
+    // <strict/>
 
     var apply = false,
         blocks = new jQuery();
@@ -4205,12 +3777,7 @@ function selectionToggleBlockClasses(addClasses, removeClasses, limitElement, bl
  * @param {RangySelection} [selection] The selection from which to remove the ranges.
  */
 function selectionConstrain(node, selection) {
-    // <strict>
-    if (!typeIsNode(node)) {
-        handleInvalidArgumentError('Parameter 1 to selectionConstrain must be a node', node);
-        return;
-    }
-    // </strict>
+    // <strict/>
     selection = selection || rangy.getSelection();
     var ranges = selection.getAllRanges(),
         newRanges = [];
@@ -4236,12 +3803,7 @@ function selectionConstrain(node, selection) {
  * @param {RangySelection} [selection] The selection to have it's formatting cleared.
  */
 function selectionClearFormatting(limitNode, selection) {
-    // <strict>
-    if (limitNode && !typeIsNode(limitNode)) {
-        handleInvalidArgumentError('Parameter 1 to selectionClearFormatting must be a node', limitNode);
-        return;
-    }
-    // </strict>
+    // <strict/>
 
     limitNode = limitNode || document.body;
     selection = selection || rangy.getSelection();
@@ -4521,11 +4083,7 @@ function selectionDelete(selection) {
  * @returns {Object} The saved state of the element.
  */
 function stateSave(element) {
-    // <strict>
-    if (!(element instanceof $)) {
-        handleError("Element must be a jQuery instance when saving a state", element);
-    }
-    // </strict>
+    // <strict/>
 
     var range = rangeGet();
     return {
@@ -4542,14 +4100,7 @@ function stateSave(element) {
  * @returns {Object} The restored element.
  */
 function stateRestore(element, state) {
-    // <strict>
-    if (!(element instanceof $)) {
-        handleError("Element must be a jQuery instance when restoring a state", element);
-    }
-    if (!(state.element instanceof $)) {
-        handleError("Preview state element must be a jQuery instance when restoring a state", state.element);
-    }
-    // </strict>
+    // <strict/>
 
     element.replaceWith(state.element);
     var ranges = null;
@@ -4558,9 +4109,7 @@ function stateRestore(element, state) {
             ranges = rangeDeserialize(state.ranges, state.element.get(0));
         }
     } catch (exception) {
-        // <debug>
-        handleError(exception);
-        // </debug>
+        // <debug/>
     }
     return {
         element: state.element,
@@ -4621,12 +4170,7 @@ function stringCamelCaseConvert(string, delimiter) {
  * @returns {Element}
  */
 function stringHtmlStringIsEmpty(html) {
-    // <strict>
-    if (!typeIsString(html)) {
-        handleInvalidArgumentError('Parameter 1 to stringHtmlStringIsEmpty must be a string', html);
-        return;
-    }
-    // </strict>
+    // <strict/>
     return $($.parseHTML(html)).is(':empty');
 }
 ;
@@ -5124,61 +4668,7 @@ if (typeof Node === 'undefined') {
 
 // </ie>
 
-// <strict>
-
-// Ensure jQuery has been included
-if (typeof jQuery === 'undefined') handleError('jQuery is required');
-
-// Ensure jQuery UI has been included
-else if (!jQuery.ui) handleError('jQuery UI is required');
-
-// Ensure dialog has been included
-else if (!jQuery.ui.dialog) handleError('jQuery UI Dialog is required.');
-
-// Ensure dialog has been included
-else if (!jQuery.ui.position) handleError('jQuery UI Position is required.');
-
-// Ensure rangy has been included
-if (typeof rangy === 'undefined') handleError('Rangy is required. This library should have been included with the file you downloaded. If not, acquire it here: http://code.google.com/p/rangy/"');
-
-
-function versionCompare(v1, v2) {
-    var v1parts = v1.split('.');
-    var v2parts = v2.split('.');
-
-    for (var i = 0; i < v1parts.length; ++i) {
-        if (v2parts.length == i) {
-            return v1;
-        }
-        var v1int = parseInt(v1parts[i]);
-        var v2int = parseInt(v2parts[i]);
-
-        if (v1int == v2int) {
-            continue;
-        }
-        else if (v1int > v2int) {
-            return v1;
-        }
-        else {
-            return v2;
-        }
-    }
-
-    if (v1parts.length != v2parts.length) {
-        return v2;
-    }
-
-    return null;
-}
-var jQueryVersion = versionCompare('1.9.0', jQuery.fn.jquery);
-if (jQueryVersion === '1.9.0') {
-    handleError('jQuery version should be at least 1.9.0');
-}
-var jQueryUIVersion = versionCompare('1.10.0', jQuery.ui.version);
-if (jQueryUIVersion === '1.10.0') {
-    handleError('jQuery UI version should be at least 1.9.0');
-}
-// </strict>;
+// <strict/>;
 // File end: c:\work\modules\raptor-gold\raptor-editor\src/support.js
 ;
 // File start: c:\work\modules\raptor-gold\raptor-editor\src/raptor.js
@@ -5271,9 +4761,7 @@ var Raptor =  {
                 url: url,
                 type: 'GET',
                 async: false,
-                // <debug>
-                cache: false,
-                // </debug>
+                // <debug/>
                 // 15 seconds
                 timeout: 15000,
                 error: function() {
@@ -5331,23 +4819,7 @@ var Raptor =  {
      * @param {Object} ui
      */
     registerUi: function(ui) {
-        // <strict>
-        if (typeof ui !== 'object') {
-            handleError(tr('errorUINotObject', {
-                ui: ui
-            }));
-            return;
-        } else if (typeof ui.name !== 'string') {
-            handleError(tr('errorUINoName', {
-                ui: ui
-            }));
-            return;
-        } else if (this.ui[ui.name]) {
-            handleError(tr('errorUIOverride', {
-                name: ui.name
-            }));
-        }
-        // </strict>
+        // <strict/>
         this.ui[ui.name] = ui;
     },
 
@@ -5358,49 +4830,19 @@ var Raptor =  {
      * @param {Object} layout
      */
     registerLayout: function(layout) {
-        // <strict>
-        if (typeof layout !== 'object') {
-            handleError('Layout "' + layout + '" is invalid (must be an object)');
-            return;
-        } else if (typeof layout.name !== 'string') {
-            handleError('Layout "'+ layout + '" is invalid (must have a name property)');
-            return;
-        } else if (this.layouts[layout.name]) {
-            handleError('Layout "' + layout.name + '" has already been registered, and will be overwritten');
-        }
-        // </strict>
+        // <strict/>
 
         this.layouts[layout.name] = layout;
     },
 
     registerPlugin: function(plugin) {
-        // <strict>
-        if (typeof plugin !== 'object') {
-            handleError('Plugin "' + plugin + '" is invalid (must be an object)');
-            return;
-        } else if (typeof plugin.name !== 'string') {
-            handleError('Plugin "'+ plugin + '" is invalid (must have a name property)');
-            return;
-        } else if (this.plugins[plugin.name]) {
-            handleError('Plugin "' + plugin.name + '" has already been registered, and will be overwritten');
-        }
-        // </strict>
+        // <strict/>
 
         this.plugins[plugin.name] = plugin;
     },
 
     registerPreset: function(preset, setDefault) {
-        // <strict>
-        if (typeof preset !== 'object') {
-            handleError('Preset "' + preset + '" is invalid (must be an object)');
-            return;
-        } else if (typeof preset.name !== 'string') {
-            handleError('Preset "'+ preset + '" is invalid (must have a name property)');
-            return;
-        } else if (this.presets[preset.name]) {
-            handleError('Preset "' + preset.name + '" has already been registered, and will be overwritten');
-        }
-        // </strict>
+        // <strict/>
 
         this.presets[preset.name] = preset;
         if (setDefault) {
@@ -5472,11 +4914,7 @@ var RaptorWidget = {
     _init: function() {
         // Prevent double initialisation
         if (this.element.attr('data-raptor-initialised')) {
-            // <debug>
-            if (debugLevel >= MID) {
-                debug('Raptor already initialised, attempted to reinitialise on: ', this.element);
-            }
-            // </debug>
+            // <debug/>
             return;
         }
         this.element.attr('data-raptor-initialised', true);
@@ -5488,15 +4926,7 @@ var RaptorWidget = {
 
         var currentInstance = this;
 
-        // <strict>
-        // Check for nested editors
-        Raptor.eachInstance(function(instance) {
-            if (currentInstance != instance &&
-                    currentInstance.element.closest(instance.element).length) {
-                handleError('Nesting editors is unsupported', currentInstance.element, instance.element);
-            }
-        });
-        // </strict>
+        // <strict/>
 
         // Set the initial locale
         var locale = this.persist('locale') || this.options.initialLocale;
@@ -5851,9 +5281,7 @@ var RaptorWidget = {
             }
             this.checkSelectionChange();
         } catch (exception) {
-            // <strict>
-            handleError(exception);
-            // </strict>
+            // <strict/>
         }
     },
 
@@ -5885,9 +5313,7 @@ var RaptorWidget = {
             this.checkChange();
         } catch (exception) {
             this.stateRestore(state);
-            // <strict>
-            handleError(exception);
-            // </strict>
+            // <strict/>
         }
     },
 
@@ -5987,9 +5413,7 @@ var RaptorWidget = {
 //                    document.execCommand('enableInlineTableEditing', false, false);
 //                    document.execCommand('styleWithCSS', true, true);
 //                } catch (error) {
-//                    // <strict>
-//                    handleError(error);
-//                    // </strict>
+//                    // <strict/>
 //                }
 
                 for (var name in this.plugins) {
@@ -6120,21 +5544,14 @@ var RaptorWidget = {
      * Layout
     \*========================================================================*/
     getLayout: function(type) {
-        // <strict>
-        if (typeof type === 'undefined') {
-            handleInvalidArgumentError('Parameter 1 to getLayout is expected to be a layout type', type);
-            return;
-        }
-        // </strict>
+        // <strict/>
         return this.layouts[type];
     },
 
     loadLayouts: function() {
         for (var name in this.options.layouts) {
             if (typeof Raptor.layouts[name] === 'undefined') {
-                // <strict>
-                handleError('Unknown layout type: ' + name);
-                // </strict>
+                // <strict/>
                 continue;
             }
             this.layouts[name] = this.prepareComponent(Raptor.layouts[name], this.options.layouts[name], 'layout').instance;
@@ -6160,11 +5577,7 @@ var RaptorWidget = {
 
         instance.raptor = this;
         instance.options = options;
-        // <strict>
-        if (!instance.init) {
-            handleError('Component missing init function: ' + instance.name);
-        }
-        // </strict>
+        // <strict/>
         var init = instance.init();
 
         return {
@@ -6177,9 +5590,7 @@ var RaptorWidget = {
      * Show the layout for the current element.
      */
     showLayout: function() {
-        // <debug>
-        if (debugLevel >= MID) debug('Displaying layout', this.getElement());
-        // </debug>
+        // <debug/>
 
         // If unify option is set, hide all other layouts first
         this.unify(function(raptor) {
@@ -6206,12 +5617,7 @@ var RaptorWidget = {
         if (!this.templates[name]) {
             this.templates[name] = templateGet(name, this.options.urlPrefix);
         }
-        // <strict>
-        if (!this.templates[name]) {
-            handleError('Missing template: ' + name);
-            return '**MISSING TEMPLATE: ' + name + '**';
-        }
-        // </strict>
+        // <strict/>
         return templateConvertTokens(this.templates[name], variables);
     },
 
@@ -6286,15 +5692,7 @@ var RaptorWidget = {
      * @param {Object} The hotkey object or null
      */
     registerHotkey: function(mixed, action) {
-        // <strict>
-        if (!typeIsString(mixed)) {
-            handleInvalidArgumentError('Expected argument 1 to raptor.registerHotkey to be a string');
-            return;
-        }
-        if (this.hotkeys[mixed]) {
-            handleError('Hotkey "' + mixed + '" has already been registered, and will be overwritten');
-        }
-        // </strict>
+        // <strict/>
 
         this.hotkeys[mixed] = action;
     },
@@ -6316,9 +5714,7 @@ var RaptorWidget = {
      * Suspend hotkey functionality.
      */
     suspendHotkeys: function() {
-        // <debug>
-        if (debugLevel >= MID) debug('Disabling hotkeys');
-        // </debug>
+        // <debug/>
         this.hotkeysSuspended = true;
     },
 
@@ -6326,9 +5722,7 @@ var RaptorWidget = {
      * Resume hotkey functionality.
      */
     resumeHotkeys: function() {
-        // <debug>
-        if (debugLevel >= MID) debug('Enabling hotkeys');
-        // </debug>
+        // <debug/>
         this.hotkeysSuspended = false;
     },
 
@@ -6341,22 +5735,14 @@ var RaptorWidget = {
         if (this.options.enableUi === false &&
                 typeof this.options.plugins[ui] === 'undefined' ||
                 this.options.plugins[ui] === false) {
-            // <debug>
-            if (debugLevel >= MID) {
-                debug('UI with name ' + ui + ' has been disabled ' + (
-                    this.options.enableUi === false ? 'by default' : 'manually'
-                ) + ' ' + $.inArray(ui, this.options.ui));
-            }
-            // </debug>
+            // <debug/>
             return false;
         }
 
         // Check if we have explicitly disabled UI
         if ($.inArray(ui, this.options.disabledUi) !== -1 ||
                 $.inArray(ui, this.options.disabledPlugins) !== -1) {
-            // <strict>
-            debug('Using disabledUi/disabledPlugins options is deprecated, use plugins: { nameOfPlugin: false } instead.');
-            // </strict>
+            // <strict/>
             return false;
         }
 
@@ -6369,9 +5755,7 @@ var RaptorWidget = {
      * @return {Object|null} UI object referenced by the given name.
      */
     getUi: function(ui) {
-        // <strict>
-        handleError('raptor.getUi() is deprecated, use raptor.getPlugin() instead.');
-        // </strict>
+        // <strict/>
         return this.uiObjects[ui];
     },
 
@@ -6401,20 +5785,14 @@ var RaptorWidget = {
             if (this.options.enablePlugins === false &&
                     typeof this.options.plugins[name] === 'undefined' ||
                     this.options.plugins[name] === false) {
-                // <debug>
-                if (debugLevel >= MID) {
-                    debug('Not loading plugin ' + name);
-                }
-                // </debug>
+                // <debug/>
                 continue;
             }
 
             // Check if we have explicitly disabled the plugin
             if ($.inArray(name, this.options.disabledUi) !== -1 ||
                     $.inArray(name, this.options.disabledPlugins) !== -1) {
-                // <strict>
-                debug('Using disabledUi/disabledPlugins options is deprecated, use plugins: { nameOfPlugin: false } instead.');
-                // </strict>
+                // <strict/>
                 continue;
             }
 
@@ -6498,9 +5876,7 @@ var RaptorWidget = {
     bind: function(name, callback, context) {
         if (typeof callback === 'undefined' ||
             !$.isFunction(callback)) {
-            // <strict>
-            handleError('Must bind a valid callback, ' + name + ' was a ' + typeof callback);
-            // </strict>
+            // <strict/>
             return;
         }
         var names = name.split(/,\s*/);
@@ -6538,11 +5914,7 @@ var RaptorWidget = {
     fire: function(name, args) {
         var result = [];
 
-        // <debug>
-        if (debugLevel === MAX) {
-            debug('Firing event: ' + name);
-        }
-        // </debug>
+        // <debug/>
 
         if (this.events[name]) {
             for (var i = 0, l = this.events[name].length; i < l; i++) {
@@ -6665,11 +6037,7 @@ UiGroup.prototype.appendTo = function(layout, panel) {
                     uiGroupContainer.append(component.init);
                 }
             }
-            // <strict>
-            else {
-                handleError('UI identified by key "' + uiGroup[ii] + '" does not exist');
-            }
-            // </strict>
+            // <strict/>
         }
 
         // Append the UI group to the editor toolbar
@@ -6746,11 +6114,7 @@ ToolbarLayout.prototype.initDragging = function() {
     if ($.fn.draggable &&
             this.options.draggable &&
             !this.getElement().data('ui-draggable')) {
-        // <debug>
-        if (debugLevel >= MID) {
-            debug('Initialising toolbar dragging', this.raptor.getElement());
-        }
-        // </debug>
+        // <debug/>
         this.getElement().draggable({
             cancel: 'a, button',
             cursor: 'move',
@@ -6766,11 +6130,7 @@ ToolbarLayout.prototype.initDragging = function() {
             pos = [10, 10];
         }
 
-        // <debug>
-        if (debugLevel >= MID) {
-            debug('Restoring toolbar position', this.raptor.getElement(), pos);
-        }
-        // </debug>
+        // <debug/>
 
         if (parseInt(pos[0], 10) + this.getElement().outerHeight() > $(window).height()) {
             pos[0] = $(window).height() - this.getElement().outerHeight();
@@ -6846,11 +6206,7 @@ ToolbarLayout.prototype.getElement = function() {
             }
         }
 
-        // <debug>
-        if (debugLevel >= MID) {
-            debug('Loading toolbar', this.raptor.getElement());
-        }
-        // </debug>
+        // <debug/>
 
         var toolbar = this.toolbar = $('<div/>')
             .addClass(this.options.baseClass + '-toolbar');
@@ -7462,17 +6818,7 @@ FilteredPreviewButton.prototype.selectionChange = function() {
     }
 };
 
-// <strict>
-/**
- * Get the element according to the button's filtereing strategy.
- * @throws {Error} If this function is not overridden.
- * @param  {RangyRange} range
- * @return {Element} The filtered element.
- */
-FilteredPreviewButton.prototype.getElement = function(range) {
-    throw new Error('Expected child class to override FilteredPreviewButton.getElement');
-};
-// </strict>
+// <strict/>
 
 
 /**
@@ -7601,26 +6947,7 @@ DialogButton.prototype.action = function() {
     this.openDialog();
 };
 
-// <strict>
-/**
- * Callback triggered when the user clicks the OK button on the dialog.
- *
- * @param {Object} dialog Dialog to get the ok button from.
- * @throws {Error} If this function is not overridden.
- */
-DialogButton.prototype.applyAction = function(dialog) {
-    throw new Error('Expected child class to override DialogButton.applyAction');
-};
-
-/**
- * Callback triggered when the user clicks on the dialog button.
- *
- * @throws {Error} If this function is not overridden.
- */
-DialogButton.prototype.getDialogTemplate = function() {
-    throw new Error('Expected child class to override DialogButton.getDialogTemplate');
-};
-// </strict>
+// <strict/>
 
 /**
  * Checks the validility of a dialog.
@@ -10488,16 +9815,7 @@ Raptor.registerUi(new Button({
  */
 Raptor.registerUi(new Button({
     name: 'logo',
-    // <usage-statistics>
-    init: function() {
-        var button = Button.prototype.init.apply(this, arguments);
-        button.find('.ui-button-icon-primary').css({
-            'background-image': 'url(//www.raptor-editor.com/logo/VERSION?json=' +
-                encodeURIComponent(JSON.stringify(this.raptor.options)) + ')'
-        });
-        return button;
-    },
-    // </usage-statistics>
+    // <usage-statistics/>
     action: function() {
         window.open('http://www.raptor-editor.com/about/VERSION', '_blank');
     }
@@ -11169,11 +10487,7 @@ Raptor.registerUi(new Button({
 
         var result = Button.prototype.init.apply(this, arguments);
 
-        // <strict>
-        if (!this.getPlugin()) {
-            handleError('Cannot find save plugin for UI.');
-        }
-        // </strict>
+        // <strict/>
 
         this.raptor.bind('dirty', this.dirty.bind(this));
         this.raptor.bind('cleaned', this.clean.bind(this));
@@ -12652,21 +11966,4 @@ Raptor.registerUi(new DialogButton({
 }));
 ;
 // File end: c:\work\modules\raptor-gold\raptor-editor\src\plugins/view-source/view-source.js
-;
-// File start: c:\work\modules\raptor-gold\raptor-premium\src\plugins/lorem-ipsum/lorem-ipsum.js
-/**
- * @fileOverview 
- * @license http://www.raptor-editor.com/license
- *
- * @author David Neilsen <david@panmedia.co.nz>
- */
-
-Raptor.registerUi(new PreviewButton({
-    name: 'loremIpsum',
-    action: function() {
-        selectionReplace(this.raptor.getTemplate('lorem-ipsum.lorem-ipsum'));
-    }
-}));
-;
-// File end: c:\work\modules\raptor-gold\raptor-premium\src\plugins/lorem-ipsum/lorem-ipsum.js
 })();

@@ -52,7 +52,20 @@ class Raptor {
         wp_enqueue_style('raptor', plugins_url('libraries/raptor.css', dirname(__FILE__)), false, false, false);
         wp_enqueue_style('raptor-front-end', plugins_url('libraries/raptor-front-end.css', dirname(__FILE__)), false, false, false);
 
-        wp_enqueue_script('jquery-ui', plugins_url('libraries/jquery-ui.js', dirname(__FILE__)), 'jquery', false, true);
+        wp_enqueue_script('jquery-ui-core');
+        wp_enqueue_script('jquery-ui-widget');
+        wp_enqueue_script('jquery-ui-mouse');
+        wp_enqueue_script('jquery-ui-progressbar');
+        wp_enqueue_script('jquery-ui-tabs');
+        wp_enqueue_script('jquery-ui-sortable');
+        wp_enqueue_script('jquery-ui-draggable');
+        wp_enqueue_script('jquery-ui-droppable');
+        wp_enqueue_script('jquery-ui-selectable');
+        wp_enqueue_script('jquery-ui-position');
+        wp_enqueue_script('jquery-ui-resizable');
+        wp_enqueue_script('jquery-ui-dialog');
+        wp_enqueue_script('jquery-ui-button');
+        wp_enqueue_script('jquery-ui-menu');
         wp_enqueue_script('rangy-core', plugins_url('libraries/rangy-core.js', dirname(__FILE__)), 'jquery-ui', false, true);
         wp_enqueue_script('rangy-applier', plugins_url('libraries/rangy-applier.js', dirname(__FILE__)), 'jquery-ui', false, true);
         wp_enqueue_script('rangy-cssclassapplier', plugins_url('libraries/rangy-cssclassapplier.js', dirname(__FILE__)), 'jquery-ui', false, true);

@@ -11,8 +11,10 @@ class Raptor {
     }
 
     public function pluginsLoaded() {
-        add_action('wp_print_scripts', array($this, 'adminPrintScripts'));
-        add_action('wp_ajax_raptor_save', array($this, 'save'));
+        if (current_user_can('edit_posts')) {
+            add_action('wp_print_scripts', array($this, 'adminPrintScripts'));
+            add_action('wp_ajax_raptor_save', array($this, 'save'));
+        }
     }
 
     public function save() {

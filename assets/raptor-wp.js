@@ -12,13 +12,14 @@
         this.raptor.unify(function(raptor) {
             if (raptor.isDirty()) {
                 raptor.clean();
-                var id = raptor.getElement().closest('article').attr('id').replace(/[^0-9]+/, '');
+                var id = raptor.getElement().data('raptor-id');
                 if (typeof posts[id] === 'undefined') {
                     posts[id] = {};
                 }
-                posts[id][raptor.getPlugin('savePost').options.type] = raptor.getHtml();
+                posts[id][raptor.getElement().data('raptor-type')] = raptor.getHtml();
             }
         });
+        console.log(posts);return;
         $.ajax({
                 type: 'post',
                 url: RaptorWP.url,
@@ -59,8 +60,7 @@
 
     Raptor.registerPlugin(new SavePostPlugin());
 
-    $('.entry-title a').raptor({
-        preset: 'micro',
+    var options = {
         plugins: {
             dock: {
                 docked: true,
@@ -68,25 +68,33 @@
             },
             save: {
                 plugin: 'savePost'
+            }
+        },
+        bind: {
+            enabling: function() {
+                var element = this.getElement(),
+                    source = element.attr('data-raptor-source');
+                if (source) {
+                    element.html(atob(source));
+                }
             },
-            savePost: {
-                type: 'title'
+            saved: function() {
+                var html = this.getHtml();
+                this.getElement()
+                    .attr('data-source', btoa(html));
             }
         }
-    });
+    }
 
-    $('.entry-content').raptor({
-        plugins: {
-            dock: {
-                docked: true,
-                spacer: false
-            },
-            save: {
-                plugin: 'savePost'
-            },
-            savePost: {
-                type: 'content'
-            }
+    $('.raptor-micro').raptor($.extend({}, options, {
+        preset: 'micro'
+    }));
+
+    $('.raptor-content').raptor(options);
+
+    $('body').on('click', 'a', function(e) {
+        if ($(this).find('.raptor-editing')) {
+            e.preventDefault();
         }
     });
 

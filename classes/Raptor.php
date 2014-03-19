@@ -86,6 +86,21 @@ class Raptor {
             'nonce' => wp_create_nonce('raptor'),
             'action' => 'raptor_save',
         ));
+
+        add_filter('the_title', array($this, 'theTitle'));
+        add_filter('the_content', array($this, 'theContent'));
+    }
+
+    public function theTitle($title) {
+        global $post;
+        $encodedContent = base64_encode($post->title);
+        return "<span class='raptor-micro' data-raptor-type='title' data-raptor-id='$post->ID' data-raptor-source='$encodedContent'>$title</span>";
+    }
+
+    public function theContent($content) {
+        global $post;
+        $encodedContent = base64_encode($post->post_content);
+        return "<div class='raptor-content' data-raptor-type='content' data-raptor-id='$post->ID' data-raptor-source='$encodedContent'>$content</div>";
     }
 
 }

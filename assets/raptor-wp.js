@@ -93,7 +93,7 @@
 
     $('body').on('click', 'a', function(e) {
         if ($(this).find('.raptor-editing')) {
-            e.preventDefault();
+            //e.preventDefault();
         }
     });
 

@@ -18,16 +18,16 @@ Allows editing posts and titles inline on the front end of you website using Rap
 
 Install via the Plugins section of your WordPress administation. Click "Add New", the search for "Raptor Editor for WordPress".
 
-=== Installation from Source ===
+== Installation from Source ==
 
-==== Clone the Git repository ====
+== Clone the Git repository ==
 
 Clone the Git repository directory into you wp-content/plugins directory:
 
     $ cd ~/mywebsite.com/wp-content/plugins
     $ git clone https://github.com/PANmedia/raptor-wp.git raptor-editor
 
-==== Download from Github ====
+== Download from Github ==
 
 Download the latest release from https://github.com/PANmedia/raptor-wp/releases
 Extract the file to ~/mywebsite.com/wp-content/plugins/raptor-editor

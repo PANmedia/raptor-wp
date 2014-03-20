@@ -19,7 +19,6 @@
                 posts[id][raptor.getElement().data('raptor-type')] = raptor.getHtml();
             }
         });
-        console.log(posts);return;
         $.ajax({
                 type: 'post',
                 url: RaptorWP.url,

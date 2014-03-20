@@ -3,7 +3,7 @@
  * Plugin Name: Raptor Editor for WordPress
  * Plugin URI: https://github.com/PANmedia/raptor-wp
  * Description: Inline content editing.
- * Version: 1.0.7
+ * Version: 1.0.8
  * Author: David Neilsen
  * Author URI: https://github.com/Petah
  * License: GPLv2 or later

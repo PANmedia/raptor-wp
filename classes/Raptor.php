@@ -92,7 +92,10 @@ class Raptor {
     }
 
     public function theTitle($title) {
-        global $post;
+        global $post, $wp_list_table;
+        if (isset($wp_list_table)) {
+            return $title;
+        }
         $encodedContent = base64_encode($post->title);
         return "<span class='raptor-micro' data-raptor-type='title' data-raptor-id='$post->ID' data-raptor-source='$encodedContent'>$title</span>";
     }

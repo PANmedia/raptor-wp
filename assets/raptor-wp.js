@@ -92,8 +92,8 @@
     $('.raptor-content').raptor(options);
 
     $('body').on('click', 'a', function(e) {
-        if ($(this).find('.raptor-editing')) {
-            //e.preventDefault();
+        if ($(this).find('.raptor-editing').length) {
+            e.preventDefault();
         }
     });
 

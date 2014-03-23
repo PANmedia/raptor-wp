@@ -93,7 +93,7 @@ class Raptor {
 
     public function theTitle($title) {
         global $post, $wp_list_table;
-        if (isset($wp_list_table)) {
+        if (isset($wp_list_table) || !isset($post) || !$post) {
             return $title;
         }
         $encodedContent = base64_encode($post->title);
@@ -102,6 +102,9 @@ class Raptor {
 
     public function theContent($content) {
         global $post;
+        if (!isset($post) || !$post) {
+            return $content;
+        }
         $encodedContent = base64_encode($post->post_content);
         return "<div class='raptor-content' data-raptor-type='content' data-raptor-id='$post->ID' data-raptor-source='$encodedContent'>$content</div>";
     }

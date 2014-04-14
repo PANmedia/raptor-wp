@@ -75,6 +75,8 @@ class Raptor {
         wp_enqueue_script('rangy-serializer', plugins_url('libraries/rangy-serializer.js', dirname(__FILE__)), 'jquery-ui', false, true);
         wp_enqueue_script('rangy-textrange', plugins_url('libraries/rangy-textrange.js', dirname(__FILE__)), 'jquery-ui', false, true);
         wp_enqueue_script('jquery-pnotify', plugins_url('libraries/jquery-pnotify.js', dirname(__FILE__)), 'jquery-ui', false, true);
+        wp_enqueue_script('goog-table', plugins_url('libraries/goog-table.js', dirname(__FILE__)), 'jquery-ui', false, true);
+        wp_enqueue_script('resizetable', plugins_url('libraries/resizetable.js', dirname(__FILE__)), 'jquery-ui', false, true);
         wp_enqueue_script('raptor', plugins_url('libraries/raptor.js', dirname(__FILE__)), 'jquery-ui', false, true);
 
         wp_enqueue_style('raptor-wp', plugins_url('assets/raptor-wp.css', dirname(__FILE__)), 'raptor', false, false);

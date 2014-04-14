@@ -4,45 +4,25 @@
 // you may not use this file except in compliance with the License.
 // You may obtain a copy of the License at
 //
-//            http://www.apache.org/licenses/LICENSE-2.0
+//      http://www.apache.org/licenses/LICENSE-2.0
 //
 // Unless required by applicable law or agreed to in writing, software
 // distributed under the License is distributed on an "AS-IS" BASIS,
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
-
+//
 // https://code.google.com/p/closure-library/source/browse/closure/goog/editor/table.js
 //
 // Modified by David Neilsen <david@panmedia.co.nz>
 
 /**
- * @fileoverview Table editing support.
- * This file provides the class GoogTable and two
- * supporting classes, GoogTableRow and
- * GoogTableCell. Together these provide support for
- * high level table modifications: Adding and deleting rows and columns,
- * and merging and splitting cells.
- *
- * @supported IE6+, WebKit 525+, Firefox 2+.
- */
-
-
-/**
  * Class providing high level table editing functions.
  * @param {Element} node Element that is a table or descendant of a table.
  * @constructor
- * @final
  */
 GoogTable = function(node) {
-    this.element = goog.dom.getAncestorByTagNameAndClass(node,
-            goog.dom.TagName.TABLE);
-    if (!this.element) {
-        goog.log.error(this.logger_,
-                "Can't create Table based on a node " +
-                "that isn't a table, or descended from a table.");
-    }
-    this.dom_ = goog.dom.getDomHelper(this.element);
+    this.element = node;
     this.refresh();
 };
 
@@ -58,13 +38,13 @@ GoogTable = function(node) {
 // every time there is a change to the DOM.
 GoogTable.prototype.refresh = function() {
     var rows = this.rows = [];
-    var tbody = this.element.getElementsByTagName(goog.dom.TagName.TBODY)[0];
+    var tbody = this.element.tBodies[0];
     if (!tbody) {
         return;
     }
     var trs = [];
     for (var child = tbody.firstChild; child; child = child.nextSibling) {
-        if (child.nodeName == goog.dom.TagName.TR) {
+        if (child.tagName === 'TR') {
             trs.push(child);
         }
     }
@@ -117,8 +97,8 @@ GoogTable.prototype.refresh = function() {
 GoogTable.getChildCellElements = function(tr) {
     var cells = [];
     for (var i = 0, cell; cell = tr.childNodes[i]; i++) {
-        if (cell.nodeName == goog.dom.TagName.TD ||
-                cell.nodeName == goog.dom.TagName.TH) {
+        if (cell.tagName === 'TD' ||
+                cell.tagName === 'TH') {
             cells.push(cell);
         }
     }
@@ -130,13 +110,12 @@ GoogTable.getChildCellElements = function(tr) {
  * Inserts a new row in the table. The row will be populated with new
  * cells, and existing rowspanned cells that overlap the new row will
  * be extended.
- * @param {number=} opt_rowIndex Index at which to insert the row. If
- *         this is omitted the row will be appended to the end of the table.
+ * @param {number=} rowIndex Index at which to insert the row. If
+ *     this is omitted the row will be appended to the end of the table.
  * @return {Element} The new row.
  */
-GoogTable.prototype.insertRow = function(opt_rowIndex) {
-    var rowIndex = goog.isDefAndNotNull(opt_rowIndex) ?
-            opt_rowIndex : this.rows.length;
+GoogTable.prototype.insertRow = function(rowIndex, options) {
+    var rowIndex = rowIndex || this.rows.length;
     var refRow;
     var insertAfter;
     if (rowIndex == 0) {
@@ -146,24 +125,26 @@ GoogTable.prototype.insertRow = function(opt_rowIndex) {
         refRow = this.rows[rowIndex - 1];
         insertAfter = true;
     }
-    var newTr = this.dom_.createElement('tr');
+    var newTr = document.createElement('tr');
     for (var i = 0, cell; cell = refRow.columns[i]; i += 1) {
         // Check whether the existing cell will span this new row.
         // If so, instead of creating a new cell, extend
         // the rowspan of the existing cell.
         if ((insertAfter && cell.endRow > rowIndex) ||
-                (!insertAfter && cell.startRow < rowIndex)) {
+            (!insertAfter && cell.startRow < rowIndex)) {
             cell.setRowSpan(cell.rowSpan + 1);
             if (cell.colSpan > 1) {
                 i += cell.colSpan - 1;
             }
         } else {
-            newTr.appendChild(this.createEmptyTd());
+            var newTd = document.createElement('td');
+            newTd.innerHTML = options.placeHolder;
+            newTr.appendChild(newTd);
         }
         if (insertAfter) {
-            goog.dom.insertSiblingAfter(newTr, refRow.element);
+            refRow.element.parentNode.insertBefore(newTr, refRow.element.nextSibling);
         } else {
-            goog.dom.insertSiblingBefore(newTr, refRow.element);
+            refRow.element.insertBefore(newTr);
         }
     }
     this.refresh();
@@ -175,86 +156,32 @@ GoogTable.prototype.insertRow = function(opt_rowIndex) {
  * Inserts a new column in the table. The column will be created by
  * inserting new TD elements in each row, or extending the colspan
  * of existing TD elements.
- * @param {number=} opt_colIndex Index at which to insert the column. If
- *         this is omitted the column will be appended to the right side of
- *         the table.
+ * @param {number=} colIndex Index at which to insert the column. If
+ *     this is omitted the column will be appended to the right side of
+ *     the table.
  * @return {Array.<Element>} Array of new cell elements that were created
- *         to populate the new column.
+ *     to populate the new column.
  */
-GoogTable.prototype.insertColumn = function(opt_colIndex) {
-    // TODO(user): set column widths in a way that makes sense.
-    var colIndex = goog.isDefAndNotNull(opt_colIndex) ?
-            opt_colIndex :
-            (this.rows[0] && this.rows[0].columns.length) || 0;
-    var newTds = [];
-    for (var rowNum = 0, row; row = this.rows[rowNum]; rowNum++) {
-        var existingCell = row.columns[colIndex];
-        if (existingCell && existingCell.endCol >= colIndex &&
-                existingCell.startCol < colIndex) {
-            existingCell.setColSpan(existingCell.colSpan + 1);
-            rowNum += existingCell.rowSpan - 1;
-        } else {
-            var newTd = this.createEmptyTd();
-            // TODO(user): figure out a way to intelligently size new columns.
-            newTd.style.width = GoogTable.OPTIMUM_EMPTY_CELL_WIDTH + 'px';
-            this.insertCellElement(newTd, rowNum, colIndex);
-            newTds.push(newTd);
-        }
-    }
-    this.refresh();
-    return newTds;
-};
-
-
-/**
- * Removes a row from the table, removing the TR element and
- * decrementing the rowspan of any cells in other rows that overlap the row.
- * @param {number} rowIndex Index of the row to delete.
- */
-GoogTable.prototype.removeRow = function(rowIndex) {
-    var row = this.rows[rowIndex];
-    if (!row) {
-        goog.log.warning(this.logger_,
-                "Can't remove row at position " + rowIndex + ': no such row.');
-    }
-    for (var i = 0, cell; cell = row.columns[i]; i += cell.colSpan) {
-        if (cell.rowSpan > 1) {
-            cell.setRowSpan(cell.rowSpan - 1);
-            if (cell.startRow == rowIndex) {
-                // Rowspanned cell started in this row - move it down to the next row.
-                this.insertCellElement(cell.element, rowIndex + 1, cell.startCol);
-            }
-        }
-    }
-    row.element.parentNode.removeChild(row.element);
-    this.refresh();
-};
-
-
-/**
- * Removes a column from the table. This is done by removing cell elements,
- * or shrinking the colspan of elements that span multiple columns.
- * @param {number} colIndex Index of the column to delete.
- */
-GoogTable.prototype.removeColumn = function(colIndex) {
-    for (var i = 0, row; row = this.rows[i]; i++) {
-        var cell = row.columns[colIndex];
-        if (!cell) {
-            goog.log.error(this.logger_,
-                    "Can't remove cell at position " + i + ', ' + colIndex +
-                    ': no such cell.');
-        }
-        if (cell.colSpan > 1) {
-            cell.setColSpan(cell.colSpan - 1);
-        } else {
-            cell.element.parentNode.removeChild(cell.element);
-        }
-        // Skip over following rows that contain this same cell.
-        i += cell.rowSpan - 1;
-    }
-    this.refresh();
-};
-
+//GoogTable.prototype.insertColumn = function(colIndex, options) {
+//    // TODO(user): set column widths in a way that makes sense.
+//    var colIndex = colIndex || ((this.rows[0] && this.rows[0].columns.length) || 0);
+//    var newTds = [];
+//    for (var rowNum = 0, row; row = this.rows[rowNum]; rowNum++) {
+//        var existingCell = row.columns[colIndex];
+//        if (existingCell && existingCell.endCol >= colIndex &&
+//            existingCell.startCol < colIndex) {
+//            existingCell.setColSpan(existingCell.colSpan + 1);
+//            rowNum += existingCell.rowSpan - 1;
+//        } else {
+//            var newTd = document.createElement('td');
+//            newTd.innerHTML = options.placeHolder;
+//            this.insertCellElement(newTd, rowNum, colIndex);
+//            newTds.push(newTd);
+//        }
+//    }
+//    this.refresh();
+//    return newTds;
+//};
 
 /**
  * Merges multiple cells into a single cell, and sets the rowSpan and colSpan
@@ -264,7 +191,7 @@ GoogTable.prototype.removeColumn = function(colIndex) {
  * @param {number} endRowIndex Bottom coordinate of the cells to merge.
  * @param {number} endColIndex Right coordinate of the cells to merge.
  * @return {boolean} Whether or not the merge was possible. If the cells
- *         in the supplied coordinates can't be merged this will return false.
+ *     in the supplied coordinates can't be merged this will return false.
  */
 GoogTable.prototype.mergeCells = function(
         startRowIndex, startColIndex, endRowIndex, endColIndex) {
@@ -272,7 +199,9 @@ GoogTable.prototype.mergeCells = function(
     var cells = [];
     var cell;
     if (startRowIndex == endRowIndex && startColIndex == endColIndex) {
-        goog.log.warning(this.logger_, "Can't merge single cell");
+        // <strict>
+        handleError("Can't merge single cell");
+        // </strict>
         return false;
     }
     // Gather cells and do sanity check.
@@ -283,9 +212,11 @@ GoogTable.prototype.mergeCells = function(
                     cell.endRow > endRowIndex ||
                     cell.startCol < startColIndex ||
                     cell.endCol > endColIndex) {
-                goog.log.warning(this.logger_,
+                // <strict>
+                handleError(
                         "Can't merge cells: the cell in row " + i + ', column ' + j +
                         'extends outside the supplied rectangle.');
+                // </strict>
                 return false;
             }
             // TODO(user): this is somewhat inefficient, as we will add
@@ -296,7 +227,7 @@ GoogTable.prototype.mergeCells = function(
     }
     var targetCell = cells[0];
     var targetTd = targetCell.element;
-    var doc = this.dom_.getDocument();
+    var doc = document;
 
     // Merge cell contents and discard other cells.
     for (var i = 1; cell = cells[i]; i++) {
@@ -308,8 +239,8 @@ GoogTable.prototype.mergeCells = function(
         // Add a space if needed, to keep merged content from getting squished
         // together.
         if (targetTd.lastChild &&
-                targetTd.lastChild.nodeType == goog.dom.NodeType.TEXT) {
-            targetTd.appendChild(doc.createTextNode(' '));
+                targetTd.lastChild.nodeType === Node.TEXT_NODE) {
+            targetTd.appendChild(doc.createElement('br'));
         }
         var childNode;
         while ((childNode = td.firstChild)) {
@@ -319,13 +250,6 @@ GoogTable.prototype.mergeCells = function(
     }
     targetCell.setColSpan((endColIndex - startColIndex) + 1);
     targetCell.setRowSpan((endRowIndex - startRowIndex) + 1);
-    if (endColIndex > startColIndex) {
-        // Clear width on target cell.
-        // TODO(user): instead of clearing width, calculate width
-        // based on width of input cells
-        targetTd.removeAttribute('width');
-        targetTd.style.width = null;
-    }
     this.refresh();
 
     return true;
@@ -337,7 +261,7 @@ GoogTable.prototype.mergeCells = function(
  * @param {number} rowIndex y coordinate of the cell to split.
  * @param {number} colIndex x coordinate of the cell to split.
  * @return {Array.<Element>} Array of new cell elements created by splitting
- *         the cell.
+ *     the cell.
  */
 // TODO(user): support splitting only horizontally or vertically,
 // support splitting cells that aren't already row/colspanned.
@@ -345,10 +269,11 @@ GoogTable.prototype.splitCell = function(rowIndex, colIndex) {
     var row = this.rows[rowIndex];
     var cell = row.columns[colIndex];
     var newTds = [];
+    var html = cell.element.innerHTML;
     for (var i = 0; i < cell.rowSpan; i++) {
         for (var j = 0; j < cell.colSpan; j++) {
             if (i > 0 || j > 0) {
-                var newTd = this.createEmptyTd();
+                var newTd = document.createElement('td');
                 this.insertCellElement(newTd, rowIndex + i, colIndex + j);
                 newTds.push(newTd);
             }
@@ -356,6 +281,9 @@ GoogTable.prototype.splitCell = function(rowIndex, colIndex) {
     }
     cell.setColSpan(1);
     cell.setRowSpan(1);
+    // Set first cell HTML
+    newTds[0].innerHTML = html;
+    cell.element.innerHTML = '';
     this.refresh();
     return newTds;
 };
@@ -364,7 +292,7 @@ GoogTable.prototype.splitCell = function(rowIndex, colIndex) {
 /**
  * Inserts a cell element at the given position. The colIndex is the logical
  * column index, not the position in the dom. This takes into consideration
- * that cells in a given logical    row may actually be children of a previous
+ * that cells in a given logical  row may actually be children of a previous
  * DOM row that have used rowSpan to extend into the row.
  * @param {Element} td The new cell element to insert.
  * @param {number} rowIndex Row in which to insert the element.
@@ -385,25 +313,11 @@ GoogTable.prototype.insertCellElement = function(
 
 
 /**
- * Creates an empty TD element and fill it with some empty content so it will
- * show up with borders even in IE pre-7 or if empty-cells is set to 'hide'
- * @return {Element} a new TD element.
- */
-GoogTable.prototype.createEmptyTd = function() {
-    // TODO(user): more cross-browser testing to determine best
-    // and least annoying filler content.
-    return this.dom_.createDom(goog.dom.TagName.TD, {}, goog.string.Unicode.NBSP);
-};
-
-
-
-/**
  * Class representing a logical table row: a tr element and any cells
  * that appear in that row.
  * @param {Element} trElement This rows's underlying TR element.
  * @param {number} rowIndex This row's index in its parent table.
  * @constructor
- * @final
  */
 GoogTableRow = function(trElement, rowIndex) {
     this.index = rowIndex;
@@ -420,7 +334,6 @@ GoogTableRow = function(trElement, rowIndex) {
  * @param {number} startRow Index of the row where this cell begins.
  * @param {number} startCol Index of the column where this cell begins.
  * @constructor
- * @final
  */
 GoogTableCell = function(td, startRow, startCol) {
     this.element = td;
@@ -453,7 +366,7 @@ GoogTableCell.prototype.setColSpan = function(colSpan) {
             this.element.colSpan = colSpan;
         } else {
             this.element.colSpan = 1,
-            this.element.removeAttribute('colSpan');
+                    this.element.removeAttribute('colSpan');
         }
         this.colSpan = colSpan;
         this.updateCoordinates_();
@@ -477,76 +390,4 @@ GoogTableCell.prototype.setRowSpan = function(rowSpan) {
         this.rowSpan = rowSpan;
         this.updateCoordinates_();
     }
-};
-
-
-/**
- * Optimum size of empty cells (in pixels), if possible.
- * @type {number}
- */
-GoogTable.OPTIMUM_EMPTY_CELL_WIDTH = 60;
-
-
-/**
- * Maximum width for new tables.
- * @type {number}
- */
-GoogTable.OPTIMUM_MAX_NEW_TABLE_WIDTH = 600;
-
-
-/**
- * Default color for table borders.
- * @type {string}
- */
-GoogTable.DEFAULT_BORDER_COLOR = '#888';
-
-
-/**
- * Creates a new table element, populated with cells and formatted.
- * @param {Document} doc Document in which to create the table element.
- * @param {number} columns Number of columns in the table.
- * @param {number} rows Number of rows in the table.
- * @param {Object=} opt_tableStyle Object containing borderWidth and borderColor
- *        properties, used to set the inital style of the table.
- * @return {Element} a table element.
- */
-GoogTable.createDomTable = function(
-        doc, columns, rows, opt_tableStyle) {
-    // TODO(user): define formatting properties as constants,
-    // make separate formatTable() function
-    var style = {
-        borderWidth: '1',
-        borderColor: GoogTable.DEFAULT_BORDER_COLOR
-    };
-    for (var prop in opt_tableStyle) {
-        style[prop] = opt_tableStyle[prop];
-    }
-    var dom = new goog.dom.DomHelper(doc);
-    var tableElement = dom.createTable(rows, columns, true);
-
-    var minimumCellWidth = 10;
-    // Calculate a good cell width.
-    var cellWidth = Math.max(
-            minimumCellWidth,
-            Math.min(GoogTable.OPTIMUM_EMPTY_CELL_WIDTH,
-                             GoogTable.OPTIMUM_MAX_NEW_TABLE_WIDTH / columns));
-
-    var tds = tableElement.getElementsByTagName(goog.dom.TagName.TD);
-    for (var i = 0, td; td = tds[i]; i++) {
-        td.style.width = cellWidth + 'px';
-    }
-
-    // Set border somewhat redundantly to make sure they show
-    // up correctly in all browsers.
-    goog.style.setStyle(
-            tableElement, {
-                'borderCollapse': 'collapse',
-                'borderColor': style.borderColor,
-                'borderWidth': style.borderWidth + 'px'
-            });
-    tableElement.border = style.borderWidth;
-    tableElement.setAttribute('bordercolor', style.borderColor);
-    tableElement.setAttribute('cellspacing', '0');
-
-    return tableElement;
 };

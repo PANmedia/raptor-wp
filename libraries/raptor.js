@@ -2,18 +2,6 @@
 // File start: c:\work\modules\raptor-gold\raptor-common/ajax.js
 var ajax = {};
 
-ajax.x = function() {
-    try {
-        return new ActiveXObject('Msxml2.XMLHTTP')
-    } catch (e1) {
-        try {
-            return new ActiveXObject('Microsoft.XMLHTTP')
-        } catch (e2) {
-            return new XMLHttpRequest()
-        }
-    }
-};
-
 ajax.prepare = function(data) {
     var query = [];
     for (var key in data) {
@@ -23,7 +11,7 @@ ajax.prepare = function(data) {
 };
 
 ajax.send = function(url, callback, method, data, async) {
-    var x = ajax.x();
+    var x = new XMLHttpRequest();
     x.open(method, url, async);
     x.onreadystatechange = function() {
         if (x.readyState == 4) {
@@ -42,10 +30,6 @@ ajax.get = function(url, data, callback, async) {
 };
 
 ajax.post = function(url, data, callback, async) {
-    var query = [];
-    for (var key in data) {
-        query.push(encodeURIComponent(key) + '=' + encodeURIComponent(data[key]));
-    }
     ajax.send(url, callback, 'POST', ajax.prepare(data), async)
 };
 ;
@@ -315,13 +299,9 @@ function nodeClosestByClassName(node, className) {
 }
 
 function nodeFromHtml(html, wrapper) {
-    return nodesFromHtml(html, wrapper)[0];
-}
-
-function nodesFromHtml(html, wrapper) {
     var node = document.createElement(wrapper || 'div');
     node.innerHTML = html;
-    return node.children;
+    return node.children[0];
 }
 
 function nodeClassSwitch(node, classAdd, classRemove) {
@@ -447,6 +427,16 @@ function stringFromCamelCase(string, delimiter) {
         return (delimiter || '-') + match.toLowerCase();
     });
 }
+
+function stringToCamelCase(string, ucFirst) {
+    var result = string.toLowerCase().replace(/[^a-z0-9](.)/ig, function(match, char) {
+        return char.toUpperCase();
+    });
+    if (ucFirst !== false) {
+        result = stringUcFirst(result);
+    }
+    return result;
+}
 ;
 // File end: c:\work\modules\raptor-gold\raptor-common/string.js
 ;
@@ -467,7 +457,8 @@ var templateCache = {
     "unsupported": "<div class=\"{{baseClass}}-unsupported-overlay\"></div> <div class=\"{{baseClass}}-unsupported-content\"> It has been detected that you a using a browser that is not supported by Raptor, please use one of the following browsers: <ul> <li><a href=\"http://www.google.com/chrome\">Google Chrome</a></li> <li><a href=\"http://www.firefox.com\">Mozilla Firefox</a></li> <li><a href=\"http://www.google.com/chromeframe\">Internet Explorer with Chrome Frame</a></li> </ul> <div class=\"{{baseClass}}-unsupported-input\"> <button class=\"{{baseClass}}-unsupported-close\">Close</button> <input name=\"{{baseClass}}-unsupported-show\" type=\"checkbox\" /> <label>Don't show this message again</label> </div> <div>",
     "class-menu.item": "<li><a data-value=\"{{value}}\">{{label}}</a></li>",
     "click-button-to-edit.button": "<button class=\"{{baseClass}}-button\">tr('clickButtonToEditPluginButton')</button>",
-    "color-menu-basic.menu": "<li><a data-color=\"automatic\"><div class=\"{{baseClass}}-swatch\" style=\"display: none\"></div> <span>tr('colorMenuBasicAutomatic')</span></a></li> <li><a data-color=\"white\"><div class=\"{{baseClass}}-swatch\" style=\"background-color: #ffffff\"></div> <span>tr('colorMenuBasicWhite')</span></a></li> <li><a data-color=\"black\"><div class=\"{{baseClass}}-swatch\" style=\"background-color: #000000\"></div> <span>tr('colorMenuBasicBlack')</span></a></li> <li><a data-color=\"grey\"><div class=\"{{baseClass}}-swatch\" style=\"background-color: #999\"></div> <span>tr('colorMenuBasicGrey')</span></a></li> <li><a data-color=\"blue\"><div class=\"{{baseClass}}-swatch\" style=\"background-color: #4f81bd\"></div> <span>tr('colorMenuBasicBlue')</span></a></li> <li><a data-color=\"red\"><div class=\"{{baseClass}}-swatch\" style=\"background-color: #c0504d\"></div> <span>tr('colorMenuBasicRed')</span></a></li> <li><a data-color=\"green\"><div class=\"{{baseClass}}-swatch\" style=\"background-color: #9bbb59\"></div> <span>tr('colorMenuBasicGreen')</span></a></li> <li><a data-color=\"purple\"><div class=\"{{baseClass}}-swatch\" style=\"background-color: #8064a2\"></div> <span>tr('colorMenuBasicPurple')</span></a></li> <li><a data-color=\"orange\"><div class=\"{{baseClass}}-swatch\" style=\"background-color: #f79646\"></div> <span>tr('colorMenuBasicOrange')</span></a></li>",
+    "color-menu-basic.automatic": "<li><a data-color=\"automatic\"><div class=\"{{baseClass}}-swatch\" style=\"display: none\"></div> <span>tr('colorMenuBasicAutomatic')</span></a></li>",
+    "color-menu-basic.item": "<li><a data-color=\"{{className}}\"><div class=\"{{baseClass}}-swatch\" style=\"background-color: {{color}}\"></div> <span>{{label}}</span></a></li>",
     "embed.dialog": "<div class=\"{{baseClass}}-panel-tabs ui-tabs ui-widget ui-widget-content ui-corner-all\"> <ul class=\"ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all\"> <li class=\"ui-state-default ui-corner-top ui-tabs-selected ui-state-active\"><a>tr('embedDialogTabCode')</a></li> <li class=\"ui-state-default ui-corner-top\"><a>tr('embedDialogTabPreview')</a></li> </ul> <div class=\"{{baseClass}}-code-tab\"> <p>tr('embedDialogTabCodeContent')</p> <textarea></textarea> </div> <div class=\"{{baseClass}}-preview-tab\" style=\"display: none\"> <p>tr('embedDialogTabPreviewContent')</p> <div class=\"{{baseClass}}-preview\"></div> </div> </div>",
     "image-resize.dialog": "<div class=\"raptor-resize-image\"> <div> <label for=\"{{baseClass}}-width\">tr('imageResizeDialogWidth')</label> <input class=\"form-text\" id=\"{{baseClass}}-width\" name=\"width\" type=\"text\" placeholder=\"tr('imageResizeDialogWidthPlaceHolder')\"/> </div> <div> <label for=\"{{baseClass}}-height\">tr('imageResizeDialogHeight')</label> <input class=\"form-text\" id=\"{{baseClass}}-height\" name=\"height\" type=\"text\" placeholder=\"tr('imageResizeDialogHeightPlaceHolder')\"/> </div> <div class=\"{{baseClass}}-lock-proportions-container\"> <span class=\"{{baseClass}}-lock-proportions\"> <span class=\"ui-button-text\">Constrain proportions</span> <span class=\"ui-icon ui-icon-locked\"></span> </span> </div> </div>",
     "insert-file.dialog": "<div> <div> <label class=\"form-label\">tr('insertFileURLLabel')</label> <input type=\"text\" name=\"location\" class=\"form-text\" placeholder=\"tr('insertFileURLPlaceHolder')\"/> </div> <div> <label class=\"form-label\">tr('insertFileNameLabel')</label> <input type=\"text\" name=\"name\" class=\"form-text\" placeholder=\"tr('insertFileNamePlaceHolder')\"/> </div> </div>",
@@ -2145,647 +2136,6 @@ function fragmentInsertBefore(domFragment, beforeElement, wrapperTag) {
 ;
 // File end: c:\work\modules\raptor-gold\raptor-editor\src/tools/fragment.js
 ;
-// File start: c:\work\modules\raptor-gold\raptor-editor\src/tools/list.js
-/**
- * @fileOverview List manipulation helper functions.
- * @license http://www.raptor-editor.com/license
- *
- * @author David Neilsen david@panmedia.co.nz
- * @author Michael Robinson michael@panmedia.co.nz
- */
-
-/**
- * Determines the appropriate list toggling action then performs it.
- *
- * @param {String} listType This is the type of list to check the selection against.
- * @param {Object} listItem This is the list item to use as the selection.
- * @param {Element} wrapper Element containing the entire action, may not be modified.
- */
-function listToggle(listType, listItem, wrapper) {
-    if (wrapper.html().trim() === '') {
-        return;
-    }
-    if (!selectionExists()) {
-        return;
-    }
-    if (listShouldConvertType(listType, listItem, wrapper)) {
-        console.log('listShouldConvertType');
-        return listConvertListType(listType, listItem, wrapper);
-    }
-    if (listShouldUnwrap(listType, listItem)) {
-        console.log('listShouldUnwrap');
-        return listUnwrapSelection(listType, listItem, wrapper);
-    }
-    if (listShouldWrap(listType, listItem, wrapper)) {
-        console.log('listShouldWrap');
-        return listWrapSelection(listType, listItem, wrapper);
-    }
-}
-
-/**
- * @param  {String} listType
- * @param  {String} listItem
- * @return {Boolean}
- */
-function listShouldUnwrap(listType, listItem) {
-    var selectedElements = $(selectionGetElements());
-    if (selectedElements.is(listType)) {
-        return true;
-    }
-    if (listType === 'blockquote' && !selectedElements.parent().is(listType)) {
-        return false;
-    }
-    if (selectedElements.is(listItem) && selectedElements.parent().is(listType)) {
-        return true;
-    }
-    if (selectedElements.parentsUntil(listType, listItem).length) {
-        return true;
-    }
-    return false;
-}
-
-/**
- * @param  {String} listType
- * @param  {String} listItem
- * @return {Boolean}
- */
-function listShouldConvertType(listType, listItem, wrapper) {
-    var range = selectionRange();
-    var commonAncestor = $(rangeGetCommonAncestor(range));
-    if (rangeIsEmpty(range)) {
-        var closestListItem = commonAncestor.closest(listItem, wrapper);
-        if (closestListItem.length) {
-            rangeExpandTo(range, [closestListItem]);
-        } else {
-            rangeExpandToParent(range);
-        }
-    }
-    commonAncestor = $(rangeGetCommonAncestor(range));
-
-    // Do not convert blockquotes that have partial selections
-    if (listType === 'blockquote' &&
-        !rangeContainsNode(range, commonAncestor.get(0))) {
-        return false;
-    }
-
-    if ($(commonAncestor).is(listItem) &&
-        !$(commonAncestor).parent().is(listType)) {
-        return true;
-    }
-    return false;
-}
-
-function listShouldWrap(listType, listItem, wrapper) {
-    if (listType === 'blockquote') {
-        return elementIsValid(wrapper, listValidBlockQuoteParents);
-    }
-    return elementIsValid(wrapper, listValidUlOlParents);
-}
-
-/**
- * @type {String[]} Tags allowed within an li.
- */
-var listValidLiChildren = [
-    'a', 'abbr','acronym', 'applet', 'b', 'basefont', 'bdo', 'big', 'br', 'button',
-    'cite', 'code', 'dfn', 'em', 'font', 'i', 'iframe', 'img', 'input', 'kbd',
-    'label', 'map', 'object', 'p', 'q', 's',  'samp', 'select', 'small', 'span',
-    'strike', 'strong', 'sub', 'sup', 'textarea', 'tt', 'u', 'var',
-    'h1', 'h2', 'h3', 'h4', 'h5', 'h6'
-];
-
-/**
- * @type {String][]} Tags ol & ul are allowed within.
- */
-var listValidUlOlParents =  [
-    'article', 'nav', 'section', 'footer', 'blockquote', 'body', 'button',
-    'center', 'dd', 'div', 'fieldset', 'form', 'iframe', 'li', 'noframes',
-    'noscript', 'object', 'td', 'th'
-];
-
-/**
- * @type {String][]} Tags blockquote is allowed within.
- */
-var listValidBlockQuoteParents = [
-    'body', 'center', 'dd', 'div', 'dt', 'fieldset', 'form', 'iframe', 'li', 'td', 'th'
-];
-
- var listValidPChildren = [
-    'a', 'abbr', 'acronym', 'applet', 'b', 'basefont', 'bdo', 'big', 'br',
-    'button', 'cite', 'code', 'dfn', 'em', 'font', 'i', 'iframe', 'img',
-    'input', 'kbd', 'label', 'map', 'object', 'q', 's', 'samp', 'script',
-    'select', 'small', 'span', 'strike', 'strong', 'sub', 'sup', 'textarea',
-    'u'
-];
-
-var listValidPParents = [
-    'address', 'blockquote', 'body', 'button', 'center', 'dd', 'div', 'fieldset',
-    'form', 'iframe', 'li', 'noframes', 'noscript', 'object', 'td', 'th'
-];
-
-/**
- * Convert tags invalid within the context of listItem.
- *
- * @param  {Element} list
- * @param  {String} listItem
- * @param  {String[]} validChildren
- */
-function listEnforceValidChildren(list, listItem, validChildren, removeEmpty) {
-    removeEmpty = typeof removeEmpty === 'undefined' ? true : removeEmpty;
-    // <strict/>
-    var removeEmptyElements = function(node) {
-        if ($(node).is('img') || $(node).find('img').length) {
-            return;
-        }
-        if (!$(node).text().trim()) {
-            $(node).remove();
-            return true;
-        }
-    };
-
-    list.find('> ' + listItem).each(function() {
-        if (removeEmpty && removeEmptyElements(this)) {
-            return true;
-        }
-        $(this).contents().each(function() {
-            if (removeEmpty && removeEmptyElements(this)) {
-                return true;
-            }
-            if (listItem === 'p') {
-                if (!typeIsTextNode(this) &&
-                    !elementIsValid(this, validChildren)) {
-                    $(this).contents().unwrap();
-                    return true;
-                }
-            } else {
-                // Do nothing for bare text nodes
-                if (typeIsTextNode(this)) {
-                    return true;
-                }
-                // Unwrap the invalid element and remove it if empty
-                if (!elementIsValid(this, validChildren)) {
-                    $(this).contents().unwrap();
-                    removeEmptyElements(this);
-                    return true;
-                }
-            }
-        });
-    });
-}
-
-/**
- * Wraps the selected element(s) in list tags.
- *
- * @param {String} listType The type of list that the selection is to be transformed into.
- * @param {String} listItem The list item to be used in creating the list.
- * @param {Element} wrapper Element containing the entire action, may not be modified.
- */
-function listWrapSelection(listType, listItem, wrapper) {
-    var range = selectionRange(),
-        commonAncestor = rangeGetCommonAncestor(range),
-        startContainer = range.startContainer,
-        endContainer = range.endContainer;
-
-
-    var contents = range.extractContents(),
-        html = fragmentToHtml(contents),
-        nodes = nodeFromHtml('<' + listType + '>' + html + '</' + listType + '>'),
-        elements = $(nodes);
-    elements.children().wrap('<li>')
-    selectionReplace(elements);
-    return;
-
-    /**
-     * <wrapper>{}<p>Some content</p></wrapper>
-     */
-    if (rangeIsEmpty(range) && commonAncestor === wrapper.get(0)) {
-        return;
-    }
-    console.log(range.startContainer);
-
-    // Having a <td> fully selected is a special case: without intervention
-    // the surrounding <table> would be split, with a <listType> inserted between
-    // the two <tables>.
-    if ($(commonAncestor).is('td,th') || commonAncestor === wrapper.get(0)) {
-        rangeSelectElementContent(range, commonAncestor);
-
-    // Other cases require checking if the range contains the full text of the
-    // common ancestor. In these cases the commonAncestor should be selected
-    } else if (rangeContainsNodeText(range, commonAncestor)) {
-        rangeSelectElement(range, $(commonAncestor));
-    }
-
-    if (rangeIsEmpty(range)) {
-        range.selectNode(elementClosestBlock($(commonAncestor), wrapper).get(0));
-    }
-
-    var contents = listConvertItemsForList(fragmentToHtml(range.extractContents()), listItem);
-    var validParents = listType === 'blockquote' ? listValidBlockQuoteParents : listValidUlOlParents;
-    var uniqueId = elementUniqueId();
-    var replacementHtml = '<' + listType + ' id="' + uniqueId + '">' + $('<div/>').html(contents).html() + '</' + listType + '>';
-
-    rangeReplaceWithinValidTags(range, replacementHtml, wrapper, validParents);
-
-    var replacement = $('#' + uniqueId).removeAttr('id');
-    var validChildren = listType === 'blockquote' ? listValidPChildren : listValidLiChildren;
-    listEnforceValidChildren(replacement, listItem, validChildren);
-    if (replacement.is(listType)) {
-        var child = replacement.find(' > ' + listItem);
-        if (child.length === 0) {
-            replacement = $(document.createElement('li')).appendTo(replacement);
-        }
-    }
-    selectionSelectInner(replacement.get(0));
-}
-
-/**
- * Wrap non block elements in <p> tags, then in <li>'s.
- *
- * @param  {String} items HTML to be prepared.
- * @param  {String} listItem
- * @return {String} Prepared HTML.
- */
-function listConvertItemsForList(items, listItem) {
-    items = $('<div/>').html(items);
-
-    if (!elementContainsBlockElement(items)) {
-        // Do not double wrap p's
-        if (listItem === 'p') {
-            return '<' + listItem + '>' + items.html() + '</' + listItem + '>';
-        }
-        return '<' + listItem + '><p>' + items.html() + '</p></' + listItem + '>';
-    }
-
-    items.contents().each(function() {
-        if ($(this).is('img')) {
-            return true;
-        }
-        if (elementIsEmpty($(this))) {
-            return $(this).remove();
-        }
-        $(this).wrap('<' + listItem + '/>');
-        if (!elementIsBlock(this)) {
-            $(this).wrap('<p>');
-        }
-    });
-
-    return items.html();
-}
-
-/**
- * Convert the given list item to the given tag. If the listItem has children,
- * convert them and unwrap the containing list item.
- *
- * @param  {Element} listItem
- * @param  {string} listType
- * @param  {string} tag
- * @param  {string[]} validTagChildren Array of valid child tag names.
- * @return {Element|null} Result of the final conversion.
- */
-function listConvertListItem(listItem, listType, tag) {
-     // <strict/>
-    var listItemChildren = listItem.contents();
-    if (listItemChildren.length) {
-        listItemChildren.each(function() {
-            if ($(this).text().trim() === '') {
-                return $(this).remove();
-            }
-            if (typeIsTextNode(this) || !elementIsBlock(this)) {
-                return $(this).wrap('<' + tag + '>');
-            }
-        });
-        return listItem.contents().unwrap();
-    } else {
-        return elementChangeTag(listItem, tag);
-    }
-}
-
-/**
- * Convert listItems to paragraphs and unwrap the containing listType.
- *
- * @param  {Element} list
- * @param  {string} listItem
- * @param  {string} listType
- */
-function listUnwrap(list, listItem, listType) {
-    // <strict/>
-    var convertedItem = null;
-    list.find(listItem).each(function() {
-        listConvertListItem($(this), listType, 'p');
-    });
-    return list.contents().unwrap();
-}
-
-/**
- * Tidy lists that have been modified, including removing empty listItems and
- * removing the list if it is completely empty.
- *
- * @param  {Element} list
- * @param  {string} listType
- * @param  {string} listItem
- */
-function listTidyModified(list, listType, listItem) {
-    // <strict/>
-    listRemoveEmptyItems(list, listType, listItem);
-    listRemoveEmpty(list, listType, listItem);
-}
-
-/**
- * Remove empty listItems from within the list.
- *
- * @param  {Element} list
- * @param  {string} listType
- * @param  {string} listItem
- */
-function listRemoveEmptyItems(list, listType, listItem) {
-    // <strict/>
-    if (!list.is(listType)) {
-        return;
-    }
-    list.find(listItem).each(function() {
-        if ($(this).text().trim() === '') {
-            $(this).remove();
-        }
-    });
-}
-
-/**
- * Remove list if it is of listType and empty.
- *
- * @param  {Element} list
- * @param  {string} listType
- * @param  {string} listItem
- */
-function listRemoveEmpty(list, listType, listItem) {
-    // <strict/>
-    if (!list.is(listType)) {
-        return;
-    }
-    if (list.text().trim() === '') {
-        list.remove();
-    }
-}
-
-/**
- * Unwrap the list items between the range's startElement & endElement.
- *
- * @param  {RangyRange} range
- * @param  {string} listType
- * @param  {string} listItem
- * @param  {Element} wrapper
- */
-function listUnwrapSelectedListItems(range, listType, listItem, wrapper) {
-    var startElement = rangeGetStartElement(range);
-    var endElement = rangeGetEndElement(range);
-    var replacementPlaceholderId = elementUniqueId();
-
-    rangeExpandToParent(range);
-    var breakOutValidityList = listType === 'blockquote' ? listValidBlockQuoteParents : listValidPParents;
-    breakOutValidityList = $.grep(breakOutValidityList, function(item) {
-        return item !== 'li';
-    });
-    rangeReplaceWithinValidTags(range, $('<p/>').attr('id', replacementPlaceholderId), wrapper, breakOutValidityList);
-
-    var replacementPlaceholder = $('#' + replacementPlaceholderId);
-
-    listTidyModified(replacementPlaceholder.prev(), listType, listItem);
-    listTidyModified(replacementPlaceholder.next(), listType, listItem);
-
-    var toUnwrap = [startElement];
-    if (startElement !== endElement) {
-        $(startElement).nextUntil(endElement).each(function() {
-            if (this === endElement) {
-                return;
-            }
-            toUnwrap.push(this);
-        });
-        toUnwrap.push(endElement);
-    }
-
-    toUnwrap.reverse();
-
-    $(toUnwrap).each(function() {
-        replacementPlaceholder.after(this);
-        listConvertListItem($(this), listType, 'p');
-    });
-
-    replacementPlaceholder.remove();
-
-    return listEnforceValidChildren($(rangeGetCommonAncestor(range)), listItem, listValidLiChildren);
-}
-
-/**
- * Unwraps the selected list item(s) and puts it into <p> tags.
- *
- * @param {Object} listItem
- */
-function listUnwrapSelection(listType, listItem, wrapper) {
-    var range = selectionRange();
-    if (rangeIsEmpty(range)) {
-        rangeExpandTo(range, [listItem]);
-    }
-
-    var commonAncestor = $(rangeGetCommonAncestor(range));
-
-    /**
-     * Selection contains more than one <listItem>, or the whole <listType>
-     */
-    if (commonAncestor.is(listType)) {
-        var startElement = rangeGetStartElement(range);
-        var endElement = rangeGetEndElement(range);
-
-        /**
-         * {<listType>
-         *     <listItem>list content</listItem>
-         * </listType>}
-         */
-        if ($(endElement).is(listType) && $(startElement).is(listType)) {
-            return listUnwrap(commonAncestor, listItem, listType);
-        }
-
-        /**
-         * <listType>
-         *     <listItem>{list content</listItem>
-         *     <listItem>list content}</listItem>
-         *     <listItem>list content</listItem>
-         * </listType>
-         */
-         return listUnwrapSelectedListItems(range, listType, listItem, wrapper);
-    }
-
-    if (!commonAncestor.is(listItem)) {
-        commonAncestor = commonAncestor.closest(listItem);
-    }
-    /**
-     * <listType>
-     *     <li>{list content}</li>
-     * </listType>
-     */
-    if (!commonAncestor.prev().length && !commonAncestor.next().length) {
-        return listUnwrap(commonAncestor.closest(listType), listItem, listType);
-    }
-
-    /**
-     * <listType>
-     *     <listItem>list content</listItem>
-     *     <listItem>{list content}</listItem>
-     *     <listItem>list content</listItem>
-     * </listType>
-     */
-    if (commonAncestor.next().length && commonAncestor.prev().length) {
-        return listUnwrapSelectedListItems(range, listType, listItem, wrapper);
-    }
-
-    /**
-     * <listType>
-     *     <listItem>{list content}</listItem>
-     *     <listItem>list content</listItem>
-     * </listType>
-     */
-    if (commonAncestor.next().length && !commonAncestor.prev().length) {
-        commonAncestor.parent().before(listConvertListItem(commonAncestor, listType, 'p'));
-        commonAncestor.remove();
-        return;
-    }
-
-    /**
-     * <listType>
-     *     <listItem>list content</listItem>
-     *     <listItem>{list content}</listItem>
-     * </listType>
-     */
-    if (!commonAncestor.next().length && commonAncestor.prev().length) {
-        commonAncestor.parent().after(listConvertListItem(commonAncestor, 'p', listType));
-        commonAncestor.remove();
-        return;
-    }
-}
-
-function listConvertListType(listType, listItem, wrapper) {
-    var range = selectionRange();
-    if (rangeIsEmpty(range)) {
-        rangeExpandTo(range, [listItem]);
-    }
-
-    var startElement = rangeGetStartElement(range);
-    var endElement = rangeGetEndElement(range);
-    var replacementPlaceholderId = elementUniqueId();
-
-    rangeExpandToParent(range);
-    var breakOutValidityList = $.grep(listValidPParents, function(item) {
-        return item !== listItem;
-    });
-    rangeReplaceWithinValidTags(range, $('<p/>').attr('id', replacementPlaceholderId), wrapper, breakOutValidityList);
-
-    var replacementPlaceholder = $('#' + replacementPlaceholderId);
-
-    listTidyModified(replacementPlaceholder.prev(), listType, listItem);
-    listTidyModified(replacementPlaceholder.next(), listType, listItem);
-
-    var toUnwrap = [startElement];
-    if (startElement !== endElement) {
-        $(startElement).nextUntil(endElement).each(function() {
-            if (this === endElement) {
-                return;
-            }
-            toUnwrap.push(this);
-        });
-        toUnwrap.push(endElement);
-    }
-
-    toUnwrap.reverse();
-
-    $(toUnwrap).each(function() {
-        replacementPlaceholder.after(this);
-    });
-    replacementPlaceholder.remove();
-    var convertedList = $(toUnwrap).wrap('<' + listType + '>').parent();
-
-    return listEnforceValidChildren(convertedList, listItem, listValidLiChildren);
-}
-
-/**
- * Break the currently selected list, replacing the selection.
- *
- * @param  {String} listType
- * @param  {String} listItem
- * @param  {Element} wrapper
- * @param  {String|Element} replacement
- * @return {Element|Boolean} The replaced element, or false if replacement did not
- *                               occur.
- */
-function listBreakByReplacingSelection(listType, listItem, wrapper, replacement) {
-    var selectedElement = selectionGetElement();
-    if (!selectedElement.closest(listItem).length) {
-        return false;
-    }
-
-    var parentList = selectedElement.closest(listType);
-    if (!parentList.length || wrapper.get(0) === parentList.get(0)) {
-        return false;
-    }
-
-    selectionSelectToEndOfElement(selectedElement);
-    selectionDelete();
-
-    var top = $('<' + listType + '/>'),
-        bottom = $('<' + listType + '/>'),
-        middlePassed = false;
-    parentList.children().each(function() {
-        if (selectedElement.closest(listItem).get(0) === this) {
-            middlePassed = true;
-            top.append(this);
-            return;
-        }
-        if (!middlePassed) {
-            top.append(this);
-        } else {
-            bottom.append(this);
-        }
-    });
-    parentList.replaceWith(top);
-    replacement = $(replacement).appendTo($('body'));
-    top.after(replacement, bottom);
-
-    return replacement;
-}
-
-/**
- * Add a new list item below the selection. New list item contains content of original
- * list item from selection end to end of element.
- *
- * @param  {String} listType
- * @param  {String} listItem
- * @param  {Element} wrapper
- * @param  {String|Element} replacement
- * @return {Element|Boolean}
- */
-function listBreakAtSelection(listType, listItem, wrapper) {
-    var selectedElement = selectionGetElement();
-    if (!selectedElement.closest(listItem).length) {
-        return false;
-    }
-
-    selectionDelete();
-    selectionSelectToEndOfElement(selectedElement);
-    var html = selectionGetHtml();
-    if (html.trim() === '') {
-        html = '&nbsp;';
-    }
-    selectionDelete();
-
-    if (selectedElement.text().trim() === '') {
-        selectedElement.html('&nbsp;');
-    }
-    var newListItem = $('<' + listItem + '>').html(html);
-    selectedElement.closest(listItem).after(newListItem);
-
-    listEnforceValidChildren(selectedElement.closest(listType), listItem, listValidLiChildren, false);
-
-    return newListItem;
-}
-;
-// File end: c:\work\modules\raptor-gold\raptor-editor\src/tools/list.js
-;
 // File start: c:\work\modules\raptor-gold\raptor-editor\src/tools/node.js
 /**
  * @fileOverview Find node parent helper function.
@@ -4152,18 +3502,6 @@ function stringStripTags(content, allowedTags) {
 }
 
 /**
- * Converts a string in camelcase to lower case words separated with a dash or other supplied delimiter.
- * @param {String} string The string to be converted from camelcase.
- * @param {String} delimiter The character to separate the words, '-' if null.
- * @returns {String} A lowercase string separated by dashes.
- */
-function stringCamelCaseConvert(string, delimiter) {
-    return string.replace(/([A-Z])/g, function(match) {
-        return (delimiter || '-') + match.toLowerCase();
-    });
-}
-
-/**
  * Checks if an html string is empty.
  *
  * @param {Element} element The element to be checked.
@@ -5218,7 +4556,9 @@ var RaptorWidget = {
     },
 
     change: function() {
-        this.fire('change', [this.getHtml()]);
+        this.fire('change', [
+            this.getHtml()
+        ]);
     },
 
     /*========================================================================*\
@@ -6094,6 +5434,11 @@ ToolbarLayout.prototype.show = function() {
     if (!this.isVisible()) {
         this.getElement().css('display', '');
         this.constrainPosition();
+        if (this.raptor.getElement().zIndex() > this.getElement().zIndex()) {
+            this.getElement().css('z-index', this.raptor.getElement().zIndex() + 1);
+        } else {
+            this.getElement().css('z-index', null);
+        }
         this.raptor.fire('toolbarShow');
     }
 };
@@ -6300,6 +5645,11 @@ HoverPanelLayout.prototype.show = function(event) {
     if (!this.raptor.isEditing()) {
         this.visible = true;
         this.getElement().show();
+        if (this.raptor.getElement().zIndex() > this.getElement().zIndex()) {
+            this.getElement().css('z-index', this.raptor.getElement().zIndex() + 1);
+        } else {
+            this.getElement().css('z-index', null);
+        }
         this.position();
         this.raptor.getElement().addClass(this.raptor.options.baseClass + '-editable-block-hover');
     }
@@ -6547,7 +5897,7 @@ Button.prototype.getTitle = function() {
  */
 Button.prototype.getIcon = function() {
     if (this.icon === null) {
-        return 'ui-icon-' + stringCamelCaseConvert(this.name);
+        return 'ui-icon-' + stringFromCamelCase(this.name);
     }
     return this.icon;
 };
@@ -6644,7 +5994,6 @@ PreviewButton.prototype.mouseLeave = function() {
  */
 PreviewButton.prototype.click = function() {
     this.previewing = false;
-    this.raptor.actionPreviewRestore();
     return Button.prototype.click.apply(this, arguments);
 };
 
@@ -7422,23 +6771,6 @@ $.extend(Raptor, {
     fragmentInsertBefore: fragmentInsertBefore,
     fragmentToHtml: fragmentToHtml,
     getLocalizedString: getLocalizedString,
-    listBreakAtSelection: listBreakAtSelection,
-    listBreakByReplacingSelection: listBreakByReplacingSelection,
-    listConvertItemsForList: listConvertItemsForList,
-    listConvertListItem: listConvertListItem,
-    listConvertListType: listConvertListType,
-    listEnforceValidChildren: listEnforceValidChildren,
-    listRemoveEmpty: listRemoveEmpty,
-    listRemoveEmptyItems: listRemoveEmptyItems,
-    listShouldConvertType: listShouldConvertType,
-    listShouldUnwrap: listShouldUnwrap,
-    listShouldWrap: listShouldWrap,
-    listTidyModified: listTidyModified,
-    listToggle: listToggle,
-    listUnwrap: listUnwrap,
-    listUnwrapSelectedListItems: listUnwrapSelectedListItems,
-    listUnwrapSelection: listUnwrapSelection,
-    listWrapSelection: listWrapSelection,
     nodeFindParent: nodeFindParent,
     nodeFindTextNodes: nodeFindTextNodes,
     nodeIsChildOf: nodeIsChildOf,
@@ -7508,7 +6840,6 @@ $.extend(Raptor, {
     setLocale: setLocale,
     stateRestore: stateRestore,
     stateSave: stateSave,
-    stringCamelCaseConvert: stringCamelCaseConvert,
     stringHtmlStringIsEmpty: stringHtmlStringIsEmpty,
     stringStripTags: stringStripTags,
     styleRestoreState: styleRestoreState,
@@ -8255,16 +7586,18 @@ Raptor.registerUi(new Button({
  * @param {Object} options
  */
 function ColorMenuBasic(options) {
-    this.colors = [
-        'white',
-        'black',
-        'grey',
-        'blue',
-        'red',
-        'green',
-        'purple',
-        'orange'
-    ];
+    this.options = {
+        colors: {
+            white: '#ffffff',
+            black: '#000000',
+            grey: '#999',
+            blue: '#4f81bd',
+            red: '#c0504d',
+            green: '#9bbb59',
+            purple: '#8064a2',
+            orange: '#f79646'
+        }
+    };
     /**
      * Cache the current color so it can be reapplied to the button if the user
      * clicks the button to open the menu, hovers some colors then clicks off to
@@ -8307,15 +7640,15 @@ ColorMenuBasic.prototype.updateButton = function() {
         return;
     }
     tag = $(tag);
-    for (var colorsIndex = 0; colorsIndex < this.colors.length; colorsIndex++) {
-        closest = $(tag).closest('.' + this.options.cssPrefix + this.colors[colorsIndex]);
+    for (var label in this.options.colors) {
+        closest = $(tag).closest('.' + this.options.cssPrefix + label);
         if (closest.length) {
-            color = this.colors[colorsIndex];
+            color = label;
             break;
         }
     }
     if (color) {
-        aButtonSetLabel(button, tr('colorMenuBasic' + (color.charAt(0).toUpperCase() + color.slice(1))));
+        aButtonSetLabel(button, tr('colorMenuBasic' + stringToCamelCase(color)));
         aButtonSetIcon(button, 'ui-icon-swatch');
         // FIXME: set color in an adapter friendly way
         button.find('.ui-icon').css('background-color', closest.css('color'));
@@ -8406,7 +7739,16 @@ ColorMenuBasic.prototype.menuItemClick = function(event) {
  * @returns {Element} The menu items.
  */
 ColorMenuBasic.prototype.getMenuItems = function() {
-    return this.raptor.getTemplate('color-menu-basic.menu', this.options);
+    var template = this.raptor.getTemplate('color-menu-basic.automatic', this.options);
+    for (var label in this.options.colors) {
+        template += this.raptor.getTemplate('color-menu-basic.item', {
+            color: this.options.colors[label],
+            label: tr('colorMenuBasic' + stringToCamelCase(label)),
+            className: label,
+            baseClass: this.options.baseClass
+        });
+    }
+    return template;
 };
 
 Raptor.registerUi(new ColorMenuBasic());
@@ -8438,7 +7780,8 @@ function DockPlugin(name, overrides) {
         docked: false,
         position: 'top',
         spacer: true,
-        persist: true
+        persist: true,
+        dockTo: null
     };
     this.dockState = false;
     this.marker = false;
@@ -8524,16 +7867,17 @@ DockPlugin.prototype.toggleDockToElement = function() {
  * @return {Object} Resulting dock state
  */
 DockPlugin.prototype.dockToElement = function() {
-    var element = this.raptor.getElement(),
+    var element = this.options.dockTo ? $(this.options.dockTo) : this.raptor.getElement(),
         layoutElement = this.raptor.getLayout('toolbar').getElement();
     this.marker = $('<marker>').addClass(this.options.baseClass + '-marker').insertAfter(layoutElement);
-    this.raptor.getLayout('toolbar').getElement().addClass(this.options.baseClass + '-docked-to-element');
-    this.dockState = dockToElement(this.raptor.getLayout('toolbar').getElement(), element, {
+    layoutElement.addClass(this.options.baseClass + '-docked-to-element');
+    this.dockState = dockToElement(layoutElement, element, {
         position: this.options.position,
         spacer: false,
         wrapperClass: this.options.baseClass + '-inline-wrapper'
     });
     this.activateButton(this.raptor.getPlugin('dockToElement'));
+    this.raptor.persist('docked', true);
 };
 
 /**
@@ -8546,6 +7890,7 @@ DockPlugin.prototype.undockFromElement = function() {
     this.dockState = null;
     this.raptor.getLayout('toolbar').getElement().removeClass(this.options.baseClass + '-docked-to-element');
     this.deactivateButton(this.raptor.getPlugin('dockToElement'));
+    this.raptor.persist('docked', false);
 };
 
 /**
@@ -8575,7 +7920,6 @@ DockPlugin.prototype.dockToScreen = function() {
     if (!this.dockState) {
         var layout = this.raptor.getLayout('toolbar');
         if (layout.isReady()) {
-            this.raptor.persist('docked', true);
             var layoutElement = layout.getElement();
             this.marker = $('<marker>').addClass(this.options.baseClass + '-marker')
                                 .insertAfter(layoutElement);
@@ -8591,6 +7935,7 @@ DockPlugin.prototype.dockToScreen = function() {
                 this.dockState.spacer.addClass(this.options.baseClass + '-hidden');
             }
             this.activateButton(this.raptor.getPlugin('dockToScreen'));
+            this.raptor.persist('docked', true);
         }
     }
 };
@@ -8602,7 +7947,6 @@ DockPlugin.prototype.dockToScreen = function() {
  */
 DockPlugin.prototype.undockFromScreen = function() {
     if (this.dockState) {
-        this.raptor.persist('docked', false);
         var layout = this.raptor.getLayout('toolbar'),
             layoutElement = undockFromScreen(this.dockState);
         this.marker.replaceWith(layoutElement);
@@ -8611,6 +7955,7 @@ DockPlugin.prototype.undockFromScreen = function() {
         this.dockState = null;
         layoutElement.removeClass(this.options.baseClass + '-docked');
         this.deactivateButton(this.raptor.getPlugin('dockToScreen'));
+        this.raptor.persist('docked', false);
     }
 };
 
@@ -9768,7 +9113,7 @@ LinkTypeInternal.prototype.updateInputs = function(link, panel) {
 Raptor.registerUi(new Button({
     name: 'listOrdered',
     action: function() {
-        document.execCommand('insertorderedlist');
+        document.execCommand('insertOrderedList');
     }
 }));
 ;
@@ -9793,7 +9138,7 @@ Raptor.registerUi(new Button({
 Raptor.registerUi(new Button({
     name: 'listUnordered',
     action: function() {
-        document.execCommand('insertunorderedlist');
+        document.execCommand('insertUnorderedList');
     }
 }));
 ;
